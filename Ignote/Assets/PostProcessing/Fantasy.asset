@@ -43,15 +43,15 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.79
-      radius: 1.61
+      intensity: 0.93
+      radius: 2.66
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
       ambientOnly: 0
       highPrecision: 1
   screenSpaceReflection:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       reflection:
         blendType: 0
@@ -95,16 +95,16 @@ MonoBehaviour:
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -8
+      logMin: -9
       logMax: 4
   bloom:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.06
-        threshold: -0.31
-        softKnee: 0.526
-        radius: 3.86
+        intensity: 0.035
+        threshold: -0.89
+        softKnee: 0.542
+        radius: 3.5
         antiFlicker: 1
       lensDirt:
         texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
@@ -121,14 +121,14 @@ MonoBehaviour:
         neutralWhiteLevel: 5.39
         neutralWhiteClip: 10
       basic:
-        postExposure: 0.69
-        temperature: -16
-        tint: 2.7
+        postExposure: 0.82
+        temperature: -10
+        tint: 3
         hueShift: -2
         saturation: 1
         contrast: 1
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 1.07, y: 0.02, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 0.96626145, g: 0.97012484, b: 1, a: 0}
+          lift: {r: 0.9277918, g: 1, b: 0.98492193, a: 0}
           gamma: {r: 0.97975653, g: 1, b: 0.99999994, a: 0}
           gain: {r: 0.9932517, g: 0.9865044, b: 1, a: 0}
       curves:
@@ -150,6 +150,15 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 0
               value: 0
+              inSlope: 1
+              outSlope: 1
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.45266274
+              value: 0.7044025
               inSlope: 1
               outSlope: 1
               tangentMode: 0
@@ -321,10 +330,10 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 0, g: 0, b: 0, a: 1}
+      color: {r: 1, g: 0.72573435, b: 0.33490568, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.18
-      smoothness: 0.328
+      intensity: 0.131
+      smoothness: 0.4
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
