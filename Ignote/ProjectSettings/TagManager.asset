@@ -5,6 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Companion
+  - DistractionItem
+  - Enemy
+  - Projectile
+  - Ballista
+  - ArmAttack
+  - TeleportA
+  - PressurePlate
+  - Terrain
+  - TeleportB
+  - Wrench
+  - EProjectile
   layers:
   - Default
   - TransparentFX

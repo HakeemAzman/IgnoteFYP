@@ -24,4 +24,12 @@ public class PlayerHealth : MonoBehaviour
             playerCurrentHealth = player_Health;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "EProjectile")
+        {
+            player_Health -= 30;
+        }
+    }
 }

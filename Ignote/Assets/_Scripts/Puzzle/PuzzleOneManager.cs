@@ -34,6 +34,7 @@ public class PuzzleOneManager : MonoBehaviour
         if((other.gameObject.name == "ChainRobot") && Input.GetButtonDown("Stay"))
         {
             robotCage.GetComponent<Animator>().Play("RobotCageOpen");
+
         }
 
         if (other.CompareTag("PressurePlate"))

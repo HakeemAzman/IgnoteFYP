@@ -38,14 +38,19 @@ public class ProjectileHit : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        else if (other.transform == targetPlayer) //does damage to the player
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform == targetPlayer) //does damage to the player
         {
             playerHealth.playerCurrentHealth -= damageOutput;
             Instantiate(explosionParticle, transform.position, transform.rotation);
             Destroy(gameObject);
             gameObject.SetActive(false);
         }
-        else if (other.transform == targetCompanion) //does damage to the companion
+        if (collision.transform == targetCompanion) //does damage to the companion
         {
             companionHealth.companionHealth -= damageOutput;
             Instantiate(explosionParticle, transform.position, transform.rotation);

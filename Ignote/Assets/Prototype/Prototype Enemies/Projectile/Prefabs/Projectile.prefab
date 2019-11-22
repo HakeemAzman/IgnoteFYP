@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 692698316737471534}
   m_Layer: 2
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: EProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4437929111392464818}
   m_Layer: 2
   m_Name: Projectile System
-  m_TagString: Untagged
+  m_TagString: EProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,4 +182,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 3588092282836143534, guid: 4701dffe40520a34f82686e7b1d8cae9,
     type: 3}
-  damageOutput: 5
+  damageOutput: 10
