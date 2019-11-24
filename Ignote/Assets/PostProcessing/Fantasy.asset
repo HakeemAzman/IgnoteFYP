@@ -101,7 +101,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.035
+        intensity: 0.05
         threshold: -0.89
         softKnee: 0.542
         radius: 3.5
@@ -125,8 +125,8 @@ MonoBehaviour:
         temperature: -10
         tint: 3
         hueShift: -2
-        saturation: 1
-        contrast: 1
+        saturation: 1.16
+        contrast: 0.97
       channelMixer:
         red: {x: 1.07, y: 0.02, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -330,11 +330,11 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 1, g: 0.72573435, b: 0.33490568, a: 1}
+      color: {r: 1, g: 0.8934009, b: 0.740566, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.131
-      smoothness: 0.4
-      roundness: 1
+      intensity: 0.22
+      smoothness: 0.41
+      roundness: 0.99
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
