@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
 
     public Transform lastCheckpoint;
 
-    private AudioSource source;
+    private AudioSource musicSource;
+    private AudioSource SFXSource;
 
     [SerializeField] private GameObject audioSource;
+    [SerializeField] private GameObject SFXsource;
     [SerializeField] private Slider sliderMusic;
+    [SerializeField] private Slider sliderSFX;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
 
@@ -24,8 +27,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        source = audioSource.GetComponent<AudioSource>();
-        sliderMusic.value = PlayerPrefs.GetFloat("Volume", source.volume);
+        musicSource = audioSource.GetComponent<AudioSource>();
+        SFXSource = SFXsource.GetComponent<AudioSource>();
+        sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume", musicSource.volume);
+        sliderSFX.value = PlayerPrefs.GetFloat("SFXVolume", SFXSource.volume);
 
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
@@ -88,6 +93,11 @@ public class GameManager : MonoBehaviour
 
     public void GameMusicVolume()
     {
-        PlayerPrefs.SetFloat("Volume", audioSource.GetComponent<AudioSource>().volume);
+        PlayerPrefs.SetFloat("MusicVolume", audioSource.GetComponent<AudioSource>().volume);
+    }
+
+    public void GameSFXVolume()
+    {
+        PlayerPrefs.SetFloat("SFXVolume", SFXsource.GetComponent<AudioSource>().volume);
     }
 }
