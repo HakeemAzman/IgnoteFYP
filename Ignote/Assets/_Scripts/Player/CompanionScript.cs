@@ -11,7 +11,7 @@ public class CompanionScript : MonoBehaviour
     [Header("Scripts")]
     public Companion_Commands cc;
     public CompanionHealth ch;
-    public AoeAttack aAttack;
+    public Compbat cbScript;
     [Space]
     public float speedFloat;
     public float charges;
@@ -27,13 +27,20 @@ public class CompanionScript : MonoBehaviour
     [Header("Gameobjects")]
     public GameObject Player;
     public GameObject Overcharge;
+    [Space]
+    [Header("AOE")]
+    public float radius;
+    public float kbForce;
+    public int damage = 30;
+    public LayerMask check;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         cc.GetComponent<Companion_Commands>();
         ch.GetComponent<CompanionHealth>();
-        aAttack.GetComponent<AoeAttack>();
+        cbScript.GetComponent<Compbat>();
     }
 
     void Update()
@@ -46,7 +53,7 @@ public class CompanionScript : MonoBehaviour
 
         if (charges >= 1)
         {
-            aAttack.damage = 100;
+            damage = 100;
             //speedFloat = 10;
         }
         if (charges >= 3)
@@ -61,14 +68,14 @@ public class CompanionScript : MonoBehaviour
 
         if(charges <= 0)
         {
-            aAttack.damage = 30;
+            damage = 30;
         }
        
         playerAI = FindClosestPlayer().transform.position;
         agent.destination = playerAI;
         gameObject.GetComponent<NavMeshAgent>().speed = speedFloat;
 
-        float dist = Vector3.Distance(gameObject.transform.position, GameObject.FindWithTag("Enemy").transform.position);
+        float dist = Vector3.Distance(transform.position, GameObject.FindWithTag("Enemy").transform.position);
         
         if(dist <= 20)
         {
@@ -90,6 +97,35 @@ public class CompanionScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ch.companionHealth -= 1;
+        }
+
+        //print(DistanceToPlauer());
+        //print(DistanceToEnemy());
+
+        if(!haveEnemy)
+        {
+            if (DistanceToPlauer() >= 3 && DistanceToPlauer() <= 5)
+            {
+                speedFloat = 0;
+                anim.SetFloat("wSpeed", 0);
+                isPlayer = true;
+            }
+
+            if (DistanceToPlauer() > 5)
+            {
+                isPlayer = false;
+                speedFloat = 5;
+                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            }
+        }
+
+        if (haveEnemy && DistanceToEnemy() <= DistanceToPlauer())
+        {
+            cbScript.EnemyInRange();
+        }
+        else if (DistanceToEnemy() >= DistanceToPlauer())
+        {
+            cbScript.EnemyOutOfRange();
         }
     }
 
@@ -154,26 +190,22 @@ public class CompanionScript : MonoBehaviour
             speedFloat = 0;
             anim.SetFloat("wSpeed", 0);
             isPlayer = true;
-            
         }
 
         else if (other.gameObject.tag == "Enemy")
         {
             isPlayer = false;
         }
-
         
+        //if (!haveEnemy)
+        //{
+        //    Player.gameObject.GetComponent<BoxCollider>().enabled = true;
+        //}
 
-        if (!haveEnemy)
-        {
-            Player.gameObject.GetComponent<BoxCollider>().enabled = true;
-        }
-
-        else if(haveEnemy)
-        {
-            Player.gameObject.GetComponent<BoxCollider>().enabled = false;
-        }
-        
+        //else if(haveEnemy)
+        //{
+        //    Player.gameObject.GetComponent<BoxCollider>().enabled = false;
+        //}
 
         if (other.gameObject.tag == "Point1")
         {
@@ -190,16 +222,15 @@ public class CompanionScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) //Starts following when the player is too far again.
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isPlayer = false;
-            speedFloat = 5;
-            gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-
-        }
-    }
+    //private void OnTriggerExit(Collider other) //Starts following when the player is too far again.
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        isPlayer = false;
+    //        speedFloat = 5;
+    //        gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+    //    }
+    //}
 
     public void ShieldBash()
     {
@@ -211,5 +242,15 @@ public class CompanionScript : MonoBehaviour
         yield return new WaitForSeconds(5);
         //Play animation here to show interactivity
         isWandering = false;
+    }
+    
+    private float DistanceToPlauer()
+    {
+        return Vector3.Distance(transform.position, Player.transform.position);
+    }
+
+    private float DistanceToEnemy()
+    {
+        return Vector3.Distance(transform.position, GameObject.FindWithTag("Enemy").transform.position);
     }
 }

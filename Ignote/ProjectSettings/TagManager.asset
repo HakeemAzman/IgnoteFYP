@@ -29,8 +29,8 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

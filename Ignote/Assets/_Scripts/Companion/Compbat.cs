@@ -6,6 +6,7 @@ public class Compbat : MonoBehaviour
 {
     public CompanionScript cs;
     public CompanionHealth ch;
+    public OverlapSphereAOE aoeScript;
     public Animator anim;
     public bool isEnemy;
     // Start is called before the first frame update
@@ -32,28 +33,27 @@ public class Compbat : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void EnemyInRange()
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            isEnemy = true;
-            cs.speedFloat = 0;
-            anim.gameObject.GetComponent<Animator>().SetBool("enemyF", true);
-            transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
-        }
+        StartCoroutine(Activate());
+        isEnemy = true;
+        cs.speedFloat = 0;
+        anim.gameObject.GetComponent<Animator>().SetBool("enemyF", true);
+        transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
     }
 
-
-    private void OnTriggerExit(Collider other)
+    public void EnemyOutOfRange()
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            isEnemy = false;
-            cs.speedFloat = 5;
-            anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
-            anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
-        }
+        StopCoroutine(Activate());
+        isEnemy = false;
+        cs.speedFloat = 5;
+        anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
+        anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
     }
 
-
+    IEnumerator Activate()
+    {
+        yield return new WaitForSeconds(1f);
+        aoeScript.AreaOfEffect();
+    }
 }
