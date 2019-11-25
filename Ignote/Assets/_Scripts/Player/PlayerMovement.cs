@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public float player_RunningEnergy = 2f;
     public float player_ShortDash;
     [Space]
-    public Image player_StaminaBar;
-    [Space]
     public float jumpHeight;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
@@ -58,9 +56,7 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Animator>().SetFloat("forwardSpeed", 0);
 
         }
-
-        //Stamina Bar
-        player_StaminaBar.fillAmount = player_CurrentStamina / player_Stamina;
+        
 
         //Running
         if ((Input.GetButton("Run") || Input.GetKey(KeyCode.LeftShift) && player_Stamina <= 20f) && (xAxis + zAxis != 0))
@@ -77,12 +73,12 @@ public class PlayerMovement : MonoBehaviour
         if (isDashing)
         {
             player_Speed = player_RunningSpeed;
-            player_ShortDash -= 1 * Time.deltaTime; //Timer for short dash
+           /* player_ShortDash -= 1 * Time.deltaTime; //Timer for short dash
 
             player_CurrentStamina -= player_RunningEnergy * Time.deltaTime;
 
             if(player_ShortDash < 0)
-                isDashing = false;
+                isDashing = false;*/
             UpdateAnimator();
         }
 
@@ -90,13 +86,13 @@ public class PlayerMovement : MonoBehaviour
         else if (!isDashing)
         {
             player_Speed = player_SetSpeed; //Set Player speed back to normal
-            player_ShortDash = 3f; //Reset Dash time
+           /* player_ShortDash = 3f; //Reset Dash time
             player_CurrentStamina += 1 * Time.deltaTime; //Recharge stamina bar
 
             if(player_CurrentStamina > 20f)
             {
                 player_CurrentStamina = 20f;
-            }
+            }*/
         }
 
         //Stamina reaches 0

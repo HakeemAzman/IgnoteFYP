@@ -9,27 +9,22 @@ public class CompanionHealth : MonoBehaviour
     public CompanionScript cs;
     public Compbat compS;
     public Animator anim;
-    public Image enduranceBar;
-    public BoxCollider leftArm;
-    public BoxCollider rightArm; 
-    public GameObject shieldSphere;
+    public Slider enduranceBar;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
         companionHealth = 1000;
+        companionCurrentHealth = companionHealth;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-        enduranceBar.fillAmount = companionCurrentHealth / companionHealth;
+        enduranceBar.value = companionCurrentHealth;
         if (companionHealth <= 0)
         {
-            leftArm.gameObject.GetComponent<BoxCollider>().enabled = false;
-            rightArm.gameObject.GetComponent<BoxCollider>().enabled = false;
             anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", 0);
             anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
             anim.gameObject.GetComponent<Animator>().SetBool("isDisabled", true);
@@ -46,8 +41,6 @@ public class CompanionHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         anim.SetBool("isDisabled", false);
-        leftArm.gameObject.GetComponent<BoxCollider>().enabled = true;
-        rightArm.gameObject.GetComponent<BoxCollider>().enabled = true;
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
         compS.gameObject.GetComponent<Compbat>().enabled = true;
         cs.speedFloat = 5;
