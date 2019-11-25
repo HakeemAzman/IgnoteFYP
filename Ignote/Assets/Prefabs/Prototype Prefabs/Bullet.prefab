@@ -124,4 +124,4 @@ MonoBehaviour:
   shootSpeed: 1
   rb: {fileID: 5862128813615282206}
   onHit: {fileID: 5862128813615282207}
-  speed: 20
+  speed: 40

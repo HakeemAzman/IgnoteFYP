@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6178842256204060577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.42, z: 0}
+  m_LocalPosition: {x: 0, y: 1.56, z: 0}
   m_LocalScale: {x: 0.50000006, y: 0.5, z: 0.50000006}
   m_Children: []
   m_Father: {fileID: 6395249223783916960}
@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 8516836361952827101}
   - component: {fileID: 6540433284708899754}
   - component: {fileID: 7951389783462495401}
+  - component: {fileID: 689209809}
   m_Layer: 0
   m_Name: Enemy Shooter
   m_TagString: Enemy
@@ -264,7 +265,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2.72
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0.53
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!54 &6395249223783916962
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c25d39e233a004faeec39f8981d611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_Health: 300
+  enemy_Health: 150
   deathParticle: {fileID: 1165182524303428248, guid: e4782262e9c34e844916dff3a171c035,
     type: 3}
   combatS: {fileID: 0}
@@ -315,8 +316,8 @@ MonoBehaviour:
   m_timeBetweenAttacks: 3
   m_damageOutput: 5
   m_health: 0
-  m_distanceFromPlayer: 60
-  m_projectile: {fileID: 7564747069514104753, guid: d6389bfdb7e456640b3a45339aac60a4,
+  m_distanceFromPlayer: 40
+  m_projectile: {fileID: 692698316737471534, guid: d6389bfdb7e456640b3a45339aac60a4,
     type: 3}
   m_fireTransform: {fileID: 1220721980309224933}
   m_launchForce: 60
@@ -353,6 +354,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7004674, y: 2.7912989, z: 0.6566679}
   m_Center: {x: -0.011191606, y: 0.77, z: -0.001907304}
+--- !u!114 &689209809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6395249223783916964}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa9ba42ac3e3684d9953398bf8c89b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_Health: 140
+  deathParticle: {fileID: 3588092282836143534, guid: 4701dffe40520a34f82686e7b1d8cae9,
+    type: 3}
+  combatS: {fileID: 0}
+  cs: {fileID: 0}
+  esC: {fileID: 8516836361952827101}
 --- !u!1001 &6783036154880478360
 PrefabInstance:
   m_ObjectHideFlags: 0
