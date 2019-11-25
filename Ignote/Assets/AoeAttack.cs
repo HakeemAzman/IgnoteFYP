@@ -14,6 +14,7 @@ public class AoeAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         // eH = GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>();
         cs.GetComponent<CompanionScript>();
     }
@@ -21,7 +22,7 @@ public class AoeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Physics.IgnoreCollision(Player.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
     }
 
     private void OnCollisionEnter(Collision collision)
