@@ -14,13 +14,11 @@ public class OverlapSphereAOE : MonoBehaviour
         colliders = Physics.OverlapSphere(arms.position, compScript.radius, compScript.check);
         foreach (Collider enemy in colliders)
         {
-            print(enemy.name);
             compScript.charges -= 1;
 
             if (enemy.CompareTag("Enemy"))
                 enemy.gameObject.GetComponent<EnemyHealth>().enemy_Health -= compScript.damage;
         }
-        print("Active");
     }
 
     private void OnDrawGizmosSelected()

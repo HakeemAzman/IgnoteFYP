@@ -11,7 +11,6 @@ public class CompanionScript : MonoBehaviour
     [Header("Scripts")]
     public Companion_Commands cc;
     public CompanionHealth ch;
-    public Compbat cbScript;
     [Space]
     public float speedFloat;
     public float charges;
@@ -40,7 +39,6 @@ public class CompanionScript : MonoBehaviour
         anim = GetComponent<Animator>();
         cc.GetComponent<Companion_Commands>();
         ch.GetComponent<CompanionHealth>();
-        cbScript.GetComponent<Compbat>();
     }
 
     protected virtual void Update()

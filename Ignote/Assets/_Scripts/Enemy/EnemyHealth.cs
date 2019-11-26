@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour
     public int enemy_Health;
     public GameObject deathParticle;
     [Space]
-    public Compbat combatS;
     public CompanionScript cs;
     [Space]
     Animator enemyMovement;
@@ -16,7 +15,6 @@ public class EnemyHealth : MonoBehaviour
     protected virtual void Start()
     {
         cs = GameObject.FindWithTag("Companion").GetComponent<CompanionScript>();
-        combatS = GameObject.FindWithTag("Companion").GetComponent<Compbat>();
         enemyMovement = gameObject.GetComponent<Animator>();
     }
 
@@ -26,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
         {
             cs.speedFloat = 5;
             Instantiate(deathParticle, transform.position, transform.rotation);
-            combatS.isEnemy = false;
             Destroy(gameObject, 0.5F);
         }
     }

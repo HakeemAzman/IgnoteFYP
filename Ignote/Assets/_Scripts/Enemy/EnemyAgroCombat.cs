@@ -81,8 +81,6 @@ public class EnemyAgroCombat : MonoBehaviour
             timeSinceLastAttack = 0;
 
             GetComponent<Animator>().SetTrigger("attack");
-
-            Debug.Log("Enemy miss to attack");
         }
     }
     
