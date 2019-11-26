@@ -6,15 +6,13 @@ public class Compbat : MonoBehaviour
 {
     public CompanionScript cs;
     public CompanionHealth ch;
-    public OverlapSphereAOE aoeScript;
     public Animator anim;
     public bool isEnemy;
+    private Coroutine storedAttack;
     // Start is called before the first frame update
 
-    void Start()
+   void Start()
     {
-        cs.GetComponent<CompanionScript>();
-        ch.GetComponent<CompanionHealth>();
         anim = GetComponent<Animator>();
     }
 
@@ -35,7 +33,6 @@ public class Compbat : MonoBehaviour
 
     public void EnemyInRange()
     {
-        StartCoroutine(Activate());
         isEnemy = true;
         cs.speedFloat = 0;
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", true);
@@ -44,16 +41,9 @@ public class Compbat : MonoBehaviour
 
     public void EnemyOutOfRange()
     {
-        StopCoroutine(Activate());
         isEnemy = false;
         cs.speedFloat = 5;
         anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
-    }
-
-    IEnumerator Activate()
-    {
-        yield return new WaitForSeconds(1f);
-        aoeScript.AreaOfEffect();
     }
 }

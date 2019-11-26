@@ -13,14 +13,14 @@ public class EnemyHealth : MonoBehaviour
     [Space]
     Animator enemyMovement;
 
-    public void Start()
+    protected virtual void Start()
     {
         cs = GameObject.FindWithTag("Companion").GetComponent<CompanionScript>();
         combatS = GameObject.FindWithTag("Companion").GetComponent<Compbat>();
         enemyMovement = gameObject.GetComponent<Animator>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if(enemy_Health <= 0)
         {
@@ -31,14 +31,14 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Wrench")
         {
             enemyMovement.GetComponent<Animator>().SetFloat("forwardSpeed", 0);
             gameObject.GetComponent<EnemyAgroCombat>().enabled = false;
             gameObject.GetComponent<EnemyAgroMover>().enabled = false;
-            StartCoroutine("reactivate");
+            StartCoroutine("Reactivate");
         }
 
         if(other.gameObject.tag == "Projectile")
@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    IEnumerator reactivate()
+    public virtual IEnumerator Reactivate()
     {
         yield return new WaitForSeconds(3);
         gameObject.GetComponent<EnemyAgroCombat>().enabled = true;

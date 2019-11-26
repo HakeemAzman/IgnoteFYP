@@ -31,13 +31,13 @@ public class Companion_Commands : MonoBehaviour
         //    cMan.enablePlayer = false;
         //    //Mount();
         //}
-        print("Stay");
+        //print("Stay");
         if (Input.GetButtonUp("Stay")) //Pressing X allows the Player to make the Companion stay at the current spot.
         {
             if(!Stay)
             {
                 Stay = true;
-                print("stay");
+                //print("stay");
                 cs.GetComponent<CompanionScript>().enabled = false;
                 anim.SetFloat("wSpeed", 0);
             }
