@@ -86,7 +86,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 4
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -126,10 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c25d39e233a004faeec39f8981d611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_Health: 100
+  enemy_Health: 20
   deathParticle: {fileID: 1165182524303428248, guid: e4782262e9c34e844916dff3a171c035,
     type: 3}
-  combatS: {fileID: 0}
   cs: {fileID: 0}
 --- !u!114 &1310805495891888339
 MonoBehaviour:
@@ -143,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7933a26d919cc446a617ea4a1b69946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 20
+  lookRadius: 31.08
   chaseCompanionDistance: 10
   attackCompanion: 0
 --- !u!114 &6389776624423853156
@@ -192,8 +191,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7004674, y: 2.7912989, z: 0.6566679}
-  m_Center: {x: -0.011191606, y: 0.77, z: -0.001907304}
+  m_Size: {x: 2.6097383, y: 2.7912989, z: 2.704308}
+  m_Center: {x: 0.041369557, y: 0.77, z: -0.0066978927}
 --- !u!1001 &7339401473869472834
 PrefabInstance:
   m_ObjectHideFlags: 0
