@@ -6,11 +6,19 @@ using UnityEngine.UI;
 public class NarrationStage1 : MonoBehaviour
 {
     public Text textBox;
-    public bool hasColor;
+    public RectTransform topBox;
+    public RectTransform bottomBox;
+    public Vector2 targetPosBottom;
+    public Vector2 targetPosTop;
+
+    bool hasColor;
+    bool canMove;
 
     private void Update()
     {
         TextBoxColor();
+
+        if (canMove) LetterBoxMove();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +52,11 @@ public class NarrationStage1 : MonoBehaviour
             textBox.text = "Emily: Is that.. A Robot?.. Why is it locked in a cage?";
             hasColor = true;
         }
+
+        if(other.name == "BlackBorderCollider")
+        {
+            canMove = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -67,5 +80,11 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.color = Color.Lerp(textBox.color, Color.clear, 1f * Time.deltaTime);
         }
+    }
+
+    void LetterBoxMove()
+    {
+        bottomBox.localPosition = Vector2.Lerp(bottomBox.localPosition, targetPosBottom, 0.4f * Time.deltaTime);
+        topBox.localPosition = Vector2.Lerp(topBox.localPosition, targetPosTop, 0.4f * Time.deltaTime);
     }
 }
