@@ -10,6 +10,8 @@ public class PuzzleOneManager : MonoBehaviour
     [SerializeField] AudioClip gateOpeningSound, heavyGateOpeningSound;
     AudioSource audioS;
 
+    public Companion_Commands cc;
+
     public GameObject interactText;
     
     private void Start()
@@ -50,6 +52,11 @@ public class PuzzleOneManager : MonoBehaviour
         if(other.gameObject.name == "PressurePlatePuzzle2")
         {
           GateAnimator.gameObject.GetComponent<Animator>().Play("GateOpenPuzzle2"); 
+        }
+
+        if(other.gameObject.CompareTag("ScriptEnable"))
+        {
+            cc.gameObject.GetComponent<Companion_Commands>().enabled = true;
         }
     
     }

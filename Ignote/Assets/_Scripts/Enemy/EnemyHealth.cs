@@ -22,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(enemy_Health <= 0)
         {
+            cs.isEnemy = false;
             cs.speedFloat = 5;
             Instantiate(deathParticle, transform.position, transform.rotation);
             Destroy(gameObject, 0.5F);

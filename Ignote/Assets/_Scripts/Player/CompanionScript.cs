@@ -204,17 +204,13 @@ public class CompanionScript : MonoBehaviour
         }
     }
 
-    protected virtual void ShieldBash()
-    {
-        float dist = Vector3.Distance(gameObject.transform.position, GameObject.FindWithTag("Enemy").transform.position);
-    }
 
     protected void EnemyInRange()
     {
         isEnemy = true;
         speedFloat = 0;
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", true);
-        transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
+        //transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
     }
 
     protected void EnemyOutOfRange()
