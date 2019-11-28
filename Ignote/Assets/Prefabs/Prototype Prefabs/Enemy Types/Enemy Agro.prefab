@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c25d39e233a004faeec39f8981d611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_Health: 20
+  enemy_Health: 200
   deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
   cs: {fileID: 0}
@@ -188,11 +188,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8757660834839872865}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6097383, y: 2.7912989, z: 2.704308}
-  m_Center: {x: 0.041369557, y: 0.77, z: -0.0066978927}
+  m_Size: {x: 0.7561302, y: 2.7912989, z: 0.76054704}
+  m_Center: {x: 0.03580396, y: 0.77, z: -0.0656529}
 --- !u!1001 &7339401473869472834
 PrefabInstance:
   m_ObjectHideFlags: 0
