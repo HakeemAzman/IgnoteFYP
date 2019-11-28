@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_Health: 20
-  deathParticle: {fileID: 1165182524303428248, guid: e4782262e9c34e844916dff3a171c035,
+  deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
   cs: {fileID: 0}
 --- !u!114 &1310805495891888339

@@ -15,6 +15,7 @@ public class OverlapSphereAOE : MonoBehaviour
         foreach (Collider enemy in colliders)
         {
             compScript.charges -= 1;
+            StartCoroutine(SpawnVFX());
 
             if (enemy.CompareTag("Enemy"))
                 enemy.gameObject.GetComponent<EnemyHealth>().enemy_Health -= compScript.damage;
@@ -25,5 +26,12 @@ public class OverlapSphereAOE : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(arms.position, compScript.radius);
+    }
+
+    IEnumerator SpawnVFX()
+    {
+        GameObject aoeVFX = Instantiate(compScript.psAOE, arms.position, transform.rotation);
+        yield return new WaitForSeconds(3f);
+        Destroy(aoeVFX);
     }
 }

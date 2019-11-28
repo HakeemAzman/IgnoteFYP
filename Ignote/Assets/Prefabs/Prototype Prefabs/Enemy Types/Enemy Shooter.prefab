@@ -348,10 +348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa9ba42ac3e3684d9953398bf8c89b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_Health: 140
-  deathParticle: {fileID: 3588092282836143534, guid: 4701dffe40520a34f82686e7b1d8cae9,
+  enemy_Health: 50
+  deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
-  combatS: {fileID: 0}
   cs: {fileID: 0}
   esC: {fileID: 8516836361952827101}
 --- !u!1001 &6783036154880478360

@@ -416,6 +416,7 @@ MonoBehaviour:
   gateOpeningSound: {fileID: 8300000, guid: 2b6828175f5942b43bb113905186dc62, type: 3}
   heavyGateOpeningSound: {fileID: 8300000, guid: a952134204b9c0d4baf5499a5e3aa2d8,
     type: 3}
+  cc: {fileID: 0}
   interactText: {fileID: 0}
 --- !u!65 &1694439832
 BoxCollider:
@@ -569,6 +570,7 @@ MonoBehaviour:
   coolDown: 5
   isAttack: 0
   AB: {fileID: 0}
+  psStun: {fileID: 2324564494541720043, guid: 6cbb7f6d627dae54a9bd987391f81ffb, type: 3}
 --- !u!114 &4627518476581614077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
+  topBox: {fileID: 0}
+  bottomBox: {fileID: 0}
+  targetPosBottom: {x: 0, y: 0}
+  targetPosTop: {x: 0, y: 0}
 --- !u!1001 &1918360157
 PrefabInstance:
   m_ObjectHideFlags: 0

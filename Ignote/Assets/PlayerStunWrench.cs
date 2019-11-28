@@ -8,6 +8,8 @@ public class PlayerStunWrench : MonoBehaviour
     public float coolDown = 5;
     public bool isAttack;
     public AutoBallista AB;
+    public GameObject psStun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class PlayerStunWrench : MonoBehaviour
         if (Input.GetButtonDown("Attack") && !isAttack)
         {
             wrench.SetActive(true);
+            StartCoroutine(SpawnVFX());
             isAttack = true;
         }
 
@@ -36,8 +39,12 @@ public class PlayerStunWrench : MonoBehaviour
                 coolDown = 5;
                 }
         }
-      
     }
 
-
+    IEnumerator SpawnVFX()
+    {
+        GameObject aoeVFX = Instantiate(psStun, wrench.transform.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Destroy(aoeVFX);
+    }
 }

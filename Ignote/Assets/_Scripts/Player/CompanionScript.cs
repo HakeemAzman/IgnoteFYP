@@ -33,6 +33,10 @@ public class CompanionScript : MonoBehaviour
     public LayerMask check;
     float dist;
 
+    [Space]
+    public GameObject psAOE;
+    public GameObject[] aoeVFXStore;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -43,26 +47,32 @@ public class CompanionScript : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (charges >= 1)
+        if (charges == 1)
         {
+            psAOE = aoeVFXStore[1];
             damage = 100;
-            //speedFloat = 10;
         }
+
+        if (charges == 2)
+        {
+            psAOE = aoeVFXStore[2];
+            damage = 100;
+        }
+
         if (charges >= 3)
         {
+            psAOE = aoeVFXStore[3];
             charges = 3;
         }
+        
         if(charges <= 0)
         {
             Overcharge.SetActive(false);
             charges = 0;
-        }
-
-        if(charges <= 0)
-        {
+            psAOE = aoeVFXStore[0];
             damage = 30;
         }
-       
+
         playerAI = FindClosestPlayer().transform.position;
         agent.destination = playerAI;
         gameObject.GetComponent<NavMeshAgent>().speed = speedFloat;
