@@ -100,7 +100,7 @@ public class AutoBallista : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        partToRotate.localRotation = Quaternion.Euler(0, rotation.y, -90);
     }
 
     public void Shoot()
