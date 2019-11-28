@@ -39,7 +39,6 @@ public class EnemyShooterCombat : MonoBehaviour
         targetCompanion = PlayerManager.instance.companion.transform;
         playerHealth = targetPlayer.GetComponent<PlayerHealth>();
         companionHealth = targetCompanion.GetComponent<CompanionHealth>();
-        
     }
 
     // Update is called once per frame
@@ -51,7 +50,7 @@ public class EnemyShooterCombat : MonoBehaviour
 
 
         AttackPlayer();
-        //AttackCompanion();
+        AttackCompanion();
 
         Aim();
     }
@@ -90,7 +89,6 @@ public class EnemyShooterCombat : MonoBehaviour
         }
     }
 
-
     void Fire(Transform target)
     {
         Vector3 directionToTarget = (target.position - transform.position).normalized;
@@ -109,7 +107,6 @@ public class EnemyShooterCombat : MonoBehaviour
 
             //shellInstance.velocity = directionToTarget * launchForce;
         }
-
     }
 
     void Aim()

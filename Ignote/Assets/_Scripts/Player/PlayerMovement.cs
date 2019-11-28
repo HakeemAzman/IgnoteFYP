@@ -143,6 +143,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         #endregion
+
+        #region Ignore collision with Enemy
+
+        #endregion
     }
 
     private void UpdateAnimator()

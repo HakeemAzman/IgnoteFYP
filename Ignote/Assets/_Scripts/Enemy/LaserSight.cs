@@ -32,7 +32,6 @@ public class LaserSight : MonoBehaviour
             }
         }
 
-
         //TODO: Ignore the projectiles.
     }
 }

@@ -222,7 +222,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6395249223783916964}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 1.1
   m_Speed: 0
@@ -330,11 +330,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395249223783916960}
     m_Modifications:
-    - target: {fileID: 5439800833198119854, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
-        type: 3}
-      propertyPath: m_Name
-      value: Ballista Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 5439800833198119856, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -404,6 +399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.77010304
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439800833198119854, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
+        type: 3}
+      propertyPath: m_Name
+      value: Ballista Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5439800832630414362, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
         type: 3}
