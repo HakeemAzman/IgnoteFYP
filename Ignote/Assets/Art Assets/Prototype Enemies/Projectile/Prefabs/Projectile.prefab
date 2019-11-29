@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 692698316737471534}
   m_Layer: 2
   m_Name: Projectile
-  m_TagString: EProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ SphereCollider:
   m_GameObject: {fileID: 142994}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0.017279029, y: 0.16912429, z: 0.00000023841858}
@@ -163,7 +163,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6160409315099167323}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.12
@@ -182,4 +182,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 3588092282836143534, guid: 4701dffe40520a34f82686e7b1d8cae9,
     type: 3}
-  damageOutput: 10
+  damageOutput: 0

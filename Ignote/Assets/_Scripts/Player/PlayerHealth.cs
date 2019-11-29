@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float playerCurrentHealth = 100f;
-    public float player_Health = 100f;
+    public float playerCurrentHealth;
+    public float player_Health;
     public Slider playerHealthImage;
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
-        if(playerCurrentHealth == 0)
+        if(playerCurrentHealth <= 0)
         {
            // transform.position = GameManager.Instance.lastCheckpoint.position;
             playerCurrentHealth = player_Health;
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.tag == "EProjectile")
         {
-            player_Health -= 30;
+            playerCurrentHealth -= 2f;
         }
     }
 }

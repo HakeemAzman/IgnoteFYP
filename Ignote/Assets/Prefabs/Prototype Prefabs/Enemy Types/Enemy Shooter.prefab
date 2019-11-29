@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeBetweenAttacks: 3
-  m_damageOutput: 5
+  m_damageOutput: 2
   m_health: 0
   m_distanceFromPlayer: 40
   m_projectile: {fileID: 692698316737471534, guid: d6389bfdb7e456640b3a45339aac60a4,
@@ -330,6 +330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395249223783916960}
     m_Modifications:
+    - target: {fileID: 5439800833198119854, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
+        type: 3}
+      propertyPath: m_Name
+      value: Ballista Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 5439800833198119856, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,11 +404,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.77010304
-      objectReference: {fileID: 0}
-    - target: {fileID: 5439800833198119854, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
-        type: 3}
-      propertyPath: m_Name
-      value: Ballista Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5439800832630414362, guid: 7acad14f98cde8b41864b7ea8eb7a25d,
         type: 3}

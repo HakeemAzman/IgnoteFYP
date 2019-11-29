@@ -19,6 +19,7 @@ TagManager:
   - EProjectile
   - EnemyShooter
   - Textboxes
+  - ScriptEnable
   layers:
   - Default
   - TransparentFX

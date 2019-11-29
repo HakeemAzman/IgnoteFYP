@@ -13,15 +13,15 @@ public class CompanionHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        companionHealth = 1000;
-        companionCurrentHealth = companionHealth;
         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        companionCurrentHealth = (float)companionHealth;
         enduranceBar.value = companionCurrentHealth;
+
         if (companionHealth <= 0)
         {
             anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", 0);
@@ -35,12 +35,20 @@ public class CompanionHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EProjectile")
+        {
+            companionCurrentHealth -= 2f;
+        }
+    }
+
     IEnumerator bootup()
     {
         yield return new WaitForSeconds(10);
         anim.SetBool("isDisabled", false);
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
         cs.speedFloat = 5;
-        companionHealth = 1000;
+        companionHealth = 100;
     }
 }

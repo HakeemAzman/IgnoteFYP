@@ -48,7 +48,6 @@ public class EnemyShooterCombat : MonoBehaviour
         //Debug.Log(enemyTransform);
         timeSinceLastAttack += Time.deltaTime;
 
-
         AttackPlayer();
         AttackCompanion();
 
@@ -104,8 +103,6 @@ public class EnemyShooterCombat : MonoBehaviour
             Rigidbody shellInstance = Instantiate(m_projectile, m_fireTransform.position, Quaternion.LookRotation(directionToTarget)) as Rigidbody;
 
             shellInstance.velocity = shellInstance.transform.forward * m_launchForce;
-
-            //shellInstance.velocity = directionToTarget * launchForce;
         }
     }
 
@@ -121,11 +118,10 @@ public class EnemyShooterCombat : MonoBehaviour
         }
     }
 
-
     void FaceTarget(Transform target)
     {
         Vector3 directionToTarget = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x, 0, directionToTarget.z));
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x, directionToTarget.y, directionToTarget.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 }

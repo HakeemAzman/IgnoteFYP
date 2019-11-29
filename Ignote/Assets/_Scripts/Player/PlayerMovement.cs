@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Stats")]
     public float player_Speed;
     public float player_SetSpeed;
-    public float player_RunningSpeed = 15f;
+    public float player_RunningSpeed;
     public float player_Stamina = 20f;
     public float player_CurrentStamina = 20f;
     public float player_RunningEnergy = 2f;
@@ -142,10 +142,6 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
             }
         }
-        #endregion
-
-        #region Ignore collision with Enemy
-
         #endregion
     }
 

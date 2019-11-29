@@ -41,21 +41,23 @@ public class ProjectileHit : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform == targetPlayer) //does damage to the player
-        {
-            playerHealth.playerCurrentHealth -= damageOutput;
-            Instantiate(explosionParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
-            gameObject.SetActive(false);
-        }
-        if (collision.transform == targetCompanion) //does damage to the companion
-        {
-            companionHealth.companionHealth -= damageOutput;
-            Instantiate(explosionParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
-            gameObject.SetActive(false);
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player")) //does damage to the player
+    //    {
+    //        print("Hit Girl");
+    //        playerHealth.playerCurrentHealth -= damageOutput;
+    //        Instantiate(explosionParticle, transform.position, transform.rotation);
+    //        Destroy(gameObject);
+    //        gameObject.SetActive(false);
+    //    }
+    //    if (collision.transform == targetCompanion) //does damage to the companion
+    //    {
+    //        print("Hit Robot");
+    //        companionHealth.companionHealth -= damageOutput;
+    //        Instantiate(explosionParticle, transform.position, transform.rotation);
+    //        Destroy(gameObject);
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 }
