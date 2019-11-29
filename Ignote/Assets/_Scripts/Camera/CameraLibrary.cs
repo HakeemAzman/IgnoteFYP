@@ -5,6 +5,12 @@ using UnityEngine;
 public class CameraLibrary : MonoBehaviour
 {
     [SerializeField] GameObject LevelLibrary;
+    [SerializeField] GameObject zoomInTrigger;
+
+    private void Awake()
+    {
+        zoomInTrigger.SetActive(false);
+    }
 
     private void OnTriggerStay (Collider other)
     {
@@ -18,7 +24,7 @@ public class CameraLibrary : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            LevelLibrary.GetComponent<Animator>().Play("CamLevelLibraryExit");
+            zoomInTrigger.SetActive(true);
         }
     }
 }
