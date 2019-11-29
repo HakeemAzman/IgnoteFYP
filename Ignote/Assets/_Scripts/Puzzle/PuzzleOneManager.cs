@@ -54,7 +54,7 @@ public class PuzzleOneManager : MonoBehaviour
           GateAnimator.gameObject.GetComponent<Animator>().Play("GateOpenPuzzle2"); 
         }
 
-        if(other.gameObject.CompareTag("ScriptEnable"))
+        if (other.gameObject.tag == "ScriptEnable") 
         {
             cc.gameObject.GetComponent<Companion_Commands>().enabled = true;
         }

@@ -96,8 +96,10 @@ public class CompanionScript : MonoBehaviour
 
         dist = Vector3.Distance(transform.position, GameObject.FindWithTag("Enemy").transform.position);
 
+        //Debug.Log(dist);
         if (dist <= 20)
         {
+            haveEnemy = true;
             enemyInSight = true;
         }
 
@@ -119,7 +121,6 @@ public class CompanionScript : MonoBehaviour
 
         if (enemyInSight && eTargets.Length >= 1)
         {
-            haveEnemy = true;
             targets = GameObject.FindGameObjectsWithTag("Enemy");
         }
 
@@ -220,7 +221,7 @@ public class CompanionScript : MonoBehaviour
         isEnemy = true;
         speedFloat = 0;
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", true);
-        //transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
+        transform.LookAt(GameObject.FindWithTag("Enemy").transform.position);
     }
 
     protected void EnemyOutOfRange()
