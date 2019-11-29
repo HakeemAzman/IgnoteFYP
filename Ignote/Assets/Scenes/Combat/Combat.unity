@@ -1906,6 +1906,11 @@ PrefabInstance:
       propertyPath: chaseCompanionDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1310805495891888339, guid: db9989ddfedeeda42b30533d5ebfa57a,
+        type: 3}
+      propertyPath: ch
+      value: 
+      objectReference: {fileID: 1228161212}
     - target: {fileID: 7339401473869049704, guid: db9989ddfedeeda42b30533d5ebfa57a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2187,6 +2192,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5013666857932038046}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1228161212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1228161214, guid: f6b83f486cf4c384ebb12ccfbde50adb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5013666857932038046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228161210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9e966956db6004ca149662a55d6b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253683442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,6 +2583,11 @@ PrefabInstance:
       propertyPath: cs
       value: 
       objectReference: {fileID: 384095745}
+    - target: {fileID: 5697064013506225260, guid: db9989ddfedeeda42b30533d5ebfa57a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8757660834839872871, guid: db9989ddfedeeda42b30533d5ebfa57a,
         type: 3}
       propertyPath: m_IsKinematic
@@ -2574,11 +2596,6 @@ PrefabInstance:
     - target: {fileID: 8757660834839872871, guid: db9989ddfedeeda42b30533d5ebfa57a,
         type: 3}
       propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5697064013506225260, guid: db9989ddfedeeda42b30533d5ebfa57a,
-        type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

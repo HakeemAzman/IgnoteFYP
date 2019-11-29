@@ -9,7 +9,7 @@ public class CompanionHealth : MonoBehaviour
     public CompanionScript cs;
     public Animator anim;
     public Slider enduranceBar;
-
+    public bool companionDisabled;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +24,7 @@ public class CompanionHealth : MonoBehaviour
 
         if (companionHealth <= 0)
         {
+            companionDisabled = true;
             anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", 0);
             anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
             anim.gameObject.GetComponent<Animator>().SetBool("isDisabled", true);
@@ -49,6 +50,7 @@ public class CompanionHealth : MonoBehaviour
         anim.SetBool("isDisabled", false);
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
         cs.speedFloat = 5;
+        companionDisabled = true;
         companionHealth = 100;
     }
 }

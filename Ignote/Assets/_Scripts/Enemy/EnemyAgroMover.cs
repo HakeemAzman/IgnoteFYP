@@ -12,6 +12,7 @@ using UnityEngine.AI;
         
         NavMeshAgent agent;
         public bool attackCompanion;
+        public CompanionHealth ch;
         #region Player, PlayerHealth
         Transform targetPlayer;
         PlayerHealth playerHealth;
@@ -34,13 +35,20 @@ using UnityEngine.AI;
 
             Combat = GetComponent<EnemyAgroCombat>();
             agent = GetComponent<NavMeshAgent>();
-
             playerHealth = targetPlayer.GetComponent<PlayerHealth>();
-        }
+            ch = GameObject.FindWithTag("Companion").GetComponent<CompanionHealth>();
+    }
 
         private void Update()
         {
-            if (playerHealth.playerCurrentHealth == 0) return;
+
+        if (ch.companionHealth <= 0 && ch.companionDisabled)
+        {
+            
+            attackCompanion = false;
+        }
+
+        if (playerHealth.playerCurrentHealth == 0) return;
 
         if (targetCompanion != null && InChasingRangeCompanion())
         {
@@ -48,6 +56,8 @@ using UnityEngine.AI;
             Combat.AttackCompanion();
             ChaseCompanion();
         }
+
+        
         if (InLineOfSightPlayer() && InChasingRangePlayer() && !attackCompanion)
             {
                 timeSinceLastSawPlayer = 0;
@@ -100,7 +110,8 @@ using UnityEngine.AI;
             if (distanceFromPlayer <= agent.stoppingDistance)
             {
                 FaceTarget(targetPlayer);
-                
+                print(distanceFromPlayer);
+            print(string.Format("{0},{1}", distanceFromPlayer, gameObject.name));
                 //Calling the enemy's attack function
                 Combat.AttackPlayer();
             }
