@@ -53,7 +53,55 @@ public class NarrationStage1 : MonoBehaviour
             hasColor = true;
         }
 
-        if(other.name == "BlackBorderCollider")
+        if (other.name == "Tutorial1")
+        {
+            textBox.text = "It looks like I can call the Robot to me or make it stay by pressing A.";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial2")
+        {
+            textBox.text = "The gate seems to be lowered,maybe there's a way around it.";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial3")
+        {
+            textBox.text = "Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X.";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial4")
+        {
+            textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench.";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial5")
+        {
+            textBox.text = "Dang, glad to have him on my side..";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial6")
+        {
+            textBox.text = "Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial7")
+        {
+            textBox.text = "There's seem to be an unmanned ballista,maybe if I hit it my ol' wrench, I can make it work for me.";
+            hasColor = true;
+        }
+
+        if (other.name == "Tutorial8")
+        {
+            textBox.text = "All in a day's work,now to catch a breather.";
+            hasColor = true;
+        }
+
+        if (other.name == "BlackBorderCollider")
         {
             canMove = true;
         }
