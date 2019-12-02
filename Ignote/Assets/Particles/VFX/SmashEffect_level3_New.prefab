@@ -28418,7 +28418,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728378511469517765}
   serializedVersion: 6
-  lengthInSec: 6
+  lengthInSec: 7
   simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
@@ -28493,7 +28493,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -37846,7 +37846,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0b705a8201643f4d88b876b160b99a0, type: 3}
+  - {fileID: 2100000, guid: c2145d71893644d4485c99a6f955483c, type: 2}
   - {fileID: 2100000, guid: 40e7261814718424fabbe46ef602fe3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -47367,7 +47367,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 27c05d9a8bcc79041a304a145a002484, type: 2}
+  - {fileID: 2100000, guid: 8c0eacc4428d39247b84dae662f7c1a3, type: 2}
   - {fileID: 2100000, guid: 40e7261814718424fabbe46ef602fe3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -47483,7 +47483,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728378513195305434}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 4
   simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
@@ -47558,7 +47558,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
