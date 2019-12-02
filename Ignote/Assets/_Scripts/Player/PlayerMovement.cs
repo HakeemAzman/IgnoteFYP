@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
+    public bool isMoving;
 
     //Private Variables
     Rigidbody rb;
@@ -49,11 +50,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (xAxis + zAxis != 0) //If there is no movement, the rotation of the character will not revert back to 0 but instead stay at the currect rotation
         {
+            isMoving = true;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerMovement), 0.3f); //Turns to the direction of the character movement
             UpdateAnimator();
         }
         else if (xAxis + zAxis == 0)
         {
+            isMoving = false;
             GetComponent<Animator>().SetFloat("forwardSpeed", 0);
 
         }

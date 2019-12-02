@@ -58,7 +58,6 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "It looks like I can call the Robot to me or make it stay by pressing A.";
             hasColor = true;
-            //StartCoroutine(TimeScale("It looks like I can call the Robot to me or make it stay by pressing A."));
             StartCoroutine(TimeScale());
         }
 
@@ -66,7 +65,6 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "The gate seems to be lowered,maybe there's a way around it.";
             hasColor = true;
-           // StartCoroutine(TimeScale("The gate seems to be lowered,maybe there's a way around it."));
             StartCoroutine(TimeScale());
         }
 
@@ -74,7 +72,6 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X.";
             hasColor = true;
-            //StartCoroutine(TimeScale("Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X."));
             StartCoroutine(TimeScale());
         }
 
@@ -82,7 +79,6 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench.";
             hasColor = true;
-            //StartCoroutine(TimeScale("Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench."));
             StartCoroutine(TimeScale());
         }
 
@@ -96,7 +92,6 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!";
             hasColor = true;
-            //StartCoroutine(TimeScale("Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!"));
             StartCoroutine(TimeScale());
         }
 
