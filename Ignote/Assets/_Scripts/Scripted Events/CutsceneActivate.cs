@@ -23,7 +23,9 @@ public class CutsceneActivate : MonoBehaviour
     IEnumerator WaitForCutscene()
     {
         player.GetComponent<PlayerMovement>().player_SetSpeed = 0;
+        player.SetActive(false);
         yield return new WaitForSeconds(cutsceneLengthInSecs);
+        player.SetActive(true);
         player.GetComponent<PlayerMovement>().player_SetSpeed = 8;
         cinemachineCutCams.SetActive(false);
         Destroy(this.gameObject);

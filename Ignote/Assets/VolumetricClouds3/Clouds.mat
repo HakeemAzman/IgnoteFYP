@@ -70,11 +70,11 @@ Material:
     - _BlendWithShadowmap: 0
     - _BumpScale: 1
     - _CloudBaseFlatness: -1.98
-    - _CloudDensity: 7.07
+    - _CloudDensity: 0.22
     - _CloudFlatness: 1
-    - _CloudLocalScale: 0.8
+    - _CloudLocalScale: 0.2
     - _ComplexLightingMode: 1
-    - _Coverage: 0.29
+    - _Coverage: 0.1
     - _CoverageHigh: 1
     - _CoverageLow: -1
     - _CoverageMapOn: 0
@@ -82,7 +82,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DirectContribution: 1
     - _DistBlendPost: 0
-    - _DistanceBlend: 11.68
+    - _DistanceBlend: 8.73
     - _DrawDistance: 10000
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -126,7 +126,7 @@ Material:
     - _VolumetricSSShadows: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    - _BaseColor: {r: 0.36223635, g: 0.33662367, b: 0.24514985, a: 1}
     - _CloudSpherePosition: {r: 0, g: 0, b: 0, a: 0}
     - _CloudTransform: {r: 236.41, g: 70, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,5 +134,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Shading: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SkyLightAttenuation: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SkyLightAttenuation: {r: 0.5660378, g: 0.5505643, b: 0.5259879, a: 1}
     - _WindDirection: {r: 0, g: 0, b: 1, a: 0}

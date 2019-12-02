@@ -10,6 +10,7 @@ public class NarrationStage1 : MonoBehaviour
     public RectTransform bottomBox;
     public Vector2 targetPosBottom;
     public Vector2 targetPosTop;
+    [SerializeField] float waitForSecs;
 
     bool hasColor;
     bool canMove;
@@ -57,24 +58,32 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "It looks like I can call the Robot to me or make it stay by pressing A.";
             hasColor = true;
+            //StartCoroutine(TimeScale("It looks like I can call the Robot to me or make it stay by pressing A."));
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial2")
         {
             textBox.text = "The gate seems to be lowered,maybe there's a way around it.";
             hasColor = true;
+           // StartCoroutine(TimeScale("The gate seems to be lowered,maybe there's a way around it."));
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial3")
         {
             textBox.text = "Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X.";
             hasColor = true;
+            //StartCoroutine(TimeScale("Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X."));
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial4")
         {
             textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench.";
             hasColor = true;
+            //StartCoroutine(TimeScale("Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench."));
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial5")
@@ -87,12 +96,15 @@ public class NarrationStage1 : MonoBehaviour
         {
             textBox.text = "Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!";
             hasColor = true;
+            //StartCoroutine(TimeScale("Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!"));
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial7")
         {
             textBox.text = "There's seem to be an unmanned ballista,maybe if I hit it my ol' wrench, I can make it work for me.";
             hasColor = true;
+            StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial8")
@@ -134,5 +146,13 @@ public class NarrationStage1 : MonoBehaviour
     {
         bottomBox.localPosition = Vector2.Lerp(bottomBox.localPosition, targetPosBottom, 0.4f * Time.deltaTime);
         topBox.localPosition = Vector2.Lerp(topBox.localPosition, targetPosTop, 0.4f * Time.deltaTime);
+    }
+
+    IEnumerator TimeScale()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(waitForSecs);
+        Time.timeScale = 1f;
     }
 }

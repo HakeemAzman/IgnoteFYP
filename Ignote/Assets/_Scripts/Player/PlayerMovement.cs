@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        rb = GetComponent<Rigidbody>();	
+        rb = GetComponent<Rigidbody>();
+        Cursor.visible = false;
 	}
 
   
