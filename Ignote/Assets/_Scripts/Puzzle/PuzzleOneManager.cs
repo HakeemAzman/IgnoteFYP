@@ -21,22 +21,9 @@ public class PuzzleOneManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TeleportA") && Input.GetButtonDown("Stay"))
-        {
-            interactText.SetActive(true);
-            this.transform.position = cubeB.transform.position;
-        }
-
-        if (other.CompareTag("TeleportB") && Input.GetButtonDown("Stay"))
-        {
-            interactText.SetActive(true);
-            this.transform.position = cubeA.transform.position;
-        }
-
         if((other.gameObject.name == "ChainRobot") && Input.GetButtonDown("Stay"))
         {
             robotCage.GetComponent<Animator>().Play("RobotCageOpen");
-
         }
 
         if (other.CompareTag("PressurePlate"))
@@ -58,29 +45,12 @@ public class PuzzleOneManager : MonoBehaviour
         {
             cc.gameObject.GetComponent<Companion_Commands>().enabled = true;
         }
-    
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.name == "ChainRobot")
             interactText.SetActive(true);
-
-        if (other.CompareTag("TeleportA"))
-            interactText.SetActive(true);
-
-        if (other.CompareTag("TeleportB"))
-            interactText.SetActive(true);
-
-        if (other.CompareTag("TeleportA") && Input.GetButtonDown("Stay"))
-        {
-            this.transform.position = cubeB.transform.position;
-        }
-
-        if (other.CompareTag("TeleportB") && Input.GetButtonDown("Stay"))
-        {
-            this.transform.position = cubeA.transform.position;
-        }
 
         if(other.CompareTag("PressurePlate"))
         {
@@ -102,13 +72,6 @@ public class PuzzleOneManager : MonoBehaviour
     {
         if (other.gameObject.name == "ChainRobot")
             interactText.SetActive(false);
-
-        if (other.CompareTag("TeleportA"))
-            interactText.SetActive(false);
-
-        if (other.CompareTag("TeleportB"))
-            interactText.SetActive(false);
-
     }
 
     IEnumerator LiftDown()

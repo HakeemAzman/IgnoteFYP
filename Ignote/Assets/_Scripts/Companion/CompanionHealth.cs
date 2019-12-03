@@ -10,6 +10,9 @@ public class CompanionHealth : MonoBehaviour
     public Animator anim;
     public Slider enduranceBar;
     public bool companionDisabled;
+    public float regenHealth;
+    bool isRegenHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,11 @@ public class CompanionHealth : MonoBehaviour
     {
         companionCurrentHealth = (float)companionHealth;
         enduranceBar.value = companionCurrentHealth;
+
+        //if(cs.isPlayer && companionCurrentHealth <= companionHealth && !isRegenHealth)
+        //{
+        //    StartCoroutine(RegainHealthOverTime());
+        //}
 
         if (companionHealth <= 0)
         {
@@ -43,6 +51,27 @@ public class CompanionHealth : MonoBehaviour
             companionCurrentHealth -= 2f;
         }
     }
+
+    //void RegenHealth()
+    //{
+    //    companionCurrentHealth += regenHealth;
+
+    //    if(companionCurrentHealth >= companionHealth)
+    //    {
+    //        companionCurrentHealth = companionHealth;
+    //    }
+    //}
+
+    //private IEnumerator RegainHealthOverTime()
+    //{
+    //    isRegenHealth = true;
+    //    while (companionCurrentHealth < companionHealth)
+    //    {
+    //        RegenHealth();
+    //        yield return new WaitForSeconds(3);
+    //    }
+    //    isRegenHealth = false;
+    //}
 
     IEnumerator bootup()
     {

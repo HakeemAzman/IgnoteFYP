@@ -110,8 +110,7 @@ using UnityEngine.AI;
             if (distanceFromPlayer <= agent.stoppingDistance)
             {
                 FaceTarget(targetPlayer);
-                print(distanceFromPlayer);
-            print(string.Format("{0},{1}", distanceFromPlayer, gameObject.name));
+                //print(string.Format("{0},{1}", distanceFromPlayer, gameObject.name));
                 //Calling the enemy's attack function
                 Combat.AttackPlayer();
             }

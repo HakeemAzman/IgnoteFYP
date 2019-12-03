@@ -13,12 +13,18 @@ public class GameManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource SFXSource;
 
+    public int enemy;
+
     [SerializeField] private GameObject audioSource;
     [SerializeField] private GameObject SFXsource;
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
+
+    public Animator animGate2;
+    public Animator animGate3;
+    public Animator animGate4;
 
     private void Awake()
     {
@@ -31,6 +37,10 @@ public class GameManager : MonoBehaviour
         SFXSource = SFXsource.GetComponent<AudioSource>();
         sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume", musicSource.volume);
         sliderSFX.value = PlayerPrefs.GetFloat("SFXVolume", SFXSource.volume);
+
+        animGate2 = GetComponent<Animator>();
+        animGate3 = GetComponent<Animator>();
+        animGate4 = GetComponent<Animator>();
 
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
@@ -53,6 +63,18 @@ public class GameManager : MonoBehaviour
                 ContinueGame();
             }
         }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemy = enemies.Length;
+
+        if (enemy == 15)
+            animGate2.Play("GateOpenPuzzle2");
+
+        if (enemy == 12)
+            animGate3.Play("Gate3Up");
+
+        if (enemy == 5)
+            animGate4.Play("Gate4Open");
     }
 
     public void Restart()

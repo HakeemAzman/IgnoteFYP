@@ -10,17 +10,23 @@ public class PlayerHealth : MonoBehaviour
     public float player_Health;
     public float regenHealth;
     public Slider playerHealthImage;
+    public GameObject health, endurance, charges;
     public Image respawnFade;
     public GameObject robot;
+    public CompanionHealth chScript;
 
     PlayerMovement pmScript;
     bool isRegenHealth;
-    Vector3 offset = new Vector3(3, 0 ,0);
+    Vector3 offset = new Vector3(3, 0 , 3);
     Transform currentCheckpointLoc;
 
     private void Start()
     {
+        chScript = GetComponent<CompanionHealth>();
         pmScript = GetComponent<PlayerMovement>();
+        health.SetActive(false);
+        endurance.SetActive(false);
+        charges.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,6 +60,13 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.CompareTag("Checkpoint"))
         {
             currentCheckpointLoc = other.gameObject.transform;
+        }
+
+        if(other.gameObject.name == "BlackBorderCollider")
+        {
+            health.SetActive(true);
+            endurance.SetActive(true);
+            charges.SetActive(true);
         }
     }
 
