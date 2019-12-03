@@ -161,7 +161,7 @@ public class CompanionScript : MonoBehaviour
             }
         }
 
-        if (speedFloat >= 5)
+        if (speedFloat >= 10)
         {
             anim.SetFloat("wSpeed", 5);
         }
@@ -219,7 +219,7 @@ public class CompanionScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isPlayer = false;
-            speedFloat = 5;
+            speedFloat = 10;
             gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }
 
@@ -241,7 +241,7 @@ public class CompanionScript : MonoBehaviour
     protected void EnemyOutOfRange()
     {
         isEnemy = false;
-        speedFloat = 5;
+        speedFloat = 10;
         anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
     }

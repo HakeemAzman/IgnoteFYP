@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemy = enemies.Length;
 
-        if (enemy == 15)
+        if (enemy == 16)
             animGate2.Play("GateOpenPuzzle2");
 
         if (enemy == 12)

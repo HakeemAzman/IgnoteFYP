@@ -46,7 +46,7 @@ public class Companion_Commands : MonoBehaviour
                 Stay = false;
                //print("call");
                 cs.GetComponent<CompanionScript>().enabled = true; //Pressing X again allows the Companion to follow from the current spot.
-                cs.speedFloat = 5;
+                cs.speedFloat = 10;
                 callTimer = 1;
             }
         }

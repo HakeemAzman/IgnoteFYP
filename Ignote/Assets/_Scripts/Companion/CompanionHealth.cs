@@ -78,7 +78,7 @@ public class CompanionHealth : MonoBehaviour
         yield return new WaitForSeconds(10);
         anim.SetBool("isDisabled", false);
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
-        cs.speedFloat = 5;
+        cs.speedFloat = 10;
         companionDisabled = true;
         companionHealth = 100;
     }
