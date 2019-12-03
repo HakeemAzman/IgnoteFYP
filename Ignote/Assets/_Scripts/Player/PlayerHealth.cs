@@ -10,9 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public float player_Health;
     public float regenHealth;
     public Slider playerHealthImage;
+    public Image respawnFade;
+    public GameObject robot;
 
     PlayerMovement pmScript;
     bool isRegenHealth;
+    Vector3 offset = new Vector3(3, 0 ,0);
+    Transform currentCheckpointLoc;
 
     private void Start()
     {
@@ -36,9 +40,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(playerCurrentHealth <= 0)
         {
-           // transform.position = GameManager.Instance.lastCheckpoint.position;
-            playerCurrentHealth = player_Health;
-            SceneManager.LoadScene(0);
+            StartCoroutine(Respawn());
         }
     }
 
@@ -47,6 +49,11 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.tag == "EProjectile")
         {
             playerCurrentHealth -= 2f;
+        }
+
+        if(other.gameObject.CompareTag("Checkpoint"))
+        {
+            currentCheckpointLoc = other.gameObject.transform;
         }
     }
 
@@ -69,5 +76,15 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(3);
         }
         isRegenHealth = false;
+    }
+
+    private IEnumerator Respawn()
+    {
+        respawnFade.color = Color.Lerp(respawnFade.color, Color.black, 1 * Time.deltaTime);
+        yield return new WaitForSeconds(2f);
+        transform.position = currentCheckpointLoc.position;
+        robot.transform.position = currentCheckpointLoc.position + offset;
+        playerCurrentHealth = player_Health;
+        respawnFade.color = Color.Lerp(respawnFade.color, Color.clear, 1 * Time.deltaTime);
     }
 }
