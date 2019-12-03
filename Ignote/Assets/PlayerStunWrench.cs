@@ -8,6 +8,7 @@ public class PlayerStunWrench : MonoBehaviour
     public float coolDown = 5;
     public bool isAttack;
     public AutoBallista AB;
+    public GameObject wrenchReady;
     public GameObject psStun;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class PlayerStunWrench : MonoBehaviour
     {
         if (Input.GetButtonDown("Attack") && !isAttack)
         {
+            wrenchReady.SetActive(false);
             wrench.SetActive(true);
             StartCoroutine(SpawnVFX());
             isAttack = true;
@@ -35,6 +37,7 @@ public class PlayerStunWrench : MonoBehaviour
                 }
                 if (coolDown <= 0)
                 {
+                wrenchReady.SetActive(true);
                 isAttack = false;
                 coolDown = 5;
                 }
