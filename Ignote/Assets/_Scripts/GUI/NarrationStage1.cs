@@ -13,7 +13,7 @@ public class NarrationStage1 : MonoBehaviour
     [SerializeField] float waitForSecs;
 
     bool hasColor;
-    bool canMove;
+    public bool canMove;
 
     private void Update()
     {
@@ -56,28 +56,28 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial1")
         {
-            textBox.text = "It looks like I can call the Robot to me or make it stay by pressing A.";
+            textBox.text = "It looks like I can call the Robot to me or make it stay by PRESSING A.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial2")
         {
-            textBox.text = "The gate seems to be lowered,maybe there's a way around it.";
+            textBox.text = "The gate seems to be lowered,maybe there's A WAY around it.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial3")
         {
-            textBox.text = "Another Robot? It doesn't look very friendly at all, I can stun him with my stun wrench by pressing X.";
+            textBox.text = "Another Robot? It doesn't look very friendly at all, I can STUN him with my STUN WRENCH by PRESSING X.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial4")
         {
-            textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can supercharge him with my stun wrench.";
+            textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can SUPERCHARGE him with my STUN WRENCH.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -90,14 +90,14 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial6")
         {
-            textBox.text = "Is that Ballista shooting at me? Damn, but both the Robot and I can't seem to reach it!";
+            textBox.text = "Is that Ballista SHOOTING at me? Damn, but both the Robot and I CAN'T SEEM to reach it!";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial7")
         {
-            textBox.text = "There's seem to be an unmanned ballista,maybe if I hit it my ol' wrench, I can make it work for me.";
+            textBox.text = "There's seem to be an unmanned ballista, maybe if I HIT IT my ol' wrench, I can MAKE IT WORK for me.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -110,6 +110,8 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "BlackBorderCollider")
         {
+            textBox.text = "PRESS RB to run";
+            hasColor = true;
             canMove = true;
         }
     }

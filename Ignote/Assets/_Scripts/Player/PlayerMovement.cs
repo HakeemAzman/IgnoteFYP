@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public bool isMoving;
+    [Space]
+    public NarrationStage1 nsScript;
 
     //Private Variables
     Rigidbody rb;
@@ -31,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        nsScript = GetComponent<NarrationStage1>();
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
 	}
-
   
     // Update is called once per frame
     void Update ()
@@ -58,16 +60,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
             GetComponent<Animator>().SetFloat("forwardSpeed", 0);
-
         }
         
 
         //Running
-        if ((Input.GetButton("Run") || Input.GetKey(KeyCode.LeftShift) && player_Stamina <= 20f) && (xAxis + zAxis != 0))
+        if ((Input.GetButton("Run") && nsScript.canMove || Input.GetKey(KeyCode.LeftShift) && player_Stamina <= 20f) && (xAxis + zAxis != 0))
         {
             isDashing = true;
         }
-        else if ((Input.GetButtonUp("Run") || Input.GetKeyUp(KeyCode.LeftShift)) || (xAxis + zAxis == 0))
+        else if ((Input.GetButtonUp("Run") && nsScript.canMove || Input.GetKeyUp(KeyCode.LeftShift)) || (xAxis + zAxis == 0))
         {
             isDashing = false;
             GetComponent<Animator>().SetFloat("forwardSpeed", 0);
