@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject resumeBtn;
 
-    public Animator animGate2;
-    public Animator animGate3;
-    public Animator animGate4;
+    public GameObject animGate2;
+    public GameObject animGate3;
+    public GameObject animGate4;
 
     private void Awake()
     {
@@ -40,10 +40,6 @@ public class GameManager : MonoBehaviour
         //SFXSource = SFXsource.GetComponent<AudioSource>();
         sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume", musicSource.volume);
         //sliderSFX.value = PlayerPrefs.GetFloat("SFXVolume", SFXSource.volume);
-
-        animGate2 = GetComponent<Animator>();
-        animGate3 = GetComponent<Animator>();
-        animGate4 = GetComponent<Animator>();
 
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
@@ -60,14 +56,14 @@ public class GameManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemy = enemies.Length;
 
-        if (enemy == 16)
-            animGate2.Play("GateOpenPuzzle2");
+        if (enemy == 4)
+            animGate2.GetComponent<Animator>().Play("GateOpenPuzzle2");
 
-        if (enemy == 12)
-            animGate3.Play("Gate3Up");
+        if (enemy == 7)
+            animGate3.GetComponent<Animator>().Play("Gate3Up");
 
         if (enemy == 5)
-            animGate4.Play("Gate4Open");
+            animGate4.GetComponent<Animator>().Play("Gate4Open");
     }
 
     public void Restart()

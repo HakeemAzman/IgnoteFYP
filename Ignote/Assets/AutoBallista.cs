@@ -93,8 +93,6 @@ public class AutoBallista : MonoBehaviour
         //}
     }
 
-    
-
     void LockOnTarget()
     {
         Vector3 dir = target.position - transform.position;

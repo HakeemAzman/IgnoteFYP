@@ -22,6 +22,7 @@ TagManager:
   - ScriptEnable
   - Checkpoint
   - Names
+  - Spawn
   layers:
   - Default
   - TransparentFX

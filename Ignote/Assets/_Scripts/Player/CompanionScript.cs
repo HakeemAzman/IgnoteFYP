@@ -109,8 +109,7 @@ public class CompanionScript : MonoBehaviour
         }
 
         dist = Vector3.Distance(transform.position, GameObject.FindWithTag("Enemy").transform.position);
-
-        //Debug.Log(dist);
+        
         if (dist <= 20)
         {
             haveEnemy = true;
@@ -124,6 +123,7 @@ public class CompanionScript : MonoBehaviour
             enemyInSight = false;
         }
     }
+
 #region Find Closest Player
     GameObject FindClosestPlayer()
     {
