@@ -26,9 +26,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116193737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.513, y: 0, z: -0}
+  m_LocalPosition: {x: -0.451, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1430991833}
   m_Father: {fileID: 4946993606020550}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -168,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -5
+      scalar: -2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -667,7 +668,7 @@ ParticleSystem:
     donutRadius: 0.8489374
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.8641206, y: 1, z: 1}
+    m_Scale: {x: 5.299017, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -2738,7 +2739,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 2
+    frequency: 1.5
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -3838,7 +3839,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4741,11 +4742,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430991832}
   m_LocalRotation: {x: -0.49989456, y: 0.50010544, z: -0.50010544, w: 0.49989462}
-  m_LocalPosition: {x: -0.59289837, y: 0.004745124, z: -0.009109229}
-  m_LocalScale: {x: 0.06422233, y: 0.06422245, z: 0.06422235}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.06422235, y: 0.06422248, z: 0.06422237}
   m_Children: []
-  m_Father: {fileID: 4946993606020550}
-  m_RootOrder: 1
+  m_Father: {fileID: 1116193738}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!182 &1430991834
 WindZone:
@@ -4756,10 +4757,10 @@ WindZone:
   m_GameObject: {fileID: 1430991832}
   m_Enabled: 1
   m_Mode: 1
-  m_Radius: 2
-  m_WindMain: 2
+  m_Radius: 3
+  m_WindMain: -2
   m_WindTurbulence: 2
-  m_WindPulseMagnitude: 0.5
+  m_WindPulseMagnitude: 1
   m_WindPulseFrequency: 0.01
 --- !u!1 &1682550975742922
 GameObject:
@@ -4792,7 +4793,6 @@ Transform:
   m_LocalScale: {x: 15.570914, y: 15.570914, z: 15.570888}
   m_Children:
   - {fileID: 1116193738}
-  - {fileID: 1430991833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
