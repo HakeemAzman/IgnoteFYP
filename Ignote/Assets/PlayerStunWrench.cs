@@ -7,15 +7,8 @@ public class PlayerStunWrench : MonoBehaviour
     public GameObject wrench;
     public float coolDown = 5;
     public bool isAttack;
-    public AutoBallista AB;
     public GameObject wrenchReady;
     public GameObject psStun;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        AB.gameObject.GetComponent<AutoBallista>();   
-    }
 
     // Update is called once per frame
     void Update()

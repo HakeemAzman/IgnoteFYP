@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int enemy;
 
     [SerializeField] private GameObject audioSource;
-    [SerializeField] private GameObject SFXsource;
+    //[SerializeField] private GameObject SFXsource;
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
     [SerializeField] private GameObject pausePanel;
@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         musicSource = audioSource.GetComponent<AudioSource>();
-        SFXSource = SFXsource.GetComponent<AudioSource>();
+        //SFXSource = SFXsource.GetComponent<AudioSource>();
         sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume", musicSource.volume);
-        sliderSFX.value = PlayerPrefs.GetFloat("SFXVolume", SFXSource.volume);
+        //sliderSFX.value = PlayerPrefs.GetFloat("SFXVolume", SFXSource.volume);
 
         animGate2 = GetComponent<Animator>();
         animGate3 = GetComponent<Animator>();
@@ -115,6 +115,6 @@ public class GameManager : MonoBehaviour
 
     public void GameSFXVolume()
     {
-        PlayerPrefs.SetFloat("SFXVolume", SFXsource.GetComponent<AudioSource>().volume);
+       // PlayerPrefs.SetFloat("SFXVolume", SFXsource.GetComponent<AudioSource>().volume);
     }
 }

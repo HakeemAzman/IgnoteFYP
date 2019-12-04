@@ -17,6 +17,11 @@ public class ButtonManager : MonoBehaviour
 
     bool hasColor = false;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Update()
     {
         if (hasColor)
