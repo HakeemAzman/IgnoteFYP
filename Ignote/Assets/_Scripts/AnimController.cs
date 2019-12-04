@@ -7,7 +7,7 @@ public class AnimController : MonoBehaviour
     public Animator anim;
     public Animator cameraAnim;
     public GameObject text;
-    public GameObject startRainfall, buttons;
+    public GameObject buttons;
     bool hasPressed = false;
 
     // Start is called before the first frame update
@@ -34,7 +34,6 @@ public class AnimController : MonoBehaviour
     IEnumerator MainMenu()
     {
         hasPressed = true;
-        startRainfall.SetActive(true);
         anim.SetBool("canStart", true);
         cameraAnim.SetBool("canPan", true);
         text.SetActive(false);
