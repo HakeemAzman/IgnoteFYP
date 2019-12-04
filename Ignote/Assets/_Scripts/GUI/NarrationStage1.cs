@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NarrationStage1 : MonoBehaviour
 {
     public Text textBox;
+    public Text roomNameTxt;
     public RectTransform topBox;
     public RectTransform bottomBox;
     public Vector2 targetPosBottom;
@@ -13,11 +14,13 @@ public class NarrationStage1 : MonoBehaviour
     [SerializeField] float waitForSecs;
 
     bool hasColor;
+    bool nameHasColor;
     public bool canMove;
 
     private void Update()
     {
         TextBoxColor();
+        NameBoxColor();
 
         if (canMove) LetterBoxMove();
     }
@@ -97,14 +100,14 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial7")
         {
-            textBox.text = "There's seem to be an unmanned ballista, maybe if I HIT IT my ol' wrench, I can MAKE IT WORK for me.";
+            textBox.text = "There's seem to be an unmanned ballista, maybe if I HIT IT with my ol' wrench, I can MAKE IT WORK for me.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial8")
         {
-            textBox.text = "All in a day's work,now to catch a breather.";
+            textBox.text = "All in a day's work, now to catch a breather.";
             hasColor = true;
         }
 
@@ -114,6 +117,36 @@ public class NarrationStage1 : MonoBehaviour
             hasColor = true;
             canMove = true;
         }
+
+        if(other.name == "Main Hall")
+        {
+            roomNameTxt.text = "Main Hall";
+            nameHasColor = true;
+        }
+
+        if (other.name == "Cathedral")
+        {
+            roomNameTxt.text = "The Cathedral";
+            nameHasColor = true;
+        }
+
+        if (other.name == "Study")
+        {
+            roomNameTxt.text = "The Study";
+            nameHasColor = true;
+        }
+
+        if (other.name == "Library")
+        {
+            roomNameTxt.text = "Library";
+            nameHasColor = true;
+        }
+
+        if (other.name == "Segregation")
+        {
+            roomNameTxt.text = "Segregation Garden";
+            nameHasColor = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -121,6 +154,12 @@ public class NarrationStage1 : MonoBehaviour
         if(other.CompareTag("Textboxes"))
         {
             hasColor = false;
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Names"))
+        {
+            nameHasColor = false;
             Destroy(other.gameObject);
         }
     }
@@ -136,6 +175,20 @@ public class NarrationStage1 : MonoBehaviour
         else
         {
             textBox.color = Color.Lerp(textBox.color, Color.clear, 1f * Time.deltaTime);
+        }
+    }
+
+    void NameBoxColor()
+    {
+        // lerps the textbox to have color if the boolean is set true
+        if (nameHasColor)
+        {
+            roomNameTxt.color = Color.Lerp(roomNameTxt.color, Color.white, 1f * Time.deltaTime);
+        }
+        // lerps it back to no alpha if the boolean is false
+        else
+        {
+            roomNameTxt.color = Color.Lerp(roomNameTxt.color, Color.clear, 1f * Time.deltaTime);
         }
     }
 

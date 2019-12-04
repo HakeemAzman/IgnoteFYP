@@ -21,6 +21,7 @@ TagManager:
   - Textboxes
   - ScriptEnable
   - Checkpoint
+  - Names
   layers:
   - Default
   - TransparentFX
