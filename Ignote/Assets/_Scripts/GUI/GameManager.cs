@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider sliderSFX;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
+
+    public GameObject resumeBtn;
 
     public Animator animGate2;
     public Animator animGate3;
@@ -48,20 +51,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Pause") && !pausePanel.activeInHierarchy)
         {
-            if (!pausePanel.activeInHierarchy)
-            {
-                PauseGame();
-            }
-            else if(optionsPanel.activeInHierarchy)
-            {
-                Done();
-            }
-            else if (pausePanel.activeInHierarchy)
-            {
-                ContinueGame();
-            }
+            PauseGame();
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(resumeBtn);
         }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -86,10 +79,12 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
+        Cursor.visible = true;
         Time.timeScale = 0;
         pausePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
     }
+
     public void ContinueGame()
     {
         Time.timeScale = 1;
