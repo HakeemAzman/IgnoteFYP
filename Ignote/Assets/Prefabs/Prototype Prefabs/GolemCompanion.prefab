@@ -662,8 +662,8 @@ GameObject:
   - component: {fileID: 5013666857775057505}
   - component: {fileID: 5013666857775057311}
   - component: {fileID: 1228161214}
-  - component: {fileID: 1228161215}
   - component: {fileID: 1228161217}
+  - component: {fileID: 1228161215}
   - component: {fileID: 1673469462}
   m_Layer: 11
   m_Name: GolemCompanion
@@ -754,6 +754,9 @@ MonoBehaviour:
   enemyInSight: 0
   Player: {fileID: 0}
   Overcharge: {fileID: 0}
+  charge1: {fileID: 0}
+  charge2: {fileID: 0}
+  charge3: {fileID: 0}
   radius: 7.6
   kbForce: 0
   damage: 30
@@ -780,19 +783,7 @@ MonoBehaviour:
   anim: {fileID: 4955745109251439030}
   enduranceBar: {fileID: 0}
   companionDisabled: 0
---- !u!135 &1228161215
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5013666858851917604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.83
-  m_Center: {x: 0, y: 2.14, z: 0}
+  regenHealth: 0
 --- !u!114 &1228161217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,6 +798,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compScript: {fileID: 5013666857775057311}
   arms: {fileID: 99439239}
+--- !u!135 &1228161215
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013666858851917604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.83
+  m_Center: {x: 0, y: 2.14, z: 0}
 --- !u!54 &1673469462
 Rigidbody:
   m_ObjectHideFlags: 0

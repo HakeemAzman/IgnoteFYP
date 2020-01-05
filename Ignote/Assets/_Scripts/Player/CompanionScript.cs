@@ -8,13 +8,16 @@ public class CompanionScript : MonoBehaviour
     private Vector3 playerAI;
     public Animator anim;
     [Space]
+
     [Header("Scripts")]
     public Companion_Commands cc;
     public CompanionHealth ch;
     [Space]
+
     public float speedFloat;
     public float charges;
     [Space]
+
     [Header("Bool")]
     public bool isPlayer;
     public bool haveEnemy;
@@ -22,19 +25,20 @@ public class CompanionScript : MonoBehaviour
     public bool playerAiFound = true;
     public bool enemyInSight;
     [Space]
+
     [Header("Gameobjects")]
     public GameObject Player;
     public GameObject Overcharge;
-    public GameObject charge1, charge2, charge3;
     [Space]
+
     [Header("AOE")]
     public float radius;
     public float kbForce;
     public int damage = 30;
     public LayerMask check;
     float dist;
-
     [Space]
+
     public GameObject psAOE;
     public GameObject[] aoeVFXStore;
 
@@ -48,49 +52,42 @@ public class CompanionScript : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (charges == 1)
+        if (((ch.companionCurrentHealth / 100) * 100) > 75)
         {
-            charge1.SetActive(true);
-            charge2.SetActive(false);
-            charge3.SetActive(false); 
-
-            psAOE = aoeVFXStore[1];
-            damage = 100;
-        }
-
-        if (charges == 2)
-        {
-            charge1.SetActive(true);
-            charge2.SetActive(true);
-            charge3.SetActive(false);
-            psAOE = aoeVFXStore[2];
-            damage = 100;
-        }
-
-        if (charges >= 3)
-        {
-            charge1.SetActive(true);
-            charge2.SetActive(true);
-            charge3.SetActive(true);
-            psAOE = aoeVFXStore[3];
-            charges = 3;
-        }
-        
-        if(charges <= 0)
-        {
-            charge1.SetActive(false);
-            charge2.SetActive(false);
-            charge3.SetActive(false);
-            Overcharge.SetActive(false);
-            charges = 0;
             psAOE = aoeVFXStore[0];
             damage = 30;
+        }
+
+        if (((ch.companionCurrentHealth / 100) * 100) < 75)
+        {
+            if(((ch.companionCurrentHealth / 100) * 100) > 50)
+            {
+                psAOE = aoeVFXStore[1];
+                damage = 50;
+            }
+        }
+
+        if (((ch.companionCurrentHealth / 100) * 100) < 50)
+        {
+            if (((ch.companionCurrentHealth / 100) * 100) > 25)
+            {
+                psAOE = aoeVFXStore[2];
+                damage = 80;
+            }
+        }
+
+        if (((ch.companionCurrentHealth / 100) * 100) < 25)
+        {
+            if (((ch.companionCurrentHealth / 100) * 100) > 0)
+            {
+                psAOE = aoeVFXStore[3];
+                damage = 110;
+            }
         }
 
         playerAI = FindClosestPlayer().transform.position;
         agent.destination = playerAI;
         gameObject.GetComponent<NavMeshAgent>().speed = speedFloat;
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

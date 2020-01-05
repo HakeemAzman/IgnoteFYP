@@ -25,11 +25,6 @@ public class CompanionHealth : MonoBehaviour
         companionCurrentHealth = (float)companionHealth;
         enduranceBar.value = companionCurrentHealth;
 
-        //if(cs.isPlayer && companionCurrentHealth <= companionHealth && !isRegenHealth)
-        //{
-        //    StartCoroutine(RegainHealthOverTime());
-        //}
-
         if (companionHealth <= 0)
         {
             companionDisabled = true;
@@ -51,27 +46,6 @@ public class CompanionHealth : MonoBehaviour
             companionCurrentHealth -= 2f;
         }
     }
-
-    //void RegenHealth()
-    //{
-    //    companionCurrentHealth += regenHealth;
-
-    //    if(companionCurrentHealth >= companionHealth)
-    //    {
-    //        companionCurrentHealth = companionHealth;
-    //    }
-    //}
-
-    //private IEnumerator RegainHealthOverTime()
-    //{
-    //    isRegenHealth = true;
-    //    while (companionCurrentHealth < companionHealth)
-    //    {
-    //        RegenHealth();
-    //        yield return new WaitForSeconds(3);
-    //    }
-    //    isRegenHealth = false;
-    //}
 
     IEnumerator bootup()
     {

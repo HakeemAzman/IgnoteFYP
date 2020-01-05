@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float player_Health;
     public float regenHealth;
     public Slider playerHealthImage;
-    public GameObject health, endurance, charges;
+    public GameObject health, endurance;
     public Image respawnFade;
     public GameObject robot;
     public CompanionHealth chScript;
@@ -26,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
         pmScript = GetComponent<PlayerMovement>();
         health.SetActive(false);
         endurance.SetActive(false);
-        charges.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,7 +65,6 @@ public class PlayerHealth : MonoBehaviour
         {
             health.SetActive(true);
             endurance.SetActive(true);
-            charges.SetActive(true);
         }
     }
 
