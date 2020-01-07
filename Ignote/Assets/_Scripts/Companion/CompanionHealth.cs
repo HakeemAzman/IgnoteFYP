@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class CompanionHealth : MonoBehaviour
 {
+    public Companion_Commands ccScript;
+    public float rateOfRepair;
+
     public float companionHealth;
     public float companionCurrentHealth;
     public CompanionScript cs;
     public Animator anim;
     public Slider enduranceBar;
     public bool companionDisabled;
-    public float regenHealth;
-    bool isRegenHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -22,20 +24,21 @@ public class CompanionHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        companionCurrentHealth = (float)companionHealth;
         enduranceBar.value = companionCurrentHealth;
 
-        if (companionHealth <= 0)
+        if(ccScript.isRepairing)
         {
-            companionDisabled = true;
-            anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", 0);
-            anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
-            anim.gameObject.GetComponent<Animator>().SetBool("isDisabled", true);
-            cs.speedFloat = 0;
-            companionHealth = 0;
-            cs.gameObject.GetComponent<CompanionScript>().enabled = false;
-            anim.SetBool("isDisabled", true);
-            StartCoroutine(bootup());
+            companionCurrentHealth += rateOfRepair * Time.deltaTime;
+        }
+
+        if(!ccScript.isRepairing && companionCurrentHealth >= 1)
+        {
+            RobotRestartSystem();
+        }
+
+        if (companionCurrentHealth <= 0)
+        {
+            RobotDeathFunctions();
         }
     }
 
@@ -47,13 +50,23 @@ public class CompanionHealth : MonoBehaviour
         }
     }
 
-    IEnumerator bootup()
+    void RobotRestartSystem()
     {
-        yield return new WaitForSeconds(10);
         anim.SetBool("isDisabled", false);
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
         cs.speedFloat = 10;
         companionDisabled = true;
-        companionHealth = 100;
+    }
+
+    void RobotDeathFunctions()
+    {
+        companionDisabled = true;
+        anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", 0);
+        anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
+        anim.gameObject.GetComponent<Animator>().SetBool("isDisabled", true);
+        cs.speedFloat = 0;
+        companionCurrentHealth = 0;
+        cs.gameObject.GetComponent<CompanionScript>().enabled = false;
+        anim.SetBool("isDisabled", true);
     }
 }

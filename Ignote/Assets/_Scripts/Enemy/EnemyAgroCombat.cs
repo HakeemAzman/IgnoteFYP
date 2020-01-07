@@ -69,7 +69,7 @@ public class EnemyAgroCombat : MonoBehaviour
         {
             timeSinceLastAttack = 0;
 
-            companionHealth.companionHealth -= damageOutput;
+            companionHealth.companionCurrentHealth -= damageOutput;
 
             GetComponent<Animator>().SetTrigger("attack");
         }

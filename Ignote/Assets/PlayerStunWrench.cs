@@ -13,7 +13,7 @@ public class PlayerStunWrench : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Attack") && !isAttack)
+       /* if (Input.GetButtonDown("Attack") && !isAttack)
         {
             wrenchReady.SetActive(false);
             wrench.SetActive(true);
@@ -34,7 +34,7 @@ public class PlayerStunWrench : MonoBehaviour
                 isAttack = false;
                 coolDown = 5;
                 }
-        }
+        }*/
     }
 
     IEnumerator SpawnVFX()

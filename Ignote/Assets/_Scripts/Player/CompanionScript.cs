@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
 public class CompanionScript : MonoBehaviour
 {
     private NavMeshAgent agent;
@@ -89,11 +90,6 @@ public class CompanionScript : MonoBehaviour
         agent.destination = playerAI;
         gameObject.GetComponent<NavMeshAgent>().speed = speedFloat;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ch.companionHealth -= 1;
-        }
-
         if (!isEnemy)
         {
             anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
@@ -169,7 +165,9 @@ public class CompanionScript : MonoBehaviour
         }
         return closestPlayer;
         #endregion
+
     }
+
     protected virtual void OnTriggerStay(Collider other) //Stops before reaching the player so it's not directly behind the player.
     {
         if (other.gameObject.tag == "Player")
@@ -202,15 +200,6 @@ public class CompanionScript : MonoBehaviour
         }
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Wrench")
-        {
-            Overcharge.SetActive(true);
-            charges += 1;
-        }
-    }
-
     protected virtual void OnTriggerExit(Collider other) //Starts following when the player is too far again.
     {
         if (other.gameObject.tag == "Player")
@@ -225,7 +214,6 @@ public class CompanionScript : MonoBehaviour
             EnemyOutOfRange();
         }
     }
-
 
     protected void EnemyInRange()
     {

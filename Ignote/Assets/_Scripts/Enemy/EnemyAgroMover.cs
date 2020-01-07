@@ -13,6 +13,7 @@ using UnityEngine.AI;
         NavMeshAgent agent;
         public bool attackCompanion;
         public CompanionHealth ch;
+
         #region Player, PlayerHealth
         Transform targetPlayer;
         PlayerHealth playerHealth;
@@ -44,7 +45,6 @@ using UnityEngine.AI;
 
         if (ch.companionHealth <= 0 && ch.companionDisabled)
         {
-            
             attackCompanion = false;
         }
 
