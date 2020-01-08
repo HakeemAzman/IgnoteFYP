@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c25d39e233a004faeec39f8981d611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_Health: 160
+  enemy_Health: 100
   deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
   cs: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   attackParticleTemp: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038,
     type: 3}
   timeBetweenAttacks: 1
-  damageOutput: 5
+  damageOutput: 10
 --- !u!95 &8902844621155466095
 Animator:
   serializedVersion: 3
@@ -192,8 +192,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7561302, y: 0.54, z: 0.76054704}
-  m_Center: {x: 0.035803944, y: 2.08, z: -0.06565291}
+  m_Size: {x: 0.8, y: 2.8273506, z: 0.4}
+  m_Center: {x: 0.041369557, y: 0.87132454, z: -0.0066978927}
 --- !u!1001 &7339401473869472834
 PrefabInstance:
   m_ObjectHideFlags: 0

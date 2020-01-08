@@ -65,7 +65,6 @@ public class AutoBallista : MonoBehaviour
 
     private void Update()
     {
-
         if (isActivated)
         {
             activeTime -= 1 * Time.deltaTime;
@@ -127,7 +126,5 @@ public class AutoBallista : MonoBehaviour
             isActivated = true;
             //activeTime = 10;
         }
-        if (other.gameObject.tag == "Enemy")
-            Destroy(bullet, 0.4f);
     }
 }

@@ -29,6 +29,11 @@ public class CompanionHealth : MonoBehaviour
         if(ccScript.isRepairing)
         {
             companionCurrentHealth += rateOfRepair * Time.deltaTime;
+
+            if(companionCurrentHealth > companionHealth)
+            {
+                companionCurrentHealth = companionHealth;
+            }
         }
 
         if(!ccScript.isRepairing && companionCurrentHealth >= 1)
@@ -46,7 +51,7 @@ public class CompanionHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "EProjectile")
         {
-            companionCurrentHealth -= 2f;
+            companionCurrentHealth -= 15f;
         }
     }
 
@@ -54,7 +59,6 @@ public class CompanionHealth : MonoBehaviour
     {
         anim.SetBool("isDisabled", false);
         cs.gameObject.GetComponent<CompanionScript>().enabled = true;
-        cs.speedFloat = 10;
         companionDisabled = true;
     }
 

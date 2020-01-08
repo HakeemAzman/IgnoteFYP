@@ -14,7 +14,6 @@ public class OverlapSphereAOE : MonoBehaviour
         colliders = Physics.OverlapSphere(arms.position, compScript.radius, compScript.check);
         foreach (Collider enemy in colliders)
         {
-            compScript.charges -= 1;
             StartCoroutine(SpawnVFX());
 
             if (enemy.CompareTag("Enemy"))

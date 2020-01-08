@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyShooterCombat : MonoBehaviour
 {
     [SerializeField] float m_timeBetweenAttacks = 1f;
-    [SerializeField] float m_damageOutput = 5f;
-    [SerializeField] float m_health;
+    [SerializeField] float m_damageOutput; //To be changed in the inspector
 
     [SerializeField] float m_distanceFromPlayer;
 
     float timeSinceLastAttack = Mathf.Infinity;
+    [SerializeField] bool onCooldown = false;
+    [SerializeField] float cooldownTimer;
 
     #region Player, PlayerHealth
     Transform targetPlayer;
@@ -48,10 +49,13 @@ public class EnemyShooterCombat : MonoBehaviour
         //Debug.Log(enemyTransform);
         timeSinceLastAttack += Time.deltaTime;
 
-        AttackPlayer();
-        AttackCompanion();
+        if(!onCooldown)
+        {
+            AttackPlayer();
+            AttackCompanion();
 
-        Aim();
+            Aim();
+        }
     }
 
     public void attackEnemy()
@@ -93,7 +97,6 @@ public class EnemyShooterCombat : MonoBehaviour
         Vector3 directionToTarget = (target.position - transform.position).normalized;
         float angle = Vector3.Angle(directionToTarget, transform.forward);
         
-
         if(Mathf.Abs(angle) < 40 && timeSinceLastAttack > m_timeBetweenAttacks)
         {
             GetComponent<Animator>().SetTrigger("attackbow");
@@ -103,6 +106,8 @@ public class EnemyShooterCombat : MonoBehaviour
             Rigidbody shellInstance = Instantiate(m_projectile, m_fireTransform.position, Quaternion.LookRotation(directionToTarget)) as Rigidbody;
 
             shellInstance.velocity = shellInstance.transform.forward * m_launchForce;
+
+            StartCoroutine(cooldown());
         }
     }
 
@@ -123,5 +128,12 @@ public class EnemyShooterCombat : MonoBehaviour
         Vector3 directionToTarget = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x, directionToTarget.y, directionToTarget.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    IEnumerator cooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(cooldownTimer);
+        onCooldown = false;
     }
 }

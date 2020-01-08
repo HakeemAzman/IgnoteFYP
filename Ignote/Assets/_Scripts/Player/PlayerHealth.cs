@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(!pmScript.isMoving && playerCurrentHealth <= player_Health && !isRegenHealth)
         {
-            StartCoroutine(RegainHealthOverTime());
+            //StartCoroutine(RegainHealthOverTime());
         }
 
         Death();
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.tag == "EProjectile")
         {
-            playerCurrentHealth -= 2f;
+            playerCurrentHealth -= 15f;
         }
 
         if(other.gameObject.CompareTag("Checkpoint"))

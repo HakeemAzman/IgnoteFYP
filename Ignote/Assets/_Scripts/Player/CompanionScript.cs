@@ -16,7 +16,6 @@ public class CompanionScript : MonoBehaviour
     [Space]
 
     public float speedFloat;
-    public float charges;
     [Space]
 
     [Header("Bool")]
@@ -64,7 +63,7 @@ public class CompanionScript : MonoBehaviour
             if(((ch.companionCurrentHealth / 100) * 100) > 50)
             {
                 psAOE = aoeVFXStore[1];
-                damage = 50;
+                damage = 40;
             }
         }
 
@@ -73,7 +72,7 @@ public class CompanionScript : MonoBehaviour
             if (((ch.companionCurrentHealth / 100) * 100) > 25)
             {
                 psAOE = aoeVFXStore[2];
-                damage = 80;
+                damage = 50;
             }
         }
 
@@ -82,7 +81,7 @@ public class CompanionScript : MonoBehaviour
             if (((ch.companionCurrentHealth / 100) * 100) > 0)
             {
                 psAOE = aoeVFXStore[3];
-                damage = 110;
+                damage = 60;
             }
         }
 

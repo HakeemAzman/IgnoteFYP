@@ -5,6 +5,7 @@ using UnityEngine;
 public class Companion_Commands : MonoBehaviour
 {
     public GameObject companion;
+    public PlayerMovement pmScript;
     public CompanionScript cs;
     public float timer = 5;
     public float timededuct = 1;
@@ -21,7 +22,7 @@ public class Companion_Commands : MonoBehaviour
     void Start()
     {
         cs.gameObject.GetComponent<CompanionScript>();
-
+        pmScript = GetComponent<PlayerMovement>();
         Stay = false;
     }
 
@@ -35,24 +36,28 @@ public class Companion_Commands : MonoBehaviour
             if(!Stay)
             {
                 Stay = true;
-                cs.GetComponent<CompanionScript>().enabled = false;
+                cs.GetComponent<CompanionScript>().speedFloat = 0;
+                companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 anim.SetFloat("wSpeed", 0);
             }
             else
             {
                 Stay = false;
-                cs.GetComponent<CompanionScript>().enabled = true;
+                companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 cs.speedFloat = 10;
-                callTimer = 1;
             }
         }
 
         if (Input.GetButton("Repair") && canRepair)
         {
             isRepairing = true;
+            pmScript.playerCanMove = false;
         }
         else
+        {
             isRepairing = false;
+            pmScript.playerCanMove = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)

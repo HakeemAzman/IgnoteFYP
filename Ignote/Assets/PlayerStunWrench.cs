@@ -5,42 +5,48 @@ using UnityEngine;
 public class PlayerStunWrench : MonoBehaviour
 {
     public GameObject wrench;
-    public float coolDown = 5;
-    public bool isAttack;
-    public GameObject wrenchReady;
-    public GameObject psStun;
+    public PlayerMovement pmScript;
+
+    private void Start()
+    {
+        pmScript = GetComponent<PlayerMovement>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-       /* if (Input.GetButtonDown("Attack") && !isAttack)
+        if(Input.GetButton("Repair")) //Add animation for repairing here later on
         {
-            wrenchReady.SetActive(false);
             wrench.SetActive(true);
-            StartCoroutine(SpawnVFX());
-            isAttack = true;
+            pmScript.playerCanMove = false;
+        }
+        else
+        {
+            wrench.SetActive(false);
+            pmScript.playerCanMove = true;
         }
 
-            if(isAttack)
-            {
-                coolDown -= 1f * Time.deltaTime;
-                if(coolDown <= 4.5f)
-                {
-                   wrench.SetActive(false);
-                }
-                if (coolDown <= 0)
-                {
-                wrenchReady.SetActive(true);
-                isAttack = false;
-                coolDown = 5;
-                }
-        }*/
-    }
+        /* if (Input.GetButtonDown("Attack") && !isAttack)
+         {
+             wrenchReady.SetActive(false);
+             wrench.SetActive(true);
+             StartCoroutine(SpawnVFX());
+             isAttack = true;
+         }
 
-    IEnumerator SpawnVFX()
-    {
-        GameObject aoeVFX = Instantiate(psStun, wrench.transform.position, transform.rotation);
-        yield return new WaitForSeconds(2f);
-        Destroy(aoeVFX);
+             if(isAttack)
+             {
+                 coolDown -= 1f * Time.deltaTime;
+                 if(coolDown <= 4.5f)
+                 {
+                    wrench.SetActive(false);
+                 }
+                 if (coolDown <= 0)
+                 {
+                 wrenchReady.SetActive(true);
+                 isAttack = false;
+                 coolDown = 5;
+                 }
+         }*/
     }
 }
