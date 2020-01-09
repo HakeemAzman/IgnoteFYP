@@ -6,6 +6,7 @@ public class OverlapSphereAOE : MonoBehaviour
 {
     public CompanionScript compScript;
     private EnemyHealth ehScript;
+    public GameObject deathParticle;
     Collider[] colliders;
     public Transform arms;
 
@@ -17,7 +18,22 @@ public class OverlapSphereAOE : MonoBehaviour
             StartCoroutine(SpawnVFX());
 
             if (enemy.CompareTag("Enemy"))
+            {
                 enemy.gameObject.GetComponent<EnemyHealth>().enemy_Health -= compScript.damage;
+
+                if(enemy.gameObject.GetComponent<EnemyHealth>().enemy_Health <= 0)
+                {
+                    print("Enemy Died");
+                    compScript.isEnemy = false;
+                    compScript.speedFloat = 10;
+
+                    GameManager.enemyScore += enemy.gameObject.GetComponent<EnemyHealth>().score;
+                    GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
+                    Destroy(deathVFX, 0.9f);
+
+                    Destroy(enemy.gameObject, 1f);
+                }
+            }
         }
     }
 

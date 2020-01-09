@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int enemy_Health;
     public GameObject deathParticle;
+    public int score = 1;
     [Space]
     public CompanionScript cs;
     [Space]
@@ -20,13 +21,8 @@ public class EnemyHealth : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(enemy_Health <= 0)
+        if (enemy_Health <= 0)
         {
-            cs.isEnemy = false;
-            cs.speedFloat = 10;
-            GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
-            Destroy(deathVFX, 0.5f);
-            Destroy(gameObject, 1F);
         }
     }
 
