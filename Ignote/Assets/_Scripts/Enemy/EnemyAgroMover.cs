@@ -43,7 +43,7 @@ using UnityEngine.AI;
         private void Update()
         {
 
-        if (ch.companionHealth <= 0 && ch.companionDisabled)
+        if (ch.companionCurrentHealth <= 0 && ch.companionDisabled)
         {
             attackCompanion = false;
         }

@@ -48,6 +48,7 @@ public class CompanionScript : MonoBehaviour
         anim = GetComponent<Animator>();
         cc.GetComponent<Companion_Commands>();
         ch.GetComponent<CompanionHealth>();
+        speedFloat = 10; //When the robot wakes up at the start
     }
 
     protected virtual void Update()

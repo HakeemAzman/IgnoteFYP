@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Companion_Commands : MonoBehaviour
 {
@@ -38,12 +39,14 @@ public class Companion_Commands : MonoBehaviour
                 Stay = true;
                 cs.GetComponent<CompanionScript>().speedFloat = 0;
                 companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                companion.GetComponent<NavMeshAgent>().enabled = false;
                 anim.SetFloat("wSpeed", 0);
             }
             else
             {
                 Stay = false;
                 companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                companion.GetComponent<NavMeshAgent>().enabled = true;
                 cs.speedFloat = 10;
             }
         }
