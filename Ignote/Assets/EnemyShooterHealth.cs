@@ -14,6 +14,7 @@ public class EnemyShooterHealth : EnemyHealth
         if (other.gameObject.tag == "Wrench") //Add power down animation or smoke VFX to indicate its disabled
         {
             gameObject.GetComponent<EnemyShooterCombat>().enabled = false;
+            base.enemy_Health = 0;
         }
     }
 }

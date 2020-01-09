@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private AudioSource SFXSource;
 
     public int enemy;
+    public int enemyScore = 0;
 
     [SerializeField] private GameObject audioSource;
     //[SerializeField] private GameObject SFXsource;
@@ -56,8 +57,8 @@ public class GameManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemy = enemies.Length;
 
-        if (enemy == 4)
-            animGate2.GetComponent<Animator>().Play("GateOpenPuzzle2");
+        if (enemyScore == 3)
+            animGate2.GetComponent<GateUp>().enabled = true;
 
         if (enemy == 7)
             animGate3.GetComponent<Animator>().Play("Gate3Up");

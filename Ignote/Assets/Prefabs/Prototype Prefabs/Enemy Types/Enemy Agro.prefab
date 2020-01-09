@@ -130,6 +130,7 @@ MonoBehaviour:
   deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
   cs: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!114 &1310805495891888339
 MonoBehaviour:
   m_ObjectHideFlags: 0

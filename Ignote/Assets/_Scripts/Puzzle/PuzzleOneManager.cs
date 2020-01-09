@@ -21,11 +21,6 @@ public class PuzzleOneManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if((other.gameObject.name == "ChainRobot") && Input.GetButtonDown("Stay"))
-        {
-            robotCage.GetComponent<Animator>().Play("RobotCageOpen");
-        }
-
         if (other.CompareTag("PressurePlate"))
         {
             audioS.PlayOneShot(heavyGateOpeningSound, 0.3f);
@@ -34,11 +29,6 @@ public class PuzzleOneManager : MonoBehaviour
         if ((other.gameObject.name == "ObstacleChain") && Input.GetButtonDown("Stay"))
         {
             StartCoroutine("LiftDown");
-        }
-
-        if(other.gameObject.name == "PressurePlatePuzzle2")
-        {
-          GateAnimator.gameObject.GetComponent<Animator>().Play("GateOpenPuzzle2"); 
         }
 
         if (other.gameObject.tag == "ScriptEnable") 
@@ -61,23 +51,11 @@ public class PuzzleOneManager : MonoBehaviour
         {
             robotCage.GetComponent<Animator>().Play("RobotCageOpen");
         }
-
-        if ((other.gameObject.name == "ObstacleChain") && Input.GetButtonDown("Stay"))
-        {
-            StartCoroutine("LiftDown");
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "ChainRobot")
             interactText.SetActive(false);
-    }
-
-    IEnumerator LiftDown()
-    {
-        cageObstacle.GetComponent<Animator>().Play("CageObstacleLift");
-        yield return new WaitForSeconds(20f);
-        cageObstacle.GetComponent<Animator>().Play("CageObstacleLiftDown");
     }
 }
