@@ -142,12 +142,16 @@ public class PlayerMovement : MonoBehaviour
         #endregion
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("Interact") && other.CompareTag("Crate"))
+        if (Input.GetButton("Interact") && other.CompareTag("Crate"))
         {
-            print("Push");
-            other.transform.parent = player.transform;
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
+
+        if(Input.GetButtonUp("Interact") && other.CompareTag("Crate"))
+        {
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 

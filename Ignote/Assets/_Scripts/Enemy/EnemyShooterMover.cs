@@ -115,7 +115,7 @@ public class EnemyShooterMover : MonoBehaviour
         if (distanceFromCompanion <= agent.stoppingDistance)
         {
             FaceTarget(targetCompanion);
-            Combat.AttackCompanion();
+           //Combat.AttackCompanion();
         }
     }
 

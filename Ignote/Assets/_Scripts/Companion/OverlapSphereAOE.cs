@@ -23,7 +23,6 @@ public class OverlapSphereAOE : MonoBehaviour
 
                 if(enemy.gameObject.GetComponent<EnemyHealth>().enemy_Health <= 0)
                 {
-                    print("Enemy Died");
                     compScript.isEnemy = false;
                     compScript.speedFloat = 10;
 
