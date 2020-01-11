@@ -23,6 +23,7 @@ TagManager:
   - Checkpoint
   - Names
   - Spawn
+  - Crate
   layers:
   - Default
   - TransparentFX

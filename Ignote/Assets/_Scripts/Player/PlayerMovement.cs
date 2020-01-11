@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Private Variables
     Rigidbody rb;
+    GameObject player;
     bool isDashing = false;
     bool isJumping = true;
     float jumpTimer = 2f;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        player = this.gameObject;
         nsScript = GetComponent<NarrationStage1>();
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Update ()
     {
         #region Enemy Movement, Direction facing, Can Move
-        if(playerCanMove)
+            if (playerCanMove)
         {
             float xAxis = Input.GetAxis("Horizontal");
             float zAxis = Input.GetAxis("Vertical");
@@ -138,6 +140,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Input.GetButtonDown("Interact") && other.CompareTag("Crate"))
+        {
+            print("Push");
+            other.transform.parent = player.transform;
+        }
     }
 
     private void UpdateAnimator()

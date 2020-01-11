@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject resumeBtn;
 
-    public GameObject animGate2;
-    public GameObject animGate3;
-    public GameObject animGate4;
+    public GameObject Gate2;
+    public GameObject Gate3;
+    public GameObject Gate4;
 
     private void Awake()
     {
@@ -54,11 +54,9 @@ public class GameManager : MonoBehaviour
             EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(resumeBtn);
         }
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemy = enemies.Length;
-
         if (enemyScore == 3)
-            animGate2.GetComponent<GateUp>().enabled = true;    }
+            Gate2.GetComponent<GateUp>().enabled = true;
+    }
 
     public void Restart()
     {

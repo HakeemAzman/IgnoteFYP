@@ -12,6 +12,7 @@ public class EnemyShooterCombat : MonoBehaviour
     float timeSinceLastAttack = Mathf.Infinity;
     [SerializeField] bool onCooldown = false;
     [SerializeField] float cooldownTimer;
+    //Transform t;
 
     #region Player, PlayerHealth
     Transform targetPlayer;
@@ -45,6 +46,9 @@ public class EnemyShooterCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // t.eulerAngles = new Vector3(t.transform.position.x, t.transform.position.y, -90);
+
+        //print(timeSinceLastAttack);
         //enemyTransform = GameObject.FindWithTag("Enemy").transform;
         //Debug.Log(enemyTransform);
         timeSinceLastAttack += Time.deltaTime;
@@ -99,7 +103,7 @@ public class EnemyShooterCombat : MonoBehaviour
         
         if(Mathf.Abs(angle) < 40 && timeSinceLastAttack > m_timeBetweenAttacks)
         {
-            GetComponent<Animator>().SetTrigger("attackbow");
+          //GetComponent<Animator>().SetTrigger("attackbow");
 
             timeSinceLastAttack = 0;
 
@@ -126,7 +130,7 @@ public class EnemyShooterCombat : MonoBehaviour
     void FaceTarget(Transform target)
     {
         Vector3 directionToTarget = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x, directionToTarget.y, directionToTarget.z));
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
