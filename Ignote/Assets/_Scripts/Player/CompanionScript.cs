@@ -27,6 +27,7 @@ public class CompanionScript : MonoBehaviour
     [Space]
 
     [Header("Gameobjects")]
+    public GameObject companionBox;
     public GameObject Player;
     public GameObject Overcharge;
     [Space]
@@ -53,6 +54,8 @@ public class CompanionScript : MonoBehaviour
 
     protected virtual void Update()
     {
+        Physics.IgnoreCollision(companionBox.GetComponent<Collider>(), Player.GetComponent<Collider>());
+
         if (((ch.companionCurrentHealth / 100) * 100) > 75)
         {
             psAOE = aoeVFXStore[0];
@@ -112,7 +115,6 @@ public class CompanionScript : MonoBehaviour
         if (dist > 20)
         {
             haveEnemy = false;
-
             enemyInSight = false;
         }
     }
@@ -147,6 +149,7 @@ public class CompanionScript : MonoBehaviour
         {
             Vector3 difference = (target.transform.position - position);
             float curDistance = difference.sqrMagnitude;
+
             if (curDistance < distance)
             {
                 closestPlayer = target;
@@ -165,7 +168,6 @@ public class CompanionScript : MonoBehaviour
         }
         return closestPlayer;
         #endregion
-
     }
 
     protected virtual void OnTriggerStay(Collider other) //Stops before reaching the player so it's not directly behind the player.
@@ -193,16 +195,11 @@ public class CompanionScript : MonoBehaviour
         {
             Player.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-
-        if (other.gameObject.tag == "Point1")
-        {
-            StartCoroutine("interacting");
-        }
     }
 
     protected virtual void OnTriggerExit(Collider other) //Starts following when the player is too far again.
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !cc.Stay)
         {
             isPlayer = false;
             speedFloat = 10;

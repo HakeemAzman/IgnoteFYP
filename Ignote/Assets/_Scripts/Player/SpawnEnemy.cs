@@ -18,9 +18,7 @@ public class SpawnEnemy : MonoBehaviour
         if(other.name == "SpawnStudy")
         {
             enemy[3].SetActive(true);
-            enemy[4].SetActive(true);
             enemy[5].SetActive(true);
-            enemy[6].SetActive(true);
         }
 
         if(other.name == "SpawnLibrary")

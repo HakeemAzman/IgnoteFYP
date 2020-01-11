@@ -17,13 +17,14 @@ public class PlayerMovement : MonoBehaviour
     public float player_ShortDash;
     public bool playerCanMove = true;
     [Space]
+
     public float jumpHeight;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public bool isMoving;
     [Space]
-    public NarrationStage1 nsScript;
 
+    public NarrationStage1 nsScript;
     //Private Variables
     Rigidbody rb;
     GameObject player;
@@ -40,12 +41,12 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
 	}
-  
+
     // Update is called once per frame
     void Update ()
     {
         #region Enemy Movement, Direction facing, Can Move
-            if (playerCanMove)
+        if (playerCanMove)
         {
             float xAxis = Input.GetAxis("Horizontal");
             float zAxis = Input.GetAxis("Vertical");

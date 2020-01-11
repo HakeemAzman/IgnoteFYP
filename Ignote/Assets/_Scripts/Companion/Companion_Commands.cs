@@ -16,6 +16,8 @@ public class Companion_Commands : MonoBehaviour
     public Animator anim;
     public float callTimer = 1;
 
+    [SerializeField] bool canCommand = false;
+
     public bool canRepair = false; //Controlled in this script and CompanionHealthScript
     public bool isRepairing = false;
 
@@ -30,26 +32,33 @@ public class Companion_Commands : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Physics.IgnoreCollision(companion.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+       Physics.IgnoreCollision(companion.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
 
-        if (Input.GetButtonUp("Stay"))
+        float dist = Vector3.Distance(companion.transform.position, transform.position);
+
+        if (dist > 30)
         {
-            if(!Stay)
-            {
-                Stay = true;
-                cs.GetComponent<CompanionScript>().speedFloat = 0;
-                companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                companion.GetComponent<NavMeshAgent>().enabled = false;
-                anim.SetFloat("wSpeed", 0);
-            }
-            else
-            {
-                Stay = false;
-                companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                companion.GetComponent<NavMeshAgent>().enabled = true;
-                cs.speedFloat = 10;
-            }
+            canCommand = false;
+            robotFollow();
         }
+        else if (dist < 30)
+        {
+            canCommand = true;
+        }
+
+        if (Input.GetButtonUp("Stay") && canCommand)
+            {
+                if (!Stay)
+                {
+                Stay = true;
+                robotStay();
+                }
+                else
+                {
+                Stay = false;
+                robotFollow();
+                }
+            }
 
         if (Input.GetButton("Repair") && canRepair)
         {
@@ -64,19 +73,34 @@ public class Companion_Commands : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
-        {
-            if (other.gameObject.tag == "Companion")
-            {
-                canRepair = true;
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.gameObject.tag == "Companion")
-            {
-                canRepair = false;
-            }
-        }
+    {
+       if (other.gameObject.tag == "Companion")
+       {
+          canRepair = true;
+       }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+       if (other.gameObject.tag == "Companion")
+       {
+          canRepair = false;
+       }
+    }
+
+    void robotStay()
+    {
+        cs.GetComponent<CompanionScript>().speedFloat = 0;
+        companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        companion.GetComponent<NavMeshAgent>().enabled = false;
+        anim.SetFloat("wSpeed", 0);
+    }
+
+    void robotFollow()
+    {
+        cs.GetComponent<CompanionScript>().speedFloat = 10;
+        companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        companion.GetComponent<NavMeshAgent>().enabled = true;
+    }
+}
 

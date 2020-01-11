@@ -25,28 +25,5 @@ public class PlayerStunWrench : MonoBehaviour
             wrench.SetActive(false);
             pmScript.playerCanMove = true;
         }
-
-        /* if (Input.GetButtonDown("Attack") && !isAttack)
-         {
-             wrenchReady.SetActive(false);
-             wrench.SetActive(true);
-             StartCoroutine(SpawnVFX());
-             isAttack = true;
-         }
-
-             if(isAttack)
-             {
-                 coolDown -= 1f * Time.deltaTime;
-                 if(coolDown <= 4.5f)
-                 {
-                    wrench.SetActive(false);
-                 }
-                 if (coolDown <= 0)
-                 {
-                 wrenchReady.SetActive(true);
-                 isAttack = false;
-                 coolDown = 5;
-                 }
-         }*/
     }
 }

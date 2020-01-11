@@ -24,6 +24,7 @@ TagManager:
   - Names
   - Spawn
   - Crate
+  - StayFollow
   layers:
   - Default
   - TransparentFX

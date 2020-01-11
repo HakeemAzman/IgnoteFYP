@@ -21,9 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (enemy_Health <= 0)
-        {
-        }
+
     }
 
     protected virtual void OnTriggerEnter(Collider other)

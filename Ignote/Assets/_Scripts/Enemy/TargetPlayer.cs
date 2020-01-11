@@ -120,10 +120,10 @@ public class TargetPlayer : MonoBehaviour
 
     protected void Fire(Transform target)
     {
-        //Vector3 directionToTarget = (target.position - transform.position).normalized;
-        //float angle = Vector3.Angle(directionToTarget, transform.forward);
+        Vector3 directionToTarget = (target.position - transform.position).normalized;
+        float angle = Vector3.Angle(directionToTarget, transform.forward);
         //Mathf.Abs(angle) < 40 &&
-        if (timeSinceLastAttack > m_timeBetweenAttacks)
+        if (Mathf.Abs(angle) < 40 && timeSinceLastAttack > m_timeBetweenAttacks)
         {
             timeSinceLastAttack = 0;
 
@@ -146,6 +146,7 @@ public class TargetPlayer : MonoBehaviour
     {
         if (other.CompareTag("Wrench"))
         {
+            GameManager.enemyScore++;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
         }
     }

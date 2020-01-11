@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
     public GameObject resumeBtn;
 
     public GameObject Gate2;
-    public GameObject Gate3;
-    public GameObject Gate4;
 
     private void Awake()
     {
