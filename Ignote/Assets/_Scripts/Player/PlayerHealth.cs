@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         pmScript = GetComponent<PlayerMovement>();
         health.SetActive(false);
         endurance.SetActive(false);
+        playerCurrentHealth = player_Health;
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.tag == "EProjectile")
         {
             playerCurrentHealth -= 15f;
+            Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("Checkpoint"))

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject resumeBtn;
 
     public GameObject Gate2;
+    public GameObject Gate4;
 
     private void Awake()
     {
@@ -54,6 +55,8 @@ public class GameManager : MonoBehaviour
 
         if (enemyScore == 3)
             Gate2.GetComponent<GateUp>().enabled = true;
+        if (enemyScore == 8)
+            Gate4.GetComponent<GateUp>().enabled = true;
     }
 
     public void Restart()

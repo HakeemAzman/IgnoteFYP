@@ -14,6 +14,9 @@ public class TargetPlayer : MonoBehaviour
     [SerializeField] float cooldownTimer;
     //Transform t;
 
+    Color green = Color.green;
+    Color red = Color.red;
+
     #region Player, PlayerHealth
     Transform targetPlayer;
     PlayerHealth playerHealth;
@@ -101,9 +104,14 @@ public class TargetPlayer : MonoBehaviour
 
     void Aim()
     {
-        if ((timeSinceLastAttack >= 1) && (timeSinceLastAttack <= 6.5f))
+        if ((timeSinceLastAttack >= 1f) && (timeSinceLastAttack <= 5f))
         {
             m_laser.SetActive(true);
+            m_laser.GetComponent<Renderer>().material.SetColor("_Color", green);
+        }
+        else if ((timeSinceLastAttack >= 5f) && (timeSinceLastAttack <= 7f))
+        {
+            m_laser.GetComponent<Renderer>().material.SetColor("_Color", red);
         }
         else
         {

@@ -23,13 +23,9 @@ public class SpawnEnemy : MonoBehaviour
 
         if(other.name == "SpawnLibrary")
         {
+            enemy[6].SetActive(true);
             enemy[7].SetActive(true);
             enemy[8].SetActive(true);
-            enemy[9].SetActive(true);
-            enemy[10].SetActive(true);
-            enemy[11].SetActive(true);
-            enemy[12].SetActive(true);
-            enemy[13].SetActive(true);
         }
 
         if (other.name == "SpawnSegregation")
