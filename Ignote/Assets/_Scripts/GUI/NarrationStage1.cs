@@ -15,7 +15,7 @@ public class NarrationStage1 : MonoBehaviour
 
     bool hasColor;
     bool nameHasColor;
-    public bool canMove;
+    public bool canMove; //PlayerMovement enable girl's running
 
     private void Update()
     {
