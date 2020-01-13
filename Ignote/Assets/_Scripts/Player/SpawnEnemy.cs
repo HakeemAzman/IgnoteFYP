@@ -30,11 +30,11 @@ public class SpawnEnemy : MonoBehaviour
 
         if (other.name == "SpawnSegregation")
         {
+            enemy[13].SetActive(true);
             enemy[14].SetActive(true);
             enemy[15].SetActive(true);
             enemy[16].SetActive(true);
             enemy[17].SetActive(true);
-            enemy[18].SetActive(true);
         }
     }
 }
