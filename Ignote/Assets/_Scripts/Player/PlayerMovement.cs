@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
 	}
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update ()
     {
         #region Enemy Movement, Direction facing, Can Move
@@ -146,6 +146,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         #endregion
+
+        if(Input.GetButton("Interact"))
+            emilyAnim.Play("EmilyPushing");
+
+        if(Input.GetButtonUp("Interact"))
+            emilyAnim.Play("EmilyIdle");
     }
 
     private void OnTriggerStay(Collider other)
@@ -158,6 +164,14 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonUp("Interact") && other.CompareTag("Crate"))
         {
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Crate"))
+        {
+            //emilyAnim.Play("EmilyIdle");
         }
     }
 

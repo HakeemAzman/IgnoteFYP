@@ -19,14 +19,15 @@ public class PlayerStunWrench : MonoBehaviour
     {
         if(Input.GetButton("Repair")) //Add animation for repairing here later on
         {
-            wrench.SetActive(true);
-            emilyAnim.SetBool("isStandby", true);
+            wrench.GetComponent<BoxCollider>().enabled = true;
+            emilyAnim.Play("EmilyRepairing");
             pmScript.playerCanMove = false;
         }
-        else
+
+        if(Input.GetButtonUp("Repair"))
         {
-            wrench.SetActive(false);
-            emilyAnim.SetBool("isStandby", false);
+            emilyAnim.Play("EmilyIdle");
+            wrench.GetComponent<BoxCollider>().enabled = false;
             pmScript.playerCanMove = true;
         }
     }

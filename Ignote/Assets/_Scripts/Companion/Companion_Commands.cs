@@ -7,6 +7,7 @@ public class Companion_Commands : MonoBehaviour
 {
     public GameObject companion;
     public PlayerMovement pmScript;
+    public Animator emilyAnim;
     public CompanionScript cs;
     public float timer = 5;
     public float timededuct = 1;
