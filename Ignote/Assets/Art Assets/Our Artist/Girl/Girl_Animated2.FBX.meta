@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: f3418cd8406c63947aa7d98fa6771cde
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: AnimControl_Global
+    100002: Bone_Back
+    100004: Bone_Chest
+    100006: Bone_Head
+    100008: Bone_L_Anckle
+    100010: Bone_L_Clavicle
+    100012: Bone_L_Elbow
+    100014: Bone_L_Foot
+    100016: Bone_L_Hand
+    100018: Bone_L_Index_A
+    100020: Bone_L_Index_B
+    100022: Bone_L_Index_C
+    100024: Bone_L_Middle_A
+    100026: Bone_L_Middle_B
+    100028: Bone_L_Middle_B 1
+    100030: Bone_L_Middle_C
+    100032: Bone_L_Middle_C 1
+    100034: Bone_L_Pinky_A
+    100036: Bone_L_Pinky_B
+    100038: Bone_L_Pinky_C
+    100040: Bone_L_Ring_A
+    100042: Bone_L_Shin
+    100044: Bone_L_Shoulder
+    100046: Bone_L_Thigh
+    100048: Bone_L_Thumb_A
+    100050: Bone_L_Thumb_B
+    100052: Bone_L_Thumb_C
+    100054: Bone_Neck
+    100056: Bone_Pelvis
+    100058: Bone_R_Anckle
+    100060: Bone_R_Clavicle
+    100062: Bone_R_Elbow
+    100064: Bone_R_Foot
+    100066: Bone_R_Hand
+    100068: Bone_R_Index_A
+    100070: Bone_R_Index_B
+    100072: Bone_R_Index_C
+    100074: Bone_R_Middle_A
+    100076: Bone_R_Middle_B
+    100078: Bone_R_Middle_B 1
+    100080: Bone_R_Middle_C
+    100082: Bone_R_Middle_C 1
+    100084: Bone_R_Pinky_A
+    100086: Bone_R_Pinky_B
+    100088: Bone_R_Pinky_C
+    100090: Bone_R_Ring_A
+    100092: Bone_R_Shin
+    100094: Bone_R_Shoulder
+    100096: Bone_R_Thigh
+    100098: Bone_R_Thumb_A
+    100100: Bone_R_Thumb_B
+    100102: Bone_R_Thumb_C
+    100104: Bone_Root
+    100106: BoneEnd_Head
+    100108: BoneEnd_L_Anckle
+    100110: BoneEnd_L_Hand
+    100112: BoneEnd_L_Index_D
+    100114: BoneEnd_L_Middle_A
+    100116: BoneEnd_L_Middle_D
+    100118: BoneEnd_L_Pinky_D
+    100120: BoneEnd_L_Thumb_D
+    100122: BoneEnd_L_Toe
+    100124: BoneEnd_Pelvis
+    100126: BoneEnd_R_Anckle
+    100128: BoneEnd_R_Hand
+    100130: BoneEnd_R_Index_D
+    100132: BoneEnd_R_Middle_A
+    100134: BoneEnd_R_Middle_D
+    100136: BoneEnd_R_Pinky_D
+    100138: BoneEnd_R_Thumb_D
+    100140: BoneEnd_R_Toe
+    100142: Girl
+    100144: //RootNode
+    400000: AnimControl_Global
+    400002: Bone_Back
+    400004: Bone_Chest
+    400006: Bone_Head
+    400008: Bone_L_Anckle
+    400010: Bone_L_Clavicle
+    400012: Bone_L_Elbow
+    400014: Bone_L_Foot
+    400016: Bone_L_Hand
+    400018: Bone_L_Index_A
+    400020: Bone_L_Index_B
+    400022: Bone_L_Index_C
+    400024: Bone_L_Middle_A
+    400026: Bone_L_Middle_B
+    400028: Bone_L_Middle_B 1
+    400030: Bone_L_Middle_C
+    400032: Bone_L_Middle_C 1
+    400034: Bone_L_Pinky_A
+    400036: Bone_L_Pinky_B
+    400038: Bone_L_Pinky_C
+    400040: Bone_L_Ring_A
+    400042: Bone_L_Shin
+    400044: Bone_L_Shoulder
+    400046: Bone_L_Thigh
+    400048: Bone_L_Thumb_A
+    400050: Bone_L_Thumb_B
+    400052: Bone_L_Thumb_C
+    400054: Bone_Neck
+    400056: Bone_Pelvis
+    400058: Bone_R_Anckle
+    400060: Bone_R_Clavicle
+    400062: Bone_R_Elbow
+    400064: Bone_R_Foot
+    400066: Bone_R_Hand
+    400068: Bone_R_Index_A
+    400070: Bone_R_Index_B
+    400072: Bone_R_Index_C
+    400074: Bone_R_Middle_A
+    400076: Bone_R_Middle_B
+    400078: Bone_R_Middle_B 1
+    400080: Bone_R_Middle_C
+    400082: Bone_R_Middle_C 1
+    400084: Bone_R_Pinky_A
+    400086: Bone_R_Pinky_B
+    400088: Bone_R_Pinky_C
+    400090: Bone_R_Ring_A
+    400092: Bone_R_Shin
+    400094: Bone_R_Shoulder
+    400096: Bone_R_Thigh
+    400098: Bone_R_Thumb_A
+    400100: Bone_R_Thumb_B
+    400102: Bone_R_Thumb_C
+    400104: Bone_Root
+    400106: BoneEnd_Head
+    400108: BoneEnd_L_Anckle
+    400110: BoneEnd_L_Hand
+    400112: BoneEnd_L_Index_D
+    400114: BoneEnd_L_Middle_A
+    400116: BoneEnd_L_Middle_D
+    400118: BoneEnd_L_Pinky_D
+    400120: BoneEnd_L_Thumb_D
+    400122: BoneEnd_L_Toe
+    400124: BoneEnd_Pelvis
+    400126: BoneEnd_R_Anckle
+    400128: BoneEnd_R_Hand
+    400130: BoneEnd_R_Index_D
+    400132: BoneEnd_R_Middle_A
+    400134: BoneEnd_R_Middle_D
+    400136: BoneEnd_R_Pinky_D
+    400138: BoneEnd_R_Thumb_D
+    400140: BoneEnd_R_Toe
+    400142: Girl
+    400144: //RootNode
+    2100000: Girl_Retopo_default
+    2100002: eyebrow_default
+    4300000: Girl
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Girl
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Public and Private Variables
     [Header("Player Stats")]
+    public Animator emilyAnim;
     public float player_Speed;
     public float player_SetSpeed;
     public float player_RunningSpeed;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        emilyAnim = emilyAnim.GetComponent<Animator>();
         player = this.gameObject;
         nsScript = GetComponent<NarrationStage1>();
         rb = GetComponent<Rigidbody>();
@@ -59,25 +61,27 @@ public class PlayerMovement : MonoBehaviour
             if (xAxis + zAxis != 0) //If there is no movement, the rotation of the character will not revert back to 0 but instead stay at the currect rotation
             {
                 isMoving = true;
+                player_Speed = player_SetSpeed;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerMovement), 0.3f); //Turns to the direction of the character movement
-                UpdateAnimator();
+             
             }
             else if (xAxis + zAxis == 0)
             {
                 isMoving = false;
-                GetComponent<Animator>().SetFloat("forwardSpeed", 0);
+                player_Speed = 0;
+                // emilyAnim.GetComponent<Animator>().SetFloat("forwardSpeed", 0);
             }
 
 
             //Running
-            if ((Input.GetButton("Run") && nsScript.canMove || Input.GetKey(KeyCode.LeftShift) && player_Stamina <= 20f) && (xAxis + zAxis != 0))
+            if ((Input.GetButton("Run") && nsScript.canMove || Input.GetKey(KeyCode.LeftShift) && (xAxis + zAxis != 0)))
             {
                 isDashing = true;
             }
             else if ((Input.GetButtonUp("Run") && nsScript.canMove || Input.GetKeyUp(KeyCode.LeftShift)) || (xAxis + zAxis == 0))
             {
                 isDashing = false;
-                GetComponent<Animator>().SetFloat("forwardSpeed", 0);
+                emilyAnim.GetComponent<Animator>().SetFloat("forwardSpeed", 0);
             }
 
             //Dashing is True
@@ -90,18 +94,18 @@ public class PlayerMovement : MonoBehaviour
             //Dashing is False
             else if (!isDashing)
             {
-                player_Speed = player_SetSpeed; //Set Player speed back to normal
+               //player_Speed = player_SetSpeed; //Set Player speed back to normal
             }
 
-            //Stamina reaches 0
-            if (player_CurrentStamina <= 0)
-            {
-                player_CurrentStamina = 0f;
-                player_Speed = player_SetSpeed;
-                isDashing = false;
+            ////Stamina reaches 0
+            //if (player_CurrentStamina <= 0)
+            //{
+            //    player_CurrentStamina = 0f;
+            //    player_Speed = player_SetSpeed;
+            //    isDashing = false;
 
-                UpdateAnimator();
-            }
+            //    UpdateAnimator();
+            //}
 
             if (rb.velocity.y < 0)
             {
@@ -114,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
             }
             //Walking
             transform.Translate(playerMovement * player_Speed * Time.deltaTime, Space.World);
+            UpdateAnimator();
         }
         #endregion
 
@@ -158,6 +163,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        GetComponent<Animator>().SetFloat("forwardSpeed", player_Speed);
+        emilyAnim.GetComponent<Animator>().SetFloat("forwardSpeed", player_Speed);
     }
 }
