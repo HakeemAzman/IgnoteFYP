@@ -27,11 +27,12 @@ public class Dialog : MonoBehaviour
             StartCoroutine(NextSentence());
         }
 
-        if(index + 1 == sentences.Length )
+        if(index +1 == sentences.Length)
         {
             Destroy(dialogHolder);
         }
         Debug.Log(index);
+        Debug.Log(sentences.Length);
     }
     
 
