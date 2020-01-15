@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int enemy;
     public static int enemyScore;
 
+    [SerializeField] private GameObject loungeTrigger;
     [SerializeField] private GameObject audioSource;
     //[SerializeField] private GameObject SFXsource;
     [SerializeField] private Slider sliderMusic;
@@ -56,7 +57,10 @@ public class GameManager : MonoBehaviour
         if (enemyScore == 3)
             Gate2.GetComponent<GateUp>().enabled = true;
         if (enemyScore == 8)
+        {
+            loungeTrigger.SetActive(true);
             Gate4.GetComponent<GateUp>().enabled = true;
+        }
     }
 
     public void Restart()

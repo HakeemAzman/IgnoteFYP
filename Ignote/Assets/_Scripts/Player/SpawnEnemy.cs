@@ -36,5 +36,10 @@ public class SpawnEnemy : MonoBehaviour
             enemy[16].SetActive(true);
             enemy[17].SetActive(true);
         }
+
+        if (other.name == "SpawnMiniBoss")
+        {
+            enemy[18].SetActive(true);
+        }
     }
 }
