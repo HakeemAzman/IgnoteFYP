@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 public class PlayerMovement : MonoBehaviour
 {
     #region Public and Private Variables
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float player_RunningEnergy = 2f;
     public float player_ShortDash;
     public bool playerCanMove = true;
+    public bool isCompanion;
     [Space]
 
     public float jumpHeight;
@@ -24,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     public bool isMoving;
     [Space]
-
     public NarrationStage1 nsScript;
     //Private Variables
     Rigidbody rb;
@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping = true;
     float jumpTimer = 2f;
     #endregion
+
+
+    public 
 
     // Use this for initialization
     void Start ()
@@ -154,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
             emilyAnim.Play("EmilyIdle");
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (Input.GetButton("Interact") && other.CompareTag("Crate"))
         {
@@ -165,14 +168,27 @@ public class PlayerMovement : MonoBehaviour
         {
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
+
+        if(other.gameObject.tag == "Companion" || other.gameObject.tag == "Ballista")
+        {
+            isCompanion = true;
+        }
+        
+
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Crate"))
         {
             //emilyAnim.Play("EmilyIdle");
         }
+
+        if (other.gameObject.tag == "Companion")
+        {
+            isCompanion = false;
+        }
+
     }
 
     private void UpdateAnimator()

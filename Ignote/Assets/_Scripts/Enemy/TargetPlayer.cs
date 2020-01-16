@@ -13,7 +13,8 @@ public class TargetPlayer : MonoBehaviour
     [SerializeField] bool onCooldown = false;
     [SerializeField] float cooldownTimer;
     //Transform t;
-
+    public GameObject smokeVFX;
+    public Transform BallistaPos;
     Color green = Color.green;
     Color red = Color.red;
 
@@ -154,6 +155,8 @@ public class TargetPlayer : MonoBehaviour
     {
         if (other.CompareTag("Wrench"))
         {
+            GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, BallistaPos.transform.position, BallistaPos.transform.rotation);
+            Destroy(SmokedVFX, 3f);
             GameManager.enemyScore++;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
         }

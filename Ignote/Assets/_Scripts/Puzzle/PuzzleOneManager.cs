@@ -7,7 +7,7 @@ public class PuzzleOneManager : MonoBehaviour
 {
     [SerializeField] GameObject cubeA, cubeB, gate, robotCage, cageObstacle,GateAnimator;
 
-    [SerializeField] AudioClip gateOpeningSound, heavyGateOpeningSound;
+    [SerializeField] AudioClip gateOpeningSound, heavyGateOpeningSound, pressurePlateSound; 
     AudioSource audioS;
 
     public Companion_Commands cc;
@@ -23,6 +23,7 @@ public class PuzzleOneManager : MonoBehaviour
     {
         if (other.CompareTag("PressurePlate"))
         {
+            audioS.PlayOneShot(pressurePlateSound,0.5f);
             audioS.PlayOneShot(heavyGateOpeningSound, 0.3f);
         }
 
