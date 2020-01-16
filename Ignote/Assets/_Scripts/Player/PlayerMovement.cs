@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
                 // emilyAnim.GetComponent<Animator>().SetFloat("forwardSpeed", 0);
             }
 
-
             //Running
             if ((Input.GetButton("Run") && nsScript.canMove || Input.GetKey(KeyCode.LeftShift) && (xAxis + zAxis != 0)))
             {
@@ -158,12 +157,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButton("Interact") && other.CompareTag("Crate"))
         {
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            //other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            other.gameObject.transform.parent = this.gameObject.transform;
         }
 
         if(Input.GetButtonUp("Interact") && other.CompareTag("Crate"))
         {
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            other.gameObject.transform.parent = null;
         }
     }
 
@@ -171,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Crate"))
         {
+            other.gameObject.transform.parent = null;
             //emilyAnim.Play("EmilyIdle");
         }
     }

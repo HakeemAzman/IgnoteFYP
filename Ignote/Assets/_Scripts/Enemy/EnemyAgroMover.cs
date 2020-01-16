@@ -120,7 +120,7 @@ using UnityEngine.AI;
     {
         if(other.gameObject.tag == "Companion")
         {
-            attackCompanion = true;
+           // attackCompanion = true;
         }
     }
     private void ChaseCompanion()

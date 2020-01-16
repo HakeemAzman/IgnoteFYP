@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
 
         if (enemyScore == 3)
             Gate2.GetComponent<GateUp>().enabled = true;
-        if (enemyScore == 8)
+
+        if (enemyScore >= 7)
         {
             loungeTrigger.SetActive(true);
             Gate4.GetComponent<GateUp>().enabled = true;

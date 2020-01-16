@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8757660834839872869
 Transform:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 4
+  m_Speed: 7
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -129,8 +129,8 @@ MonoBehaviour:
   enemy_Health: 100
   deathParticle: {fileID: 641755927051244840, guid: 1819ce3618925f04497f2d76a89efeeb,
     type: 3}
+  score: 1
   cs: {fileID: 0}
-  gm: {fileID: 0}
 --- !u!114 &1310805495891888339
 MonoBehaviour:
   m_ObjectHideFlags: 0

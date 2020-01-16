@@ -3319,8 +3319,9 @@ MonoBehaviour:
   - Robot:Hello dipshit, what are you doing here?
   - Girl:Hewoo, good morning to you
   - 'Robot: Good morning your mother, you fuck'
-  - 'Girl: Yes'
-  - .
+  - '.
+
+'
   typingSpeed: 0.02
   dialogHolder: {fileID: 304172802}
   timer: 0
