@@ -46,7 +46,6 @@ public class CompanionScript : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
         cc.GetComponent<Companion_Commands>();
         ch.GetComponent<CompanionHealth>();
         speedFloat = 10; //When the robot wakes up at the start
@@ -96,7 +95,7 @@ public class CompanionScript : MonoBehaviour
         if (!isEnemy)
         {
             anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
-            anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
+            anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", speedFloat);
         }
 
         if (!haveEnemy)
@@ -175,7 +174,7 @@ public class CompanionScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             speedFloat = 0;
-            anim.SetFloat("wSpeed", 0);
+            anim.SetFloat("wSpeed", speedFloat);
             isPlayer = true;
         }
 
@@ -224,7 +223,7 @@ public class CompanionScript : MonoBehaviour
     {
         isEnemy = false;
         speedFloat = 10;
-        anim.gameObject.GetComponent<Animator>().SetFloat("walk", 5);
+        anim.gameObject.GetComponent<Animator>().SetFloat("wSpeed", speedFloat);
         anim.gameObject.GetComponent<Animator>().SetBool("enemyF", false);
     }
 }

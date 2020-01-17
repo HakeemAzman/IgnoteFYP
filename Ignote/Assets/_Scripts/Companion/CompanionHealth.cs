@@ -15,12 +15,6 @@ public class CompanionHealth : MonoBehaviour
     public Slider enduranceBar;
     public bool companionDisabled;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -72,6 +66,5 @@ public class CompanionHealth : MonoBehaviour
         cs.speedFloat = 0;
         companionCurrentHealth = 0;
         cs.gameObject.GetComponent<CompanionScript>().enabled = false;
-        anim.SetBool("isDisabled", true);
     }
 }
