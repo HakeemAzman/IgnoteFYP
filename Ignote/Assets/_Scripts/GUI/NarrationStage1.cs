@@ -120,20 +120,23 @@ public class NarrationStage1 : MonoBehaviour
 
         if(other.name == "Main Hall")
         {
-            roomNameTxt.text = "THE GREAT HALL";
-            nameHasColor = true;
+            roomNameTxt.text = "The Great Hall";
+            StartCoroutine(DeleteName());
+            //nameHasColor = true;
         }
 
         if (other.name == "Cathedral")
         {
             roomNameTxt.text = "Cathedral Of The Deep";
-            nameHasColor = true;
+            StartCoroutine(DeleteName());
+            //nameHasColor = true;
         }
 
         if (other.name == "Study")
         {
             roomNameTxt.text = "Archduchess' Archives";
-            nameHasColor = true;
+            StartCoroutine(DeleteName());
+            //nameHasColor = true;
         }
 
         if (other.name == "Archduchess' Archives")
@@ -145,7 +148,8 @@ public class NarrationStage1 : MonoBehaviour
         if (other.name == "Segregation")
         {
             roomNameTxt.text = "Garden Of Seclusion";
-            nameHasColor = true;
+            StartCoroutine(DeleteName());
+            //nameHasColor = true;
         }
     }
 
@@ -159,7 +163,7 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.CompareTag("Names"))
         {
-            nameHasColor = false;
+            //nameHasColor = false;
             Destroy(other.gameObject);
         }
     }
@@ -201,8 +205,15 @@ public class NarrationStage1 : MonoBehaviour
     IEnumerator TimeScale()
     {
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 0.5f;
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(waitForSecs);
         Time.timeScale = 1f;
+    }
+
+    IEnumerator DeleteName()
+    {
+        nameHasColor = true;
+        yield return new WaitForSeconds(3.5f);
+        nameHasColor = false;
     }
 }
