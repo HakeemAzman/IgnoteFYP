@@ -177,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
             player_SetSpeed = 2f;
         }
 
-        if(Input.GetButtonUp("Interact") && other.CompareTag("Crate") || Input.GetButtonUp("Interact"))
+        if(Input.GetButtonUp("Interact") && other.CompareTag("Crate"))
         {
             other.gameObject.transform.parent = null;
 
@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Crate"))
+        if (other.CompareTag("Crate") || Input.GetButtonUp("Interact"))
         {
             other.gameObject.transform.parent = null;
 

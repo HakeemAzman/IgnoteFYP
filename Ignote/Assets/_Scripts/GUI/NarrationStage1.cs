@@ -120,31 +120,31 @@ public class NarrationStage1 : MonoBehaviour
 
         if(other.name == "Main Hall")
         {
-            roomNameTxt.text = "Main Hall";
+            roomNameTxt.text = "THE GREAT HALL";
             nameHasColor = true;
         }
 
         if (other.name == "Cathedral")
         {
-            roomNameTxt.text = "The Cathedral";
+            roomNameTxt.text = "Cathedral Of The Deep";
             nameHasColor = true;
         }
 
         if (other.name == "Study")
         {
-            roomNameTxt.text = "The Study";
+            roomNameTxt.text = "Archduchess' Archives";
             nameHasColor = true;
         }
 
-        if (other.name == "Library")
+        if (other.name == "Archduchess' Archives")
         {
-            roomNameTxt.text = "Library";
-            nameHasColor = true;
+            //roomNameTxt.text = "Archduchess' Archives";
+            //nameHasColor = true;
         }
 
         if (other.name == "Segregation")
         {
-            roomNameTxt.text = "Segregation Garden";
+            roomNameTxt.text = "Garden Of Seclusion";
             nameHasColor = true;
         }
     }
