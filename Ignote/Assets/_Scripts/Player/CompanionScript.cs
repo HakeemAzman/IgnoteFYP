@@ -58,7 +58,7 @@ public class CompanionScript : MonoBehaviour
         if (((ch.companionCurrentHealth / 100) * 100) > 75)
         {
             psAOE = aoeVFXStore[0];
-            damage = 30;
+            damage = 50;
         }
 
         if (((ch.companionCurrentHealth / 100) * 100) < 75)
@@ -66,7 +66,7 @@ public class CompanionScript : MonoBehaviour
             if(((ch.companionCurrentHealth / 100) * 100) > 50)
             {
                 psAOE = aoeVFXStore[1];
-                damage = 40;
+                damage = 60;
             }
         }
 
@@ -75,7 +75,7 @@ public class CompanionScript : MonoBehaviour
             if (((ch.companionCurrentHealth / 100) * 100) > 25)
             {
                 psAOE = aoeVFXStore[2];
-                damage = 50;
+                damage = 70;
             }
         }
 
@@ -84,7 +84,7 @@ public class CompanionScript : MonoBehaviour
             if (((ch.companionCurrentHealth / 100) * 100) > 0)
             {
                 psAOE = aoeVFXStore[3];
-                damage = 60;
+                damage = 80;
             }
         }
 

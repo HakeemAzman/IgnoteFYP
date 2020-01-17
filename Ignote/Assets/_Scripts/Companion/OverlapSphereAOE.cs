@@ -9,6 +9,7 @@ public class OverlapSphereAOE : MonoBehaviour
     public GameObject deathParticle;
     Collider[] colliders;
     public Transform arms;
+    public AudioClip enemyDeathSFX;
 
     public void AreaOfEffect()
     {
@@ -26,11 +27,13 @@ public class OverlapSphereAOE : MonoBehaviour
                     compScript.isEnemy = false;
                     compScript.speedFloat = 10;
 
+                    AudioSource.PlayClipAtPoint(enemyDeathSFX, enemy.gameObject.transform.position);
+
                     GameManager.enemyScore += enemy.gameObject.GetComponent<EnemyHealth>().score;
                     GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
-                    Destroy(deathVFX, 0.9f);
+                    Destroy(deathVFX, 1.5f);
 
-                    Destroy(enemy.gameObject, 1f);
+                    Destroy(enemy.gameObject, 1.6f);
                 }
             }
         }

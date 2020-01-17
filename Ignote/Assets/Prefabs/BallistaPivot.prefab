@@ -423,6 +423,8 @@ MonoBehaviour:
   smokeVFX: {fileID: 3610599272826133509, guid: f5eae6cce8ee24645951f07a6ee10d0b,
     type: 3}
   BallistaPos: {fileID: 5769861269627386112}
+  ChargeShoot: {fileID: 0}
+  aS: {fileID: 0}
   m_projectile: {fileID: 692698316737471534, guid: d6389bfdb7e456640b3a45339aac60a4,
     type: 3}
   m_fireTransform: {fileID: 4066942215474572001}

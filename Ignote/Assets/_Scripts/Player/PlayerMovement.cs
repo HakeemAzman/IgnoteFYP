@@ -34,9 +34,6 @@ public class PlayerMovement : MonoBehaviour
     float jumpTimer = 2f;
     #endregion
 
-
-    public 
-
     // Use this for initialization
     void Start ()
     {
@@ -157,31 +154,54 @@ public class PlayerMovement : MonoBehaviour
             emilyAnim.Play("EmilyIdle");
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Crate"))
+        {
+            player_RunningSpeed = 2f;
+            player_SetSpeed = 2f;
+            player_Speed = 2f;
+            nsScript.canMove = false;
+        }
+    }
+
     public void OnTriggerStay(Collider other)
     {
         if (Input.GetButton("Interact") && other.CompareTag("Crate"))
         {
+            other.gameObject.transform.parent = this.gameObject.transform;
+
             other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            nsScript.canMove = false;
+            player_RunningSpeed = 2f;
+            player_SetSpeed = 2f;
         }
 
-        if(Input.GetButtonUp("Interact") && other.CompareTag("Crate"))
+        if(Input.GetButtonUp("Interact") && other.CompareTag("Crate") || Input.GetButtonUp("Interact"))
         {
+            other.gameObject.transform.parent = null;
+
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            nsScript.canMove = true;
+            player_RunningSpeed = 12f;
+            player_SetSpeed = 7f;
         }
 
         if(other.gameObject.tag == "Companion" || other.gameObject.tag == "Ballista")
         {
             isCompanion = true;
         }
-        
-
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Crate"))
         {
-            //emilyAnim.Play("EmilyIdle");
+            other.gameObject.transform.parent = null;
+
+            nsScript.canMove = true;
+            player_RunningSpeed = 12f;
+            player_SetSpeed = 7f;
         }
 
         if (other.gameObject.tag == "Companion")
