@@ -23,7 +23,7 @@ public class PuzzleOneManager : MonoBehaviour
     {
         if (other.CompareTag("PressurePlate"))
         {
-            audioS.PlayOneShot(pressurePlateSound,0.5f);
+            audioS.PlayOneShot(pressurePlateSound,0.7f);
             audioS.PlayOneShot(heavyGateOpeningSound, 0.3f);
         }
 

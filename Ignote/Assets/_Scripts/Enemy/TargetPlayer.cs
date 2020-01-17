@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class TargetPlayer : MonoBehaviour
 {
     public float m_timeBetweenAttacks = 1f;
@@ -17,6 +17,9 @@ public class TargetPlayer : MonoBehaviour
     public Transform BallistaPos;
     Color green = Color.green;
     Color red = Color.red;
+
+    public AudioClip ChargeShoot;
+    public AudioSource aS;
 
     #region Player, PlayerHealth
     Transform targetPlayer;
@@ -107,6 +110,7 @@ public class TargetPlayer : MonoBehaviour
     {
         if ((timeSinceLastAttack >= 1f) && (timeSinceLastAttack <= 5f))
         {
+            chargingShot();
             m_laser.SetActive(true);
             m_laser.GetComponent<Renderer>().material.SetColor("_Color", green);
         }
@@ -156,9 +160,13 @@ public class TargetPlayer : MonoBehaviour
         if (other.CompareTag("Wrench"))
         {
             GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, BallistaPos.transform.position, BallistaPos.transform.rotation);
-            Destroy(SmokedVFX, 3f);
             GameManager.enemyScore++;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
         }
+    }
+
+    void chargingShot()
+    {
+        aS.Play();
     }
 }

@@ -11,7 +11,7 @@ public class GirlAnimEventSound : MonoBehaviour
     public GameObject repairEffect;
     public PlayerMovement pMovement;
     public Transform wrenchPos;
-    // Start is called before the first frame update
+  
 
 
     void girlWalking()
