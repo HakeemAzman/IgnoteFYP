@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class Dialog : MonoBehaviour
 {
-    public TextMeshProUGUI textDisplay;
+    public Text textDisplay;
     [TextArea (7,10)]
     public string[]sentences;
     private int index;
@@ -18,7 +19,7 @@ public class Dialog : MonoBehaviour
 
     void Update()
     {
-        if(timer <= 5)
+        if(timer <= 3)
         {
             timer -= Time.deltaTime * 1;
         }
@@ -48,8 +49,8 @@ public class Dialog : MonoBehaviour
     
     IEnumerator NextSentence()
     {
-        timer = 5;
-        yield return new WaitForSeconds(5);
+        timer = 3;
+        yield return new WaitForSeconds(2);
         NextDialog();
     }
 

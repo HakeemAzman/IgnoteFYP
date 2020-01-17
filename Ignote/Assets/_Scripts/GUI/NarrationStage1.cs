@@ -12,7 +12,9 @@ public class NarrationStage1 : MonoBehaviour
     public Vector2 targetPosBottom;
     public Vector2 targetPosTop;
     [SerializeField] float waitForSecs;
-
+    public Image RBbutton;
+    public Image XButton;
+    public Image LBbutton;
     bool hasColor;
     bool nameHasColor;
     public bool canMove; //PlayerMovement enable girl's running
@@ -51,15 +53,17 @@ public class NarrationStage1 : MonoBehaviour
             hasColor = true;
         }
 
-        if (other.name == "Pier Dialogue 5")
-        {
-            textBox.text = "Emily: Is that.. A Robot?.. Why is it locked in a cage?";
-            hasColor = true;
-        }
+        //if (other.name == "Pier Dialogue 5")
+        //{
+        //    textBox.text = "Emily: Is that.. A Robot?.. Why is it locked in a cage?";
+        //    hasColor = true;
+        //}
 
         if (other.name == "Tutorial1")
         {
-            textBox.text = "It looks like I can call the Robot to me or make it stay by PRESSING A.";
+            RBbutton.gameObject.SetActive(false);
+            XButton.gameObject.SetActive(true);
+            textBox.text = "PRESS          to Repair";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -73,7 +77,8 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial3")
         {
-            textBox.text = "Another Robot? It doesn't look very friendly at all, I can STUN him with my STUN WRENCH by PRESSING X.";
+            LBbutton.gameObject.SetActive(true);
+            textBox.text = "Press            to Push the crates";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -113,7 +118,9 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "BlackBorderCollider")
         {
-            textBox.text = "PRESS RB to run";
+            textBox.text = " PRESS          to run";
+            RBbutton.gameObject.SetActive(true);
+            
             hasColor = true;
             canMove = true;
         }
@@ -157,6 +164,8 @@ public class NarrationStage1 : MonoBehaviour
     {
         if(other.CompareTag("Textboxes"))
         {
+            LBbutton.gameObject.SetActive(false);
+            XButton.gameObject.SetActive(false);
             hasColor = false;
             Destroy(other.gameObject);
         }
