@@ -117,8 +117,8 @@ public class NarrationStage1 : MonoBehaviour
 
         if(other.name == "Main Hall")
         {
-            roomNameTxt.text = "The Great Hall";
-            StartCoroutine(DeleteName());
+            //roomNameTxt.text = "The Great Hall";
+            //StartCoroutine(DeleteName());
             //nameHasColor = true;
         }
 

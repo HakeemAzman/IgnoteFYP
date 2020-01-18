@@ -25,6 +25,7 @@ TagManager:
   - Spawn
   - Crate
   - StayFollow
+  - Death
   layers:
   - Default
   - TransparentFX

@@ -68,6 +68,11 @@ public class PlayerHealth : MonoBehaviour
             health.SetActive(true);
             endurance.SetActive(true);
         }
+
+        if(other.gameObject.CompareTag("Death"))
+        {
+            playerCurrentHealth -= 100f;
+        }
     }
 
     void RegenHealth()
