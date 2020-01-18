@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4066942215134985600}
   - component: {fileID: 4066942215134985614}
   - component: {fileID: 4066942215134985615}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066942215474572001}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4066942215960144407
 Transform:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   BallistaPos: {fileID: 5769861269627386112}
   ChargeShoot: {fileID: 8300000, guid: 71e4de7ff31b4d341b44567c58f7d87a, type: 3}
   aS: {fileID: 989932934}
-  m_projectile: {fileID: 692698316737471534, guid: d6389bfdb7e456640b3a45339aac60a4,
+  m_projectile: {fileID: 5156751096458633372, guid: 388e9377eefd9cf48a4f77f08ef048c4,
     type: 3}
   m_fireTransform: {fileID: 4066942215474572001}
   m_launchForce: 60
@@ -579,6 +579,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
       propertyPath: m_Name
       value: Ballista_Top 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
       propertyPath: m_LocalPosition.x
