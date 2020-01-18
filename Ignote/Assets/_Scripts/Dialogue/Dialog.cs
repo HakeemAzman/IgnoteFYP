@@ -32,8 +32,6 @@ public class Dialog : MonoBehaviour
         {
             Destroy(dialogHolder);
         }
-        Debug.Log(index);
-        Debug.Log(sentences.Length);
     }
     
 
@@ -50,7 +48,7 @@ public class Dialog : MonoBehaviour
     IEnumerator NextSentence()
     {
         timer = 3;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         NextDialog();
     }
 

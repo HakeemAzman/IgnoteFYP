@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Ch.companionCurrentHealth > 1)
+        if (Ch.companionCurrentHealth > 1)
         {
             CompanionDialog = true;
         }
@@ -25,12 +25,12 @@ public class DialogueManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             DialogHolder.gameObject.SetActive(true);
         }
 
-        if(other.gameObject.tag == "Companion")
+        if (other.gameObject.tag == "Companion")
         {
             DialogHolder2.gameObject.SetActive(true);
         }

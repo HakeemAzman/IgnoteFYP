@@ -15,6 +15,7 @@ public class NarrationStage1 : MonoBehaviour
     public Image RBbutton;
     public Image XButton;
     public Image LBbutton;
+    public Image AButton;
     bool hasColor;
     bool nameHasColor;
     public bool canMove; //PlayerMovement enable girl's running
@@ -70,7 +71,8 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial2")
         {
-            textBox.text = "The gate seems to be lowered,maybe there's A WAY around it.";
+            AButton.gameObject.SetActive(true);
+            textBox.text = "PRESS          to make the Robot Stay,Press it again to call it";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -83,36 +85,24 @@ public class NarrationStage1 : MonoBehaviour
             StartCoroutine(TimeScale());
         }
 
+        if (other.name == "Tutorial3.5")
+        {
+            
+            textBox.text = "Step on the pressure plate to lift the gate.";
+            hasColor = true;
+            StartCoroutine(TimeScale());
+        }
+
         if (other.name == "Tutorial4")
         {
-            textBox.text = "Did the friendly Robot just protect me? There's two more enemies ahead, maybe I can SUPERCHARGE him with my STUN WRENCH.";
+            textBox.text = "Kite the enemies around the friendly robot to stay safe, repair it when its bar is low.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial5")
         {
-            textBox.text = "Dang, glad to have him on my side..";
-            hasColor = true;
-        }
-
-        if (other.name == "Tutorial6")
-        {
-            textBox.text = "Is that Ballista SHOOTING at me? Damn, but both the Robot and I CAN'T SEEM to reach it!";
-            hasColor = true;
-            StartCoroutine(TimeScale());
-        }
-
-        if (other.name == "Tutorial7")
-        {
-            textBox.text = "There's seem to be an unmanned ballista, maybe if I HIT IT with my ol' wrench, I can MAKE IT WORK for me.";
-            hasColor = true;
-            StartCoroutine(TimeScale());
-        }
-
-        if (other.name == "Tutorial8")
-        {
-            textBox.text = "All in a day's work, now to catch a breather.";
+            textBox.text = "A Ballista can only be disabled by Emily, go round the back of Ballista and use the repair button to disable it";
             hasColor = true;
         }
 
@@ -164,6 +154,7 @@ public class NarrationStage1 : MonoBehaviour
     {
         if(other.CompareTag("Textboxes"))
         {
+            AButton.gameObject.SetActive(false);
             LBbutton.gameObject.SetActive(false);
             XButton.gameObject.SetActive(false);
             hasColor = false;
