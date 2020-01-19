@@ -493,9 +493,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8f3de6f110f711f49ab50661a8360b56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e24de874706b43945a2a69eb1bc3053f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.325
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -974,6 +974,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: c4f1eeff6672b6949b55eeb685fb9cf7, type: 3}
+    - target: {fileID: 2300000, guid: 5ff29e609522b224b88fe25772b9cabf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d94da8e061e4ad04cacf2e07e4bb47a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff29e609522b224b88fe25772b9cabf, type: 3}
 --- !u!1 &579722823
@@ -1627,7 +1631,6 @@ MonoBehaviour:
   anim: {fileID: 24348995}
   cameraAnim: {fileID: 721652359}
   text: {fileID: 58861225}
-  startRainfall: {fileID: 0}
   buttons: {fileID: 767182304}
 --- !u!4 &778651795
 Transform:
@@ -11466,6 +11469,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: bbb6bd27462aff844ba274e789bee18b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d94da8e061e4ad04cacf2e07e4bb47a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb6bd27462aff844ba274e789bee18b, type: 3}
 --- !u!1 &1312440193
@@ -17246,6 +17253,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 95810a291c3656b42a927b568aa0a5f3, type: 3}
+    - target: {fileID: 2300000, guid: 6bdd01bb3b42c324a8ea05fc41420ec5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d94da8e061e4ad04cacf2e07e4bb47a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bdd01bb3b42c324a8ea05fc41420ec5, type: 3}
 --- !u!1 &1740678060

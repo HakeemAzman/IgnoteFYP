@@ -581,12 +581,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 8757660834839872865}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 7
-  m_Acceleration: 20
+  m_Radius: 0.1
+  m_Speed: 6
+  m_Acceleration: 6
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_AngularSpeed: 999
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -658,7 +658,7 @@ MonoBehaviour:
   attackParticleTemp: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038,
     type: 3}
   timeBetweenAttacks: 1
-  damageOutput: 30
+  damageOutput: 20
 --- !u!95 &8902844621155466095
 Animator:
   serializedVersion: 3

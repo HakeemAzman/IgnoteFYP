@@ -74,7 +74,7 @@ Material:
     - _TimeMultSecondLayer: 13.41
     - _VolumetricSSShadows: 0
     m_Colors:
-    - _BaseColor: {r: 0.9056604, g: 0.3636054, b: 0.19223925, a: 1}
+    - _BaseColor: {r: 0.33962262, g: 0.31168455, b: 0.30277675, a: 1}
     - _CloudSpherePosition: {r: 0, g: 0, b: 0, a: 0}
     - _CloudTransform: {r: -22.1, g: 3.9, b: 0, a: 0}
     - _CoverageChannel: {r: 1, g: 0, b: 0, a: 0}
