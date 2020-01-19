@@ -31,9 +31,9 @@ public class OverlapSphereAOE : MonoBehaviour
 
                     GameManager.enemyScore += enemy.gameObject.GetComponent<EnemyHealth>().score;
                     GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
-                    Destroy(deathVFX, 1.5f);
+                    Destroy(deathVFX);
 
-                    Destroy(enemy.gameObject, 1.6f);
+                    Destroy(enemy.gameObject, 1f);
                 }
             }
         }

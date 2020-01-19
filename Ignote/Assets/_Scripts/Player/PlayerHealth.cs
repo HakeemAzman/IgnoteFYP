@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.tag == "EProjectile")
         {
-            playerCurrentHealth -= 15f;
+            playerCurrentHealth -= 40f;
             Destroy(other.gameObject);
         }
 

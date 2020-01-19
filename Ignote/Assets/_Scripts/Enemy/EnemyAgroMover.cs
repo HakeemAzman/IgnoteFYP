@@ -43,19 +43,19 @@ using UnityEngine.AI;
         private void Update()
         {
 
-        if (ch.companionCurrentHealth <= 0 && ch.companionDisabled)
-        {
-            attackCompanion = false;
-        }
+        //if (ch.companionCurrentHealth <= 0 && ch.companionDisabled)
+        //{
+        //    attackCompanion = false;
+        //}
 
         if (playerHealth.playerCurrentHealth == 0) return;
 
-        if (targetCompanion != null && InChasingRangeCompanion())
-        {
-            timeSinceLastSawPlayer = 0;
-            Combat.AttackCompanion();
-            ChaseCompanion();
-        }
+        //if (targetCompanion != null && InChasingRangeCompanion())
+        //{
+        //    timeSinceLastSawPlayer = 0;
+        //    Combat.AttackCompanion();
+        //    //ChaseCompanion();
+        //}
 
         
         if (InLineOfSightPlayer() && InChasingRangePlayer() && !attackCompanion)
@@ -86,11 +86,11 @@ using UnityEngine.AI;
             return Mathf.Abs(angle) < 360;
         }
 
-        private bool InChasingRangeCompanion()
-        {
-            float distanceFromCompanion = Vector3.Distance(targetCompanion.position, transform.position);
-            return distanceFromCompanion < chaseCompanionDistance;
-        }
+        //private bool InChasingRangeCompanion()
+        //{
+        //    float distanceFromCompanion = Vector3.Distance(targetCompanion.position, transform.position);
+        //    return distanceFromCompanion < chaseCompanionDistance;
+        //}
 
         private bool InChasingRangePlayer()
         {
@@ -116,28 +116,28 @@ using UnityEngine.AI;
             }
         }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Companion")
-        {
-            //attackCompanion = true;
-        }
-    }
-    private void ChaseCompanion()
-    {
-        //the distance between the bot and the enemy.
-        float distanceFromCompanion = Vector3.Distance(targetCompanion.position, transform.position);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.gameObject.tag == "Companion")
+    //    {
+    //        //attackCompanion = true;
+    //    }
+    //}
+    //private void ChaseCompanion()
+    //{
+    //    //the distance between the bot and the enemy.
+    //    float distanceFromCompanion = Vector3.Distance(targetCompanion.position, transform.position);
 
-        agent.SetDestination(targetCompanion.position);
+    //    agent.SetDestination(targetCompanion.position);
 
-        //if the desired distance between the enemy and bot is met
-        //or when the bot is in enemy's attack range, enemy will rotate to face the bot.
-        if (distanceFromCompanion <= agent.stoppingDistance)
-        {
-            FaceTarget(targetCompanion);
-            Combat.AttackCompanion();
-        }
-    }
+    //    //if the desired distance between the enemy and bot is met
+    //    //or when the bot is in enemy's attack range, enemy will rotate to face the bot.
+    //    if (distanceFromCompanion <= agent.stoppingDistance)
+    //    {
+    //        FaceTarget(targetCompanion);
+    //        Combat.AttackCompanion();
+    //    }
+    //}
 
     void FaceTarget(Transform target)
         {

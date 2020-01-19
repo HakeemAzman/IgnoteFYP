@@ -518,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8757660834839872869
 Transform:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ MonoBehaviour:
   attackParticleTemp: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038,
     type: 3}
   timeBetweenAttacks: 1
-  damageOutput: 10
+  damageOutput: 30
 --- !u!95 &8902844621155466095
 Animator:
   serializedVersion: 3
