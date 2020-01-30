@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1694541950}
-  m_IndirectSpecularColor: {r: 0.12092681, g: 0.06483914, b: 0.059686434, a: 1}
+  m_IndirectSpecularColor: {r: 0.12087111, g: 0.06478266, b: 0.059559405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2001,7 +2001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Producer/Lead Programmer/Level Designer
+  m_Text: Producer/Lead Programmer/Designer
 --- !u!222 &1160915614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2390,7 +2390,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Co-Producer/Lead Artist/Level Designer
+  m_Text: Co-Producer/Lead Artist/Designer
 --- !u!222 &1403659780
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2678,7 +2678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Artist
+  m_Text: Artist/Animator
 --- !u!222 &1643078354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2757,7 +2757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wei Liang
+  m_Text: Teng Wei Liang
 --- !u!222 &1657470370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3236,7 +3236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DMAT
+  m_Text: Audio
 --- !u!222 &1740678063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3413,7 +3413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Artist
+  m_Text: Artist/Designer
 --- !u!222 &2046542270
 CanvasRenderer:
   m_ObjectHideFlags: 0
