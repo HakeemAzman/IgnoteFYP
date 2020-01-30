@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 747b57f3f88f7b0449161c0a29ce4a0e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Base HumanHead
+    100002: Base HumanLCalf
+    100004: Base HumanLCollarbone
+    100006: Base HumanLFoot
+    100008: Base HumanLForearm
+    100010: Base HumanLPalm
+    100012: Base HumanLThigh
+    100014: Base HumanLUpperarm
+    100016: Base HumanLUpVectorNode
+    100018: Base HumanLUpVectorNode 1
+    100020: Base HumanNeck
+    100022: Base HumanPalmBone001
+    100024: Base HumanPalmBone001 1
+    100026: Base HumanPalmBone001Bone001
+    100028: Base HumanPalmBone001Bone001 1
+    100030: Base HumanPalmBone002
+    100032: Base HumanPalmBone002 1
+    100034: Base HumanPalmBone002Bone001
+    100036: Base HumanPalmBone002Bone001 1
+    100038: Base HumanPalmBone003
+    100040: Base HumanPalmBone003 1
+    100042: Base HumanPalmBone003Bone001
+    100044: Base HumanPalmBone003Bone001 1
+    100046: Base HumanPelvis
+    100048: Base HumanRCalf
+    100050: Base HumanRCollarbone
+    100052: Base HumanRFoot
+    100054: Base HumanRForearm
+    100056: Base HumanRibcage
+    100058: Base HumanRPalm
+    100060: Base HumanRThigh
+    100062: Base HumanRUpperarm
+    100064: Base HumanRUpVectorNode
+    100066: Base HumanRUpVectorNode 1
+    100068: Base HumanSpine
+    100070: Box002
+    100072: Box003
+    100074: Box004
+    100076: Box005
+    100078: Box006
+    100080: Box007
+    100082: Box008
+    100084: Box011
+    100086: Box012
+    100088: Box013
+    100090: Box014
+    100092: Box016
+    100094: Box017
+    100096: Cylinder001
+    100098: Cylinder002
+    100100: Cylinder003
+    100102: Cylinder004
+    100104: Cylinder005
+    100106: Cylinder006
+    100108: Cylinder010
+    100110: Cylinder011
+    100112: Cylinder012
+    100114: Cylinder013
+    100116: Cylinder014
+    100118: Cylinder015
+    100120: Cylinder016
+    100122: Cylinder017
+    100124: Cylinder018
+    100126: Cylinder019
+    100128: Cylinder020
+    100130: Cylinder021
+    100132: Object001
+    100134: Object002
+    100136: Object003
+    100138: Object004
+    100140: Object005
+    100142: Object006
+    100144: Object007
+    100146: Object008
+    100148: Object009
+    100150: Object010
+    100152: Object011
+    100154: Object012
+    100156: Object013
+    100158: Object014
+    100160: Object015
+    100162: Object016
+    100164: Object017
+    100166: Pelvis
+    100168: //RootNode
+    100170: Shoulder_right
+    100172: Sphere001
+    100174: Sphere002
+    100176: Sphere003
+    100178: Sphere004
+    100180: Sphere005
+    100182: Sphere006
+    100184: Sphere007
+    100186: Sphere008
+    400000: Base HumanHead
+    400002: Base HumanLCalf
+    400004: Base HumanLCollarbone
+    400006: Base HumanLFoot
+    400008: Base HumanLForearm
+    400010: Base HumanLPalm
+    400012: Base HumanLThigh
+    400014: Base HumanLUpperarm
+    400016: Base HumanLUpVectorNode
+    400018: Base HumanLUpVectorNode 1
+    400020: Base HumanNeck
+    400022: Base HumanPalmBone001
+    400024: Base HumanPalmBone001 1
+    400026: Base HumanPalmBone001Bone001
+    400028: Base HumanPalmBone001Bone001 1
+    400030: Base HumanPalmBone002
+    400032: Base HumanPalmBone002 1
+    400034: Base HumanPalmBone002Bone001
+    400036: Base HumanPalmBone002Bone001 1
+    400038: Base HumanPalmBone003
+    400040: Base HumanPalmBone003 1
+    400042: Base HumanPalmBone003Bone001
+    400044: Base HumanPalmBone003Bone001 1
+    400046: Base HumanPelvis
+    400048: Base HumanRCalf
+    400050: Base HumanRCollarbone
+    400052: Base HumanRFoot
+    400054: Base HumanRForearm
+    400056: Base HumanRibcage
+    400058: Base HumanRPalm
+    400060: Base HumanRThigh
+    400062: Base HumanRUpperarm
+    400064: Base HumanRUpVectorNode
+    400066: Base HumanRUpVectorNode 1
+    400068: Base HumanSpine
+    400070: Box002
+    400072: Box003
+    400074: Box004
+    400076: Box005
+    400078: Box006
+    400080: Box007
+    400082: Box008
+    400084: Box011
+    400086: Box012
+    400088: Box013
+    400090: Box014
+    400092: Box016
+    400094: Box017
+    400096: Cylinder001
+    400098: Cylinder002
+    400100: Cylinder003
+    400102: Cylinder004
+    400104: Cylinder005
+    400106: Cylinder006
+    400108: Cylinder010
+    400110: Cylinder011
+    400112: Cylinder012
+    400114: Cylinder013
+    400116: Cylinder014
+    400118: Cylinder015
+    400120: Cylinder016
+    400122: Cylinder017
+    400124: Cylinder018
+    400126: Cylinder019
+    400128: Cylinder020
+    400130: Cylinder021
+    400132: Object001
+    400134: Object002
+    400136: Object003
+    400138: Object004
+    400140: Object005
+    400142: Object006
+    400144: Object007
+    400146: Object008
+    400148: Object009
+    400150: Object010
+    400152: Object011
+    400154: Object012
+    400156: Object013
+    400158: Object014
+    400160: Object015
+    400162: Object016
+    400164: Object017
+    400166: Pelvis
+    400168: //RootNode
+    400170: Shoulder_right
+    400172: Sphere001
+    400174: Sphere002
+    400176: Sphere003
+    400178: Sphere004
+    400180: Sphere005
+    400182: Sphere006
+    400184: Sphere007
+    400186: Sphere008
+    2100000: default
+    4300000: Shoulder_right
+    4300002: Box002
+    4300004: Box003
+    4300006: Box004
+    4300008: Box005
+    4300010: Box006
+    4300012: Box007
+    4300014: Box008
+    4300016: Pelvis
+    4300018: Box011
+    4300020: Box012
+    4300022: Box013
+    4300024: Sphere001
+    4300026: Sphere002
+    4300028: Sphere003
+    4300030: Sphere004
+    4300032: Sphere005
+    4300034: Box014
+    4300036: Sphere006
+    4300038: Cylinder001
+    4300040: Cylinder002
+    4300042: Cylinder003
+    4300044: Cylinder004
+    4300046: Cylinder005
+    4300048: Cylinder006
+    4300050: Cylinder010
+    4300052: Cylinder011
+    4300054: Cylinder012
+    4300056: Cylinder013
+    4300058: Cylinder014
+    4300060: Sphere007
+    4300062: Box016
+    4300064: Cylinder015
+    4300066: Cylinder016
+    4300068: Box017
+    4300070: Cylinder017
+    4300072: Cylinder018
+    4300074: Cylinder019
+    4300076: Cylinder020
+    4300078: Cylinder021
+    4300080: Object001
+    4300082: Sphere008
+    4300084: Object002
+    4300086: Object003
+    4300088: Object004
+    4300090: Object005
+    4300092: Object006
+    4300094: Object007
+    4300096: Object008
+    4300098: Object009
+    4300100: Object010
+    4300102: Object011
+    4300104: Object012
+    4300106: Object013
+    4300108: Object014
+    4300110: Object015
+    4300112: Object016
+    4300114: Object017
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box002
+    13700002: Box003
+    13700004: Box004
+    13700006: Box005
+    13700008: Box006
+    13700010: Box007
+    13700012: Box008
+    13700014: Box011
+    13700016: Box012
+    13700018: Box013
+    13700020: Box014
+    13700022: Box016
+    13700024: Box017
+    13700026: Cylinder001
+    13700028: Cylinder002
+    13700030: Cylinder003
+    13700032: Cylinder004
+    13700034: Cylinder005
+    13700036: Cylinder006
+    13700038: Cylinder010
+    13700040: Cylinder011
+    13700042: Cylinder012
+    13700044: Cylinder013
+    13700046: Cylinder014
+    13700048: Cylinder015
+    13700050: Cylinder016
+    13700052: Cylinder017
+    13700054: Cylinder018
+    13700056: Cylinder019
+    13700058: Cylinder020
+    13700060: Cylinder021
+    13700062: Object001
+    13700064: Object002
+    13700066: Object003
+    13700068: Object004
+    13700070: Object005
+    13700072: Object006
+    13700074: Object007
+    13700076: Object008
+    13700078: Object009
+    13700080: Object010
+    13700082: Object011
+    13700084: Object012
+    13700086: Object013
+    13700088: Object014
+    13700090: Object015
+    13700092: Object016
+    13700094: Object017
+    13700096: Pelvis
+    13700098: Shoulder_right
+    13700100: Sphere001
+    13700102: Sphere002
+    13700104: Sphere003
+    13700106: Sphere004
+    13700108: Sphere005
+    13700110: Sphere006
+    13700112: Sphere007
+    13700114: Sphere008
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -64,7 +64,7 @@ public class NarrationStage1 : MonoBehaviour
         {
             RBbutton.gameObject.SetActive(false);
             XButton.gameObject.SetActive(true);
-            textBox.text = "PRESS          to Repair";
+            textBox.text = "Press              to Repair";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -72,7 +72,7 @@ public class NarrationStage1 : MonoBehaviour
         if (other.name == "Tutorial2")
         {
             AButton.gameObject.SetActive(true);
-            textBox.text = "PRESS          to make the Robot Stay,Press it again to call it";
+            textBox.text = "Press             to make the Robot Stay or Follow";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
@@ -80,14 +80,13 @@ public class NarrationStage1 : MonoBehaviour
         if (other.name == "Tutorial3")
         {
             LBbutton.gameObject.SetActive(true);
-            textBox.text = "Press            to Push the crates";
+            textBox.text = "Press              to Push the crates";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial3.5")
         {
-            
             textBox.text = "Step on the pressure plate to lift the gate.";
             hasColor = true;
             StartCoroutine(TimeScale());
@@ -108,7 +107,7 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "BlackBorderCollider")
         {
-            textBox.text = " PRESS          to run";
+            textBox.text = " Press               to run";
             RBbutton.gameObject.SetActive(true);
             
             hasColor = true;
@@ -147,6 +146,12 @@ public class NarrationStage1 : MonoBehaviour
             roomNameTxt.text = "Garden Of Seclusion";
             StartCoroutine(DeleteName());
             //nameHasColor = true;
+        }
+
+        if (other.name == "Archduchess Chambers")
+        {
+            roomNameTxt.text = "End Of Open Beta";
+            StartCoroutine(DeleteName());
         }
     }
 
