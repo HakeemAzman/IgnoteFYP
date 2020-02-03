@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class EnemyHealth : MonoBehaviour
 {
     public int enemy_Health;
-    public GameObject deathParticle;
+    public ParticleSystem deathParticle;
     public int score = 1;
     [Space]
     public CompanionScript cs;
