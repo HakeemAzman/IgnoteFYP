@@ -161,6 +161,7 @@ public class TargetPlayer : MonoBehaviour
         {
             GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, BallistaPos.transform.position, BallistaPos.transform.rotation);
             GameManager.enemyScore++;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
         }
     }
