@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4430272045532250579}
   - component: {fileID: 6074664898858127471}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 1025486546879324064}
   - component: {fileID: 4104748092076106178}
   - component: {fileID: 347734441004444548}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Repair Effect New
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3980,7 +3980,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 513
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4020,7 +4020,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4073,7 +4073,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 1
       maxCurve:
         serializedVersion: 2

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5769861269627386112}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BallistaPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007097677039129465}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.6, y: 9.87, z: 0}
+  m_LocalPosition: {x: -0.62, y: 0.87, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4066942215960144407}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4066942214926141403}
   - component: {fileID: 4066942214926141404}
   - component: {fileID: 4066942214926141405}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,13 +305,13 @@ GameObject:
   - component: {fileID: 4066942215960144402}
   - component: {fileID: 4066942215960144403}
   - component: {fileID: 989932934}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BallistaPivot
   m_TagString: Ballista
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4066942215960144407
 Transform:
   m_ObjectHideFlags: 0
