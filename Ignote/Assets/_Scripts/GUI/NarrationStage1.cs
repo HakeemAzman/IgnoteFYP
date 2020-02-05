@@ -150,7 +150,7 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Archduchess Chambers")
         {
-            roomNameTxt.text = "End Of Open Beta";
+            roomNameTxt.text = "Archduchess Chambers";
             StartCoroutine(DeleteName());
         }
     }
