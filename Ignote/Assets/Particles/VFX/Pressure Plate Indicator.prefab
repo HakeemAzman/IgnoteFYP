@@ -41,8 +41,8 @@ WindZone:
   m_Enabled: 1
   m_Mode: 1
   m_Radius: 5
-  m_WindMain: -5
-  m_WindTurbulence: 5
+  m_WindMain: -2
+  m_WindTurbulence: 1
   m_WindPulseMagnitude: 1
   m_WindPulseFrequency: 0.01
 --- !u!1 &2173677492661765492
@@ -214,7 +214,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5.5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -792,7 +792,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5305121
+      value: 0.4153421
       mode: 0
       spread: 0
       speed:
@@ -911,7 +911,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
