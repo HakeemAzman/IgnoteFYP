@@ -40,8 +40,8 @@ WindZone:
   m_GameObject: {fileID: 1850670379422746721}
   m_Enabled: 1
   m_Mode: 1
-  m_Radius: 5.5
-  m_WindMain: -10
+  m_Radius: 5
+  m_WindMain: -5
   m_WindTurbulence: 5
   m_WindPulseMagnitude: 1
   m_WindPulseFrequency: 0.01
@@ -214,7 +214,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 5.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -331,7 +331,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.05
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:

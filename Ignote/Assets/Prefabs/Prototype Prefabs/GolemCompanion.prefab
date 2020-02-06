@@ -4004,6 +4004,11 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659740948234005956, guid: c6b0b14504a2d834d8c8b82bdc2d5ef9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6690812784592043733, guid: c6b0b14504a2d834d8c8b82bdc2d5ef9,
         type: 3}
       propertyPath: playOnAwake
