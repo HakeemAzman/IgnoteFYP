@@ -6,7 +6,9 @@ public class OverlapSphereAOE : MonoBehaviour
 {
     public CompanionScript compScript;
     private EnemyHealth ehScript;
-    public GameObject deathParticle;
+    //public GameObject deathParticle;
+    public ParticleSystem deathParticle;
+
     Collider[] colliders;
     public Transform arms;
     public AudioClip enemyDeathSFX;
@@ -30,10 +32,13 @@ public class OverlapSphereAOE : MonoBehaviour
                     AudioSource.PlayClipAtPoint(enemyDeathSFX, enemy.gameObject.transform.position);
 
                     GameManager.enemyScore += enemy.gameObject.GetComponent<EnemyHealth>().score;
-                    GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
-                    Destroy(deathVFX);
 
-                    Destroy(enemy.gameObject, 1f);
+                    deathParticle.Play();
+
+                    //GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
+                    //Destroy(deathVFX);
+
+                    Destroy(enemy.gameObject, 2f);
                 }
             }
         }
