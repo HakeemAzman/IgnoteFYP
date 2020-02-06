@@ -7,7 +7,6 @@ public class OverlapSphereAOE : MonoBehaviour
     public CompanionScript compScript;
     private EnemyHealth ehScript;
     //public GameObject deathParticle;
-    public ParticleSystem deathParticle;
 
     Collider[] colliders;
     public Transform arms;
@@ -33,7 +32,7 @@ public class OverlapSphereAOE : MonoBehaviour
 
                     GameManager.enemyScore += enemy.gameObject.GetComponent<EnemyHealth>().score;
 
-                    deathParticle.Play();
+                    enemy.gameObject.GetComponent<EnemyHealth>().deathParticle.Play();
 
                     //GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
                     //Destroy(deathVFX);
