@@ -94,6 +94,7 @@ public class Companion_Commands : MonoBehaviour
         cs.GetComponent<CompanionScript>().speedFloat = 0;
         companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         companion.GetComponent<NavMeshAgent>().enabled = false;
+        companion.GetComponent<CompanionScript>().stayVFX.Play();
         anim.SetFloat("wSpeed", 0);
     }
 
@@ -102,6 +103,7 @@ public class Companion_Commands : MonoBehaviour
         cs.GetComponent<CompanionScript>().speedFloat = 10;
         companion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         companion.GetComponent<NavMeshAgent>().enabled = true;
+        companion.GetComponent<CompanionScript>().stayVFX.Stop();
     }
 }
 

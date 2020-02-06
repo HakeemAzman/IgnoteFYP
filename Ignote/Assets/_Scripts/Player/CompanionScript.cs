@@ -40,6 +40,10 @@ public class CompanionScript : MonoBehaviour
     float dist;
     [Space]
 
+    [Header("VFX")]
+    public ParticleSystem stayVFX;
+    [Space]
+
     public GameObject psAOE;
     public GameObject[] aoeVFXStore;
 
