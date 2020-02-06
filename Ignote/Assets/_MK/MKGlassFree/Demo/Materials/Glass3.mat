@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ca30768487e7357448344b6fa7f5cd61, type: 3}
+        m_Texture: {fileID: 2800000, guid: 667a8966aafe933418ea2ccf2159f43f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -90,7 +90,7 @@ Material:
     - _MKEditorShowRimBehavior: 1
     - _MKEditorShowSpecularBehavior: 1
     - _MKEditorShowTranslucentBehavior: 0
-    - _MainTint: 0.9
+    - _MainTint: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -115,7 +115,7 @@ Material:
     - _UseTranslucent: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.7449474, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
