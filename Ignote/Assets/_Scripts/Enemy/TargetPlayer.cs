@@ -159,7 +159,7 @@ public class TargetPlayer : MonoBehaviour
     {
         if (other.CompareTag("Wrench"))
         {
-            GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, BallistaPos.transform.position, BallistaPos.transform.rotation);
+            GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, new Vector3(BallistaPos.transform.position.x, BallistaPos.transform.position.y - 20, BallistaPos.transform.position.z), BallistaPos.transform.rotation);
             GameManager.enemyScore++;
             gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
