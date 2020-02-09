@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
         respawnFade.color = Color.Lerp(respawnFade.color, Color.black, 1 * Time.deltaTime);
         yield return new WaitForSeconds(2f);
         transform.position = currentCheckpointLoc.position;
-        robot.transform.position = currentCheckpointLoc.position + offset;
+        //robot.transform.position = currentCheckpointLoc.position + offset;
         playerCurrentHealth = player_Health;
         respawnFade.color = Color.Lerp(respawnFade.color, Color.clear, 1 * Time.deltaTime);
     }
