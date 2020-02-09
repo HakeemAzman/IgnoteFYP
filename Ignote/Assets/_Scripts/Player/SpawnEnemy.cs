@@ -41,5 +41,19 @@ public class SpawnEnemy : MonoBehaviour
         {
             enemy[13].SetActive(true);
         }
+
+        if(other.name == "FinaleTurrets")
+        {
+            enemy[14].SetActive(true);
+            enemy[15].SetActive(true);
+        }
+
+        if(other.name == "FinaleGuards")
+        {
+            enemy[16].SetActive(true);
+            enemy[17].SetActive(true);
+            enemy[18].SetActive(true);
+            enemy[19].SetActive(true);
+        }
     }
 }
