@@ -8,6 +8,7 @@ public class TargetPlayer : MonoBehaviour
     public float m_damageOutput; //To be changed in the inspector
 
     public float m_distanceFromPlayer;
+    [SerializeField] float offset;
 
     public float timeSinceLastAttack = Mathf.Infinity;
     [SerializeField] bool onCooldown = false;
@@ -159,7 +160,7 @@ public class TargetPlayer : MonoBehaviour
     {
         if (other.CompareTag("Wrench"))
         {
-            GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, new Vector3(BallistaPos.transform.position.x, BallistaPos.transform.position.y - 20, BallistaPos.transform.position.z), BallistaPos.transform.rotation);
+            GameObject SmokedVFX = (GameObject)Instantiate(smokeVFX, new Vector3(BallistaPos.transform.position.x, BallistaPos.transform.position.y - offset, BallistaPos.transform.position.z), BallistaPos.transform.rotation);
             GameManager.enemyScore++;
             gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<TargetPlayer>().enabled = false;
