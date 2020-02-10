@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class ProjectileStart : MonoBehaviour
 {
-    public GameObject projectileSystem;
+    //public GameObject projectileSystem;
 
-    void Start()
+    //void Start()
+    //{
+    //    projectileSystem.SetActive(true);
+    //}
+
+    //private void Update()
+    //{
+    //    Destroy(gameObject, 5f);
+    //}
+
+    void OnEnable()
     {
-        projectileSystem.SetActive(true);
+        Invoke("Destroy", 3f);
     }
 
-    private void Update()
+    void OnDisable()
     {
-        Destroy(gameObject, 5f);
+        CancelInvoke();
+    }
+
+    void Destroy()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -418,6 +418,7 @@ MonoBehaviour:
   m_timeBetweenAttacks: 6
   m_damageOutput: 10
   m_distanceFromPlayer: 40
+  offset: 0
   timeSinceLastAttack: Infinity
   onCooldown: 0
   cooldownTimer: 4
@@ -426,10 +427,13 @@ MonoBehaviour:
   BallistaPos: {fileID: 5769861269627386112}
   ChargeShoot: {fileID: 8300000, guid: 71e4de7ff31b4d341b44567c58f7d87a, type: 3}
   aS: {fileID: 989932934}
-  m_projectile: {fileID: 5156751096458633372, guid: 388e9377eefd9cf48a4f77f08ef048c4,
+  m_projectileGO: {fileID: 5624011588246841888, guid: 388e9377eefd9cf48a4f77f08ef048c4,
+    type: 3}
+  m_projectileRB: {fileID: 5156751096458633372, guid: 388e9377eefd9cf48a4f77f08ef048c4,
     type: 3}
   m_fireTransform: {fileID: 4066942215474572001}
   m_launchForce: 60
+  pooledAmount: 2
   m_laser: {fileID: 4066942215134985601}
 --- !u!82 &989932934
 AudioSource:
@@ -576,14 +580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4066942215960144407}
     m_Modifications:
-    - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
-      propertyPath: m_Name
-      value: Ballista_Top 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.39711815
@@ -639,6 +635,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
       propertyPath: m_LocalScale.z
       value: 3.8330495
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
+      propertyPath: m_Name
+      value: Ballista_Top 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 717530f2b81627644a3d37a04ecf020a, type: 3}

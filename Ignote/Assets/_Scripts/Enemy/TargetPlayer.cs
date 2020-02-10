@@ -36,9 +36,12 @@ public class TargetPlayer : MonoBehaviour
     Transform enemyTransform;
     #endregion
 
-    public Rigidbody m_projectile;
+    public GameObject m_projectileGO;
+    public Rigidbody m_projectileRB;
     public Transform m_fireTransform;
     public float m_launchForce;
+    public int pooledAmount = 2;
+    List<GameObject> projectiles;
 
     public GameObject m_laser;
     EnemyShooterCombat escScript;
@@ -46,6 +49,15 @@ public class TargetPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        projectiles = new List<GameObject>();
+        for (int i = 0; i < pooledAmount; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(m_projectileGO);
+            projectiles.Add(obj);
+            obj.SetActive(false);
+            GameObject.DontDestroyOnLoad(obj);
+        }
+
         escScript = GetComponentInChildren<EnemyShooterCombat>();
         targetPlayer = PlayerManager.instance.player.transform;
         targetCompanion = PlayerManager.instance.companion.transform;
@@ -141,9 +153,23 @@ public class TargetPlayer : MonoBehaviour
         {
             timeSinceLastAttack = 0;
 
-            Rigidbody shellInstance = Instantiate(m_projectile, m_fireTransform.position, m_fireTransform.rotation);
+            //Rigidbody shellInstance = Instantiate(m_projectileRB, m_fireTransform.position, m_fireTransform.rotation);
 
-            shellInstance.velocity = shellInstance.transform.forward * m_launchForce;
+            //shellInstance.velocity = shellInstance.transform.forward * m_launchForce;
+
+
+            for (int i = 0; i < projectiles.Count; i++)
+            { // Iterate through all pooled objects
+                if (!projectiles[i].activeInHierarchy)
+                {
+                    projectiles[i].transform.position = m_fireTransform.position;
+                    projectiles[i].transform.rotation = m_fireTransform.rotation;
+                    Rigidbody shellInstance = projectiles[i].GetComponent<Rigidbody>();
+                    shellInstance.velocity = shellInstance.transform.forward * m_launchForce;
+                    projectiles[i].SetActive(true);
+                    break;
+                }
+            }
 
             StartCoroutine(cooldown());
         }
