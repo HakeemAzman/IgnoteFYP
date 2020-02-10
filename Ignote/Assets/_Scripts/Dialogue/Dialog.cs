@@ -12,6 +12,7 @@ public class Dialog : MonoBehaviour
     public float typingSpeed;
     public GameObject dialogHolder;
     public float timer;
+
     void Start()
     {
         StartCoroutine(Type());
@@ -23,6 +24,7 @@ public class Dialog : MonoBehaviour
         {
             timer -= Time.deltaTime * 1;
         }
+
         if(timer <= 0)
         {
             StartCoroutine(NextSentence());
@@ -33,13 +35,11 @@ public class Dialog : MonoBehaviour
             Destroy(dialogHolder);
         }
     }
-    
-
 
     IEnumerator Type()
     {
         foreach(char letter in sentences[index].ToCharArray())
-            {
+        {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }

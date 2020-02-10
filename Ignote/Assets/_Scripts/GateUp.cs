@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GateUp : MonoBehaviour
 {
-
     [SerializeField] float maxY;
     [SerializeField] float minY;
     [SerializeField] float speedOfGate;

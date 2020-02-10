@@ -6,6 +6,8 @@ public class FinalePressurePlate : MonoBehaviour
 {
     public GameObject animLeftDoor;
     public GameObject animRightDoor;
+    public GameObject playerHealthUI, robotHealthUI, endCanvas;
+    public GameObject deadRobot;
     [SerializeField] bool isTriggered;
     [SerializeField] Gate6E g6eScript;
 
@@ -16,6 +18,7 @@ public class FinalePressurePlate : MonoBehaviour
         {
             animLeftDoor.GetComponent<Animator>().enabled = true;
             animRightDoor.GetComponent<Animator>().enabled = true;
+            StartCoroutine(StartCinematic());
         }
     }
 
@@ -27,5 +30,15 @@ public class FinalePressurePlate : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Companion")) isTriggered = false;
+    }
+
+    IEnumerator StartCinematic()
+    {
+        playerHealthUI.SetActive(false);
+        robotHealthUI.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        endCanvas.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        deadRobot.SetActive(true);
     }
 }

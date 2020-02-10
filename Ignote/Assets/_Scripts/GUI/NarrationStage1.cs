@@ -94,14 +94,14 @@ public class NarrationStage1 : MonoBehaviour
 
         if (other.name == "Tutorial4")
         {
-            textBox.text = "Kite the enemies around the friendly robot to stay safe, repair it when its bar is low.";
+            textBox.text = "Only the robots can deal damage.";
             hasColor = true;
             StartCoroutine(TimeScale());
         }
 
         if (other.name == "Tutorial5")
         {
-            textBox.text = "A Ballista can only be disabled by Emily, go round the back of Ballista and use the repair button to disable it";
+            textBox.text = "Only Emily can disable the ballista by using her wrench on the back.";
             hasColor = true;
         }
 
