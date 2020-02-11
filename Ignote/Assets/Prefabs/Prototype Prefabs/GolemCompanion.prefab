@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99439238}
-  m_LocalRotation: {x: -0.8633573, y: 0.03198592, z: -0.4195076, w: -0.27857575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.17, y: -0.82, z: 0.09}
   m_LocalScale: {x: 1.1629785, y: 1.1629918, z: 1.1629899}
   m_Children: []
@@ -194,6 +194,7 @@ MonoBehaviour:
   compScript: {fileID: 5013666857775057311}
   arms: {fileID: 99439239}
   enemyDeathSFX: {fileID: 8300000, guid: 778df9cb0187e5f49aebf78b3ea83e97, type: 3}
+  pooledAmount: 3
 --- !u!114 &1034151585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +323,7 @@ MonoBehaviour:
   compScript: {fileID: 5013666857775057311}
   arms: {fileID: 99439239}
   enemyDeathSFX: {fileID: 8300000, guid: 778df9cb0187e5f49aebf78b3ea83e97, type: 3}
+  pooledAmount: 3
 --- !u!114 &869079600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,7 +1074,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   stayVFX: {fileID: 0}
-  psAOE: {fileID: 0}
+  psAOE: {fileID: 6728378512723486083, guid: f621c025c82a6a1418a9fd4ffc2b7243, type: 3}
   aoeVFXStore:
   - {fileID: 6728378512723486083, guid: f621c025c82a6a1418a9fd4ffc2b7243, type: 3}
   - {fileID: 6728378512723486083, guid: f621c025c82a6a1418a9fd4ffc2b7243, type: 3}
@@ -1097,7 +1099,7 @@ MonoBehaviour:
   cs: {fileID: 5013666857775057311}
   anim: {fileID: 1799793165}
   enduranceBar: {fileID: 0}
-  companionDisabled: 0
+  companionDisabled: 1
 --- !u!135 &1228161215
 SphereCollider:
   m_ObjectHideFlags: 0

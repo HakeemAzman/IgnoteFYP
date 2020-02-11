@@ -11,13 +11,30 @@ public class OverlapSphereAOE : MonoBehaviour
     Collider[] colliders;
     public Transform arms;
     public AudioClip enemyDeathSFX;
+    
+    public int pooledAmount = 3;
+    List<GameObject> m_AOEStorage;
+
+
+    private void Start()
+    {
+        m_AOEStorage = new List<GameObject>();
+        for (int i = 0; i < pooledAmount; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(compScript.psAOE);
+            m_AOEStorage.Add(obj);
+            obj.SetActive(false);
+            GameObject.DontDestroyOnLoad(obj);
+        }
+    }
 
     public void AreaOfEffect()
     {
         colliders = Physics.OverlapSphere(arms.position, compScript.radius, compScript.check);
         foreach (Collider enemy in colliders)
         {
-            StartCoroutine(SpawnVFX());
+            //StartCoroutine(SpawnVFX());
+            AoeVFX();
 
             if (enemy.CompareTag("Enemy"))
             {
@@ -54,5 +71,19 @@ public class OverlapSphereAOE : MonoBehaviour
         GameObject aoeVFX = Instantiate(compScript.psAOE, arms.position, transform.rotation);
         yield return new WaitForSeconds(3f);
         Destroy(aoeVFX);
+    }
+
+    void AoeVFX()
+    {
+        for (int i = 0; i < m_AOEStorage.Count; i++)
+        { // Iterate through all pooled objects
+            if (!m_AOEStorage[i].activeInHierarchy)
+            {
+                m_AOEStorage[i].transform.position = arms.position;
+                m_AOEStorage[i].transform.rotation = arms.rotation;
+                m_AOEStorage[i].SetActive(true);
+                break;
+            }
+        }
     }
 }

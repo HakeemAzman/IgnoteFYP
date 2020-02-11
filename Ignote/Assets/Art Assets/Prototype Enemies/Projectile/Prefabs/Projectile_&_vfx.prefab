@@ -4886,6 +4886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2fa52c69cb514eba8632497080692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyTimer: 3
 --- !u!54 &5156751096458633372
 Rigidbody:
   m_ObjectHideFlags: 0

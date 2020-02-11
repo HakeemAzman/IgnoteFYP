@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileStart : MonoBehaviour
+public class EnableDisableGameObject : MonoBehaviour
 {
+    public float DestroyTimer;
+
     //public GameObject projectileSystem;
 
     //void Start()
