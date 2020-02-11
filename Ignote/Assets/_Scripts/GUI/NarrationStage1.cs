@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NarrationStage1 : MonoBehaviour
 {
     public Text textBox;
+    public Text dialogueBox;
     public Text roomNameTxt;
     public RectTransform topBox;
     public RectTransform bottomBox;
@@ -17,6 +18,7 @@ public class NarrationStage1 : MonoBehaviour
     public Image LBbutton;
     public Image AButton;
     bool hasColor;
+    bool dialogueColor;
     bool nameHasColor;
     public bool canMove; //PlayerMovement enable girl's running
 
@@ -24,6 +26,7 @@ public class NarrationStage1 : MonoBehaviour
     {
         TextBoxColor();
         NameBoxColor();
+        DialogueBoxColor();
 
         if (canMove) LetterBoxMove();
     }
@@ -32,33 +35,27 @@ public class NarrationStage1 : MonoBehaviour
     {
         if (other.name == "Pier Dialogue 1")
         {
-            textBox.text = "Emily: What was that..?";
-            hasColor = true;
+            dialogueBox.text = "Emily: What was that..?";
+            dialogueColor = true;
         }
 
         if(other.name == "Pier Dialogue 2")
         {
-            textBox.text = "Emily: Where am I..?";
-            hasColor = true;
+            dialogueBox.text = "Emily: Where am I..?";
+            dialogueColor = true;
         }
 
         if (other.name == "Pier Dialogue 3")
         {
-            textBox.text = "Emily: What is this place..?";
-            hasColor = true;
+            dialogueBox.text = "Emily: What is this place..?";
+            dialogueColor = true;
         }
 
         if (other.name == "Pier Dialogue 4")
         {
-            textBox.text = "Emily: Oh no.. My plane..";
-            hasColor = true;
+            dialogueBox.text = "Emily: My plane..";
+            dialogueColor = true;
         }
-
-        //if (other.name == "Pier Dialogue 5")
-        //{
-        //    textBox.text = "Emily: Is that.. A Robot?.. Why is it locked in a cage?";
-        //    hasColor = true;
-        //}
 
         if (other.name == "Tutorial1")
         {
@@ -114,38 +111,22 @@ public class NarrationStage1 : MonoBehaviour
             canMove = true;
         }
 
-        if(other.name == "Main Hall")
-        {
-            //roomNameTxt.text = "The Great Hall";
-            //StartCoroutine(DeleteName());
-            //nameHasColor = true;
-        }
-
         if (other.name == "Cathedral")
         {
             roomNameTxt.text = "Cathedral Of The Deep";
             StartCoroutine(DeleteName());
-            //nameHasColor = true;
         }
 
         if (other.name == "Study")
         {
             roomNameTxt.text = "Archduchess' Archives";
             StartCoroutine(DeleteName());
-            //nameHasColor = true;
-        }
-
-        if (other.name == "Archduchess' Archives")
-        {
-            //roomNameTxt.text = "Archduchess' Archives";
-            //nameHasColor = true;
         }
 
         if (other.name == "Segregation")
         {
             roomNameTxt.text = "Garden Of Seclusion";
             StartCoroutine(DeleteName());
-            //nameHasColor = true;
         }
 
         if (other.name == "Archduchess Chambers")
@@ -163,6 +144,7 @@ public class NarrationStage1 : MonoBehaviour
             LBbutton.gameObject.SetActive(false);
             XButton.gameObject.SetActive(false);
             hasColor = false;
+            dialogueColor = false;
             Destroy(other.gameObject);
         }
 
@@ -184,6 +166,20 @@ public class NarrationStage1 : MonoBehaviour
         else
         {
             textBox.color = Color.Lerp(textBox.color, Color.clear, 1f * Time.deltaTime);
+        }
+    }
+
+    void DialogueBoxColor()
+    {
+        // lerps the textbox to have color if the boolean is set true
+        if (dialogueColor)
+        {
+            dialogueBox.color = Color.Lerp(dialogueBox.color, Color.white, 1f * Time.deltaTime);
+        }
+        // lerps it back to no alpha if the boolean is false
+        else
+        {
+            dialogueBox.color = Color.Lerp(dialogueBox.color, Color.clear, 1f * Time.deltaTime);
         }
     }
 

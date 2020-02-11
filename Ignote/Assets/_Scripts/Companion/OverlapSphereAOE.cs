@@ -37,7 +37,7 @@ public class OverlapSphereAOE : MonoBehaviour
                     //GameObject deathVFX = Instantiate(deathParticle, transform.position, transform.rotation);
                     //Destroy(deathVFX);
 
-                    Destroy(enemy.gameObject, 2f);
+                    Destroy(enemy.gameObject, 0.5f);
                 }
             }
         }

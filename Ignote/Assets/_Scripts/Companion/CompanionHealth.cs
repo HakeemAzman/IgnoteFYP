@@ -45,7 +45,7 @@ public class CompanionHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "EProjectile")
         {
-            companionCurrentHealth -= 5f;
+            companionCurrentHealth -= 30f;
             Destroy(other.gameObject);
         }
     }

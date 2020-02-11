@@ -38,7 +38,6 @@ public class ProjectileHit : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        
     }
 
     //private void OnCollisionEnter(Collision collision)

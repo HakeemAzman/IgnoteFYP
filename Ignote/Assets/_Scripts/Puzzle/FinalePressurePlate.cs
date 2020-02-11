@@ -6,7 +6,7 @@ public class FinalePressurePlate : MonoBehaviour
 {
     public GameObject animLeftDoor;
     public GameObject animRightDoor;
-    public GameObject playerHealthUI, robotHealthUI, endCanvas;
+    public GameObject playerHealthUI, robotHealthUI, endCanvas, robotCompanion, appearObj;
     public GameObject deadRobot;
     [SerializeField] bool isTriggered;
     [SerializeField] Gate6E g6eScript;
@@ -36,7 +36,9 @@ public class FinalePressurePlate : MonoBehaviour
     {
         playerHealthUI.SetActive(false);
         robotHealthUI.SetActive(false);
+        appearObj.SetActive(true);
         yield return new WaitForSeconds(1f);
+        robotCompanion.SetActive(false);
         endCanvas.SetActive(true);
         yield return new WaitForSeconds(3f);
         deadRobot.SetActive(true);
