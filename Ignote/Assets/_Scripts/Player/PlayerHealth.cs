@@ -55,7 +55,8 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.tag == "EProjectile")
         {
             playerCurrentHealth -= 40f;
-            Destroy(other.gameObject);
+            other.GetComponent<ProjectileHit>().gameObject.SetActive(false);
+            //Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("Checkpoint"))

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnableDisableGameObject : MonoBehaviour
 {
+    public GameObject projectileSystem;
+
     public float DestroyTimer;
 
     //public GameObject projectileSystem;
@@ -30,6 +32,7 @@ public class EnableDisableGameObject : MonoBehaviour
 
     void Destroy()
     {
+        projectileSystem.SetActive(true);
         gameObject.SetActive(false);
     }
 }
