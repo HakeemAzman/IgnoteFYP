@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PuzzleOneManager : MonoBehaviour
 {
-    [SerializeField] GameObject cubeA, cubeB, gate, robotCage, cageObstacle,GateAnimator;
+    [SerializeField] GameObject cubeA, cubeB, gate, robotCage, cageObstacle, GateAnimator, pressurePlate;
 
     [SerializeField] AudioClip gateOpeningSound, heavyGateOpeningSound, pressurePlateSound; 
     AudioSource audioS;
@@ -23,8 +23,8 @@ public class PuzzleOneManager : MonoBehaviour
     {
         if (other.CompareTag("PressurePlate"))
         {
-            audioS.PlayOneShot(pressurePlateSound,0.7f);
-            audioS.PlayOneShot(heavyGateOpeningSound, 0.3f);
+            audioS.PlayOneShot(pressurePlateSound,0f);
+            audioS.PlayOneShot(heavyGateOpeningSound, 0.8f);
         }
 
         if ((other.gameObject.name == "ObstacleChain") && Input.GetButtonDown("Stay"))
@@ -45,7 +45,9 @@ public class PuzzleOneManager : MonoBehaviour
 
         if(other.CompareTag("PressurePlate"))
         {
+            pressurePlate.GetComponent<Animator>().SetTrigger("pressed");
             gate.GetComponent<Animator>().Play("GateOpen");
+            
         }
 
         if ((other.gameObject.name == "ChainRobot") && Input.GetButtonDown("Stay"))
